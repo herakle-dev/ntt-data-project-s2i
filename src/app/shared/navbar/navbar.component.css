@@ -1,0 +1,20 @@
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+a{
+  text-decoration: none;
+  color:white
+}
+mat-toolbar-row{
+  display: flex;
+  align-items:center;
+}
+.nav{
+  background-color: #2c3e50
+}
+.login{
+  background-color:#395067 !important;
+  padding: 15px;
+  border-radius:10px;
+}

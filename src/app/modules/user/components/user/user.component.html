@@ -1,0 +1,104 @@
+<div class="container">
+  <label for="sliderInput">Scegli quanti risultati vuoi vedere!</label>
+  <span>{{ sliderValue }}</span>
+  <input
+    type="range"
+    class=""
+    [(ngModel)]="sliderValue"
+    min="1"
+    max="100"
+    (change)="onSliderChange()"
+  />
+  <label for="search">Cerca un utente in archivio</label>
+  <input
+    type="text"
+    name="search"
+    #search="ngModel"
+    [(ngModel)]="searchValue"
+    (keyup)="searchUsers()"
+    placeholder="Cerca per nome o e-mail"
+  />
+</div>
+
+<app-paginator
+  [currentPage]="currentPage"
+  [totalPages]="totalPages"
+  (pageChange)="goToPage($event)"
+></app-paginator>
+
+<app-user-form></app-user-form>
+
+<div class="container" *ngIf="originalUsers.length > 0 && users.length > 0">
+  <div class="row">
+    <div class="message" *ngIf="search.pristine || !searchValue">
+      <p>A pagina {{ currentPage }} ci sono: {{ users.length }} utenti</p>
+
+      <p *ngIf="this.recursiveGetService.getRequestsComplete">
+        In archivio ci sono: {{ originalUsers.length }} utenti
+      </p>
+    </div>
+    <div class="container">
+      <div class="row" *ngIf="searchValue">
+        <div class="message">
+          <p *ngIf="originalUsers.length == 0">
+            La ricerca non ha prodotto risultati
+          </p>
+          <p *ngIf="users.length != 0">
+            La ricerca ha prodotto {{ users.length }} risultati
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="col-lg-3 user"
+      *ngFor="let user of users"
+      [class.hide]="user.hide"
+    >
+      <div class="card">
+        <div class="card-header">
+          <div
+            class="status circle"
+            [ngClass]="user.status === 'active' ? 'active' : 'inactive'"
+          >
+            <i
+              class="bi bi-person-fill"
+              [ngClass]="user.gender === 'male' ? 'male' : 'female'"
+            ></i>
+          </div>
+
+          <h5 class="card-title">
+            <a [routerLink]="[user.id]">{{ user.name }} </a>
+          </h5>
+          <button
+            (click)="askForConsent(user.id)"
+            class="btn btn-danger btn-sm rounded-0"
+            type="button"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Delete"
+          >
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="originalUsers.length === 0">
+  <h1 class="animate__animated animate__pulse animate__infinite">
+    Attendere prego...
+  </h1>
+  <p class="animate__animated animate__pulse animate__infinite">
+    Stiamo cercando gli utenti...
+  </p>
+  <mat-spinner></mat-spinner>
+  <span class="animate__animated animate__pulse animate__infinite"
+    >Meno utenti vuoi visualizzare più tempo ci vuole per trovarli tutti!</span
+  >
+</div>
+<app-paginator
+  [currentPage]="currentPage"
+  [totalPages]="totalPages"
+  (pageChange)="goToPage($event)"
+></app-paginator>

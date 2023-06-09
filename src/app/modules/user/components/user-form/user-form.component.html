@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="centered-button">
+    <button (click)="toggleSidebarForm()" class="btn btn-pagination">Crea un nuovo utente</button>
+  </div>
+  <div class="sidebar right-sidebar" [class.active]="showSidebarForm">
+    <div class="sidebar-content">
+     <div class="header"><h3>Registra un nuovo utente!</h3>
+      <button class="btn btn-danger" (click)="toggleSidebarForm()">X</button>
+    </div>
+      <form (ngSubmit)="submitForm(userForm)" #userForm="ngForm">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="formData.name" name="name" required>
+          <div *ngIf="userForm.controls['name']?.invalid && (userForm.controls['name']?.dirty || userForm.controls['name']?.touched)" class="alert alert-danger">
+            Il campo Nome è obbligatorio.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="formData.email" name="email" required email>
+          <div *ngIf="userForm.controls['email']?.invalid && (userForm.controls['email']?.dirty || userForm.controls['email']?.touched)" class="alert alert-danger">
+            Inserisci un indirizzo email valido.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="gender">Sesso</label>
+          <select class="form-control" id="gender" [(ngModel)]="formData.gender" name="gender" required>
+            <option value="male">Maschio</option>
+            <option value="female">Femmina</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Stato</label>
+          <mat-slide-toggle (change)="changeStatus()" name="status" [(ngModel)]="status">{{ status ? 'Online' : 'Offline' }} </mat-slide-toggle>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">Invia</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="row center">
+  <mat-card class="example-card col-lg-12" *ngIf="user">
+    <mat-card-header>
+      <mat-card-subtitle></mat-card-subtitle>
+      <mat-card-title>Utente : {{ user?.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Email: <strong>{{ user?.email }}</strong>
+      </p>
+      <p>
+        Sesso: <strong>{{ user?.gender === "male" ? "Uomo" : "Donna" }}</strong>
+      </p>
+      <p>
+        Status:
+        <strong>{{ user?.status === "active" ? "Online" : "Offline" }}</strong>
+      </p>
+    </mat-card-content>
+
+    <mat-card-title></mat-card-title>
+    <mat-card-actions>
+      <button
+        class="btn btn-pagination"
+        [disabled]="postShown"
+        (click)="showPosts()"
+      >
+        Mostra i post di {{ user?.name.split(" ")[0] }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <div *ngIf="!user">
+    <h2 class="text-center">Utente non esistente</h2>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="row col-lg-12">
+    <div class="post-container" *ngIf="postShown">
+      <ng-container *ngFor="let post of userPosts">
+        <mat-card class="example-card styling">
+          <mat-card-header>
+            <mat-card-title
+              >
+              {{ post.title }}
+            </mat-card-title>
+            <mat-card-subtitle>Scritto da {{ user?.name }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p></p>
+            <p>{{ post?.body }}</p>
+          </mat-card-content>
+
+            <div
+              class="comment-section center"
+            >
+              <app-comment [postId]="post.id"></app-comment>
+
+            </div>
+        </mat-card>
+      </ng-container>
+      <ng-container *ngIf="postShown && userPosts.length === 0">
+        <p class="text-center">Nessun post di {{ user?.name }}</p>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- -->
+</div>

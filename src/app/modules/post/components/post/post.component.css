@@ -1,0 +1,98 @@
+.container {
+  margin-top: 20px;
+}
+
+.post-card {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  margin-bottom: 10px;
+}
+
+.post-id {
+  font-size: 14px;
+  margin: 0;
+  color: #888;
+}
+
+.post-creator {
+  font-size: 18px;
+  margin: 0;
+}
+
+.post-title {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.post-body {
+  font-size: 16px;
+  color: #555;
+}
+
+.toggle-comments-btn {
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.comments-section {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.comment-count {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.comment-card {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-author {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.comment-body {
+  font-size: 14px;
+  margin: 0;
+  color: #555;
+}
+.post-creator {
+  font-size: 18px;
+  margin: 0;
+
+}
+
+.user-link {
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.row.loading{
+  height: 60vh;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

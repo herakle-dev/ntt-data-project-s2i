@@ -1,0 +1,21 @@
+
+<div class="div" *ngIf="!commentShown && selectedPostId">
+  <div *ngFor="let comment of comments" class="comment">
+    <div class="comment-header">
+      <i class="bi bi-person-fill"></i>
+      <span class="comment-author">{{ comment.name }}</span>
+    </div>
+    <div class="comment-body">
+      {{ comment.body }}
+    </div>
+  </div>
+
+
+</div>  <span class="new-comment" *ngIf="newCommentShow">
+    <textarea class="comment-textarea" placeholder="Aggiungi un commento..."></textarea>
+    <button class="comment-button btn btn-pagination">Invia</button>
+  </span>
+<button class="btn btn-pagination" *ngIf="comments.length " (click)="toggleComments()">{{commentShown?'Mostra ' +   comments.length  +' commenti':'Nascondi commenti'}}</button>
+<button class="btn btn-pagination" *ngIf="!comments.length" (click)="newComment()">
+  Non ci sono commenti in questo post, creane uno tu!
+</button>

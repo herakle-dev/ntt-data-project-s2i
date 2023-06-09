@@ -1,0 +1,63 @@
+
+<div class="div" style="display: flex; justify-content:center; margin-top: 15px;">
+  <label for="search">Cerca un utente in archivio</label>
+  <input
+    type="text"
+    name="search"
+    #search="ngModel"
+    [(ngModel)]="searchValue"
+    (keyup)="searchPosts()"
+    placeholder="Cerca per titolo o contenuto"
+  />
+</div>
+<app-paginator
+  [currentPage]="currentPage"
+  [totalPages]="totalPages"
+  (pageChange)="goToPage($event)"
+
+></app-paginator>
+
+<div class="container"  *ngIf="posts.length>0 && allPostsfull.length">
+  <div class="row">
+    <h2 *ngIf="recursiveGetService.getRequestsComplete">
+      Totale post: {{ allPostsfull.length }}
+    </h2>
+    <h5 style="text-align:center"> {{ posts.length }} post presenti in questa pagina.</h5>
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of posts">
+      <div class="post-card">
+        <div class="post-header">
+          <p class="post-id">Id post: {{ post.id }}</p>
+          <h4 class="post-creator">
+                 Premi
+            <a routerLink="../user/{{ post.user_id }}" class="user-link">
+              <strong class="user-name">qui</strong>
+            </a>   per visitare il profilo dell'autore del post
+          </h4>
+        </div>
+        <h2 class="post-title">{{ post.title }}</h2>
+        <p class="post-body">{{ post.body }}</p>
+
+        <app-comment [postId]="post.id"
+        ></app-comment>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="div" *ngIf="searchValue">
+  <p *ngIf="posts.length != 0">La ricerca ha prodotto {{posts.length}} risultati</p>
+  <p *ngIf="posts.length === 0">La ricerca non ha prodotto risultati</p>
+
+</div>
+
+<app-paginator
+  [currentPage]="currentPage"
+  [totalPages]="totalPages"
+  (pageChange)="goToPage($event)"
+></app-paginator>
+<div class="row loading" *ngIf="posts.length === 0 && !searchValue">
+  <h1 class="animate__animated animate__pulse animate__infinite">
+    Attendere prego...
+  </h1>
+  <mat-spinner></mat-spinner>
+
+</div>

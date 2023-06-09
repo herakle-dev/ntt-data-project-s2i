@@ -1,0 +1,194 @@
+
+.container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+background-color:  #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.user {
+  margin: 10px;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clicked {
+  background-color: rgb(155, 154, 154);
+  color: black;
+}
+
+.btn-primary {
+  border: 0.5px solid black;
+  margin: 1px;
+}
+
+mat-slider {
+  width: 300px;
+}
+
+input {
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.mat-mdc-progress-spinner {
+  width: 200px !important;
+  height: 200px !important;
+  display: block;
+  overflow: visible;
+  line-height: 0;
+}
+
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #180f94;
+}
+
+.male {
+  color: rgb(0, 102, 255);
+}
+
+.female {
+  color: rgb(232, 60, 177);
+}
+
+.hide {
+  display: none;
+}
+
+.card {
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  animation-duration: 0.5s;
+  animation-name: slideIn;
+  background-color:  #f5f5f5 ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Aggiunta della box shadow */
+}
+
+.card-title {
+  margin: 0;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate__pulse {
+  animation-name: pulse;
+}
+
+.animate__infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+a:hover{
+  color: #336699 ;
+}
+a{
+  color: #555555  ;
+}
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.active {
+  background-color: #39b54a; /* Colore per lo stato 'online' */
+}
+
+.inactive {
+  background-color: #d9534f; /* Colore per lo stato 'offline' */
+}
+
+.status i {
+  font-size: 18px;
+  color: #ffffff; /* Colore dell'icona dell'omino */
+}
+input[type="range"] {
+  width: auto;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #f5f5f5 !important;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+input[type="text"] {
+  width: auto;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+span {
+  margin-left: 10px;
+}
+label {
+  margin-bottom: 5px;
+}

@@ -1,0 +1,27 @@
+<div class="container pages">
+  <button
+    class="btn btn-dark"
+    [disabled]="currentPage === 1"
+    (click)="goToPreviousPage()"
+  >
+    Precedente
+  </button>
+  <ng-container *ngFor="let page of visiblePages">
+    <button
+      class="btn btn-pagination"
+      [class.btn-dark]="page === currentPage"
+      (click)="goToPage(page)"
+    >
+      {{ page }}
+    </button>
+  </ng-container>
+
+  <button
+    class="btn btn-dark"
+    [disabled]="currentPage === totalPages
+    "
+    (click)="goToNextPage()"
+  >
+    Successivo
+  </button>
+</div>
