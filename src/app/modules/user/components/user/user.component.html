@@ -28,7 +28,7 @@
 
 <app-user-form></app-user-form>
 
-<div class="container" *ngIf="originalUsers.length > 0 && users.length > 0">
+<div class="container" *ngIf="users.length > 0">
   <div class="row">
     <div class="message" *ngIf="search.pristine || !searchValue">
       <p>A pagina {{ currentPage }} ci sono: {{ users.length }} utenti</p>

@@ -41,11 +41,7 @@ mat-slide-toggle {
   justify-content: space-between;
   align-items: center;
 }
-.btn-pagination {
-  background-color: #3b5998; /* Colore primario per i pulsanti */
-  border: none;
-  color: #ffffff; /* Colore del testo */
-}
+
 .btn {
   margin: 5px;
 }

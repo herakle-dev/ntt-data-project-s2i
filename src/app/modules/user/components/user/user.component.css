@@ -78,11 +78,11 @@ input {
 }
 
 .male {
-  color: rgb(0, 102, 255);
+  color: rgb(0, 102, 255) !important;
 }
 
 .female {
-  color: rgb(232, 60, 177);
+  color: rgb(232, 60, 177) !important;
 }
 
 .hide {

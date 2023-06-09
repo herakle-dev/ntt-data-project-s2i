@@ -40,8 +40,3 @@ mat-slide-toggle {
 {  display: flex;
     align-items: flex-start;
 }
-.btn-pagination{
-  background-color: #3b5998; /* Colore primario per i pulsanti */
-  border: none;
-  color: #ffffff; /* Colore del testo */
-}

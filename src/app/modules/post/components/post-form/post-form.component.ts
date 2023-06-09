@@ -32,6 +32,10 @@ export class PostFormComponent {
     body: '',
   };
   ngOnInit() {
+    console.log(this.userId)
+    if (this.userId) {
+      this.formData.userId = this.userId;
+    }
     this.users = this.dataSharingService.getOriginalUsers();
     if(this.users.length===0 && location.pathname=='/post'){
 this.getAllService.getAllInApi(100,this.userService.allUsersUrl)
@@ -46,9 +50,6 @@ this.getAllService.getAllInApi(100,this.userService.allUsersUrl)
   }
 );
     }
-    if (this.userId) {
-      this.formData.userId = this.userId;
-    }
   }
   submitForm(form: NgForm) {
     if (form.invalid) {
@@ -59,6 +60,9 @@ this.getAllService.getAllInApi(100,this.userService.allUsersUrl)
       title: this.formData.title,
       body: this.formData.body
     };
+     if (this.userId) {
+      this.selectedUserId= this.userId;
+    }
     this.postFormService.newPostUrl = `https://gorest.co.in/public/v2/users/${this.selectedUserId}/posts`;
     this.postFormService.createPost(post).subscribe(
       (response) => {

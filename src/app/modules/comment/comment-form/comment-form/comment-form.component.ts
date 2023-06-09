@@ -38,10 +38,8 @@ export class CommentFormComponent {
       (response) => {
         console.log(response, 'commento creato con successo!');
         location.reload()
-        // Aggiungi qui la logica per gestire la risposta della chiamata API
       },
       (error) => {
-        // Gestisci l'errore della chiamata API
         console.log('errore', error);
       }
     );
