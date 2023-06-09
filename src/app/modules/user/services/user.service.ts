@@ -19,9 +19,10 @@ import { GetAllService } from 'src/app/shared/services/get-all.service';
       private http: HttpClient,
       private getAllService:GetAllService
     ) {}
-
     deleteThisUser(userId: number): Observable<any> {
       const deleteUrl = `${this.allUsersUrl}/${userId}`;
       return this.http.delete<any>(deleteUrl, { headers: this.headers });
     }
+
+
   }

@@ -16,13 +16,14 @@ export class UserDetailsComponent implements OnInit {
 
   userId!: number;
   postId!: number;
-
+  userName: any;
   postShown = false;
   commentShown = false;
   noPosts!: boolean;
   selectedPostId: number | null = null;
 
   commentsCount: { [postId: number]: number } = {};
+
 
   constructor(
     private userDetailsService: UserDetailsService,

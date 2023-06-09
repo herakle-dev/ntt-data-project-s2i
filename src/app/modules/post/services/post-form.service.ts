@@ -1,0 +1,17 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { GetAllService } from 'src/app/shared/services/get-all.service';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class PostFormService {
+  header=this.getAllService.headers
+  newPostUrl = ``;
+
+  constructor(private http: HttpClient, private getAllService: GetAllService) {}
+  createPost(post: any): Observable<any> {
+    return this.http.post(this.newPostUrl, post, { headers: this.header });
+  }
+}

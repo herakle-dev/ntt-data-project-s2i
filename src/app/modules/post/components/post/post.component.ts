@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component,  OnDestroy, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
 import { Subject, takeUntil } from 'rxjs';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
-import { CommentService } from 'src/app/modules/comment/services/comment.service';
+import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
 
 @Component({
   selector: 'app-post',
@@ -11,7 +11,7 @@ import { CommentService } from 'src/app/modules/comment/services/comment.service
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit, OnDestroy {
-  allPostsfull!: any[];
+  allPostsFull!: any[];
   posts: any[] = [];
   originalUsers: any[] = [];
   sliderValue = 100;
@@ -21,17 +21,20 @@ export class PostComponent implements OnInit, OnDestroy {
   searchValue: string = '';
   private unsubscribe$ = new Subject<void>();
 
+
   selectedPostId: number | null = null;
-  comments: any[] = [];
+  sharedPosts!: any[];
 
   constructor(
     private postService: PostService,
-    private commentService: CommentService,
+    private dataSharingService: DataSharingService,
     public recursiveGetService: GetAllService,
     private paginationService: PaginatorService
   ) {}
   ngOnInit(): void {
     this.retriveAllPosts();
+    this.sharedPosts = this.dataSharingService.getAllPostsFull(); // Ottieni i dati dei post condivisi dal servizio
+
   }
 
   ngOnDestroy() {
@@ -47,8 +50,10 @@ export class PostComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         (pages: any[][]) => {
-          this.allPostsfull =
-            this.recursiveGetService.flattenResponseInPages(pages);
+          this.allPostsFull = this.recursiveGetService.flattenResponseInPages(pages);
+
+            this.dataSharingService.setAllPostsFull(this.allPostsFull); // Condividi i dati con il servizio
+
           this.posts.forEach((post) => {
             const postId = post.id;
             //console.log(postId);
@@ -62,10 +67,10 @@ export class PostComponent implements OnInit, OnDestroy {
       );
   }
   searchPosts(): void {
-    if (this.allPostsfull && this.searchValue.trim() === '') {
-      this.posts = this.allPostsfull.slice();
-    } else if (this.allPostsfull) {
-      this.posts = this.allPostsfull.filter((post) => {
+    if (this.allPostsFull && this.searchValue.trim() === '') {
+      this.posts = this.allPostsFull.slice();
+    } else if (this.allPostsFull) {
+      this.posts = this.allPostsFull.filter((post) => {
         const lowerCaseBody = post.body?.toLowerCase() ?? '';
         const lowerCaseTitle = post.title?.toLowerCase() ?? '';
 
@@ -83,7 +88,7 @@ export class PostComponent implements OnInit, OnDestroy {
 
   updatePostsToDisplay(): void {
     const allPostsToDisplay =
-      this.searchValue.trim() === '' ? this.allPostsfull : this.posts;
+      this.searchValue.trim() === '' ? this.allPostsFull : this.posts;
     this.posts = this.paginationService.updateItemsToDisplay(
       allPostsToDisplay,
       this.currentPage,

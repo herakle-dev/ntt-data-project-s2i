@@ -30,7 +30,6 @@ export class UserFormComponent {
       .subscribe(
         response => {
           console.log('Dati inviati con successo!', response);
-          this.resetForm();
           location.reload()
         },
         error => {
@@ -39,14 +38,7 @@ export class UserFormComponent {
       );
   }
 
-  resetForm(): void {
-    this.formData = {
-      name: '',
-      email: '',
-      gender: '',
-      status: ''
-    };
-  }
+
 
   changeStatus() {
 this.status

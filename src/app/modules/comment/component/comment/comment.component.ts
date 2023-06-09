@@ -5,12 +5,11 @@ import { CommentService } from '../../services/comment.service';
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
-  styleUrls: ['./comment.component.css']
+  styleUrls: ['./comment.component.css'],
 })
 export class CommentComponent implements OnInit {
-
   commentShown = false;
-  newCommentShow=false
+  newCommentShow = false;
   selectedPostId: number | null = null;
   @Input() post: any;
   @Input() currentPage: number = 1;
@@ -21,7 +20,7 @@ export class CommentComponent implements OnInit {
 
   constructor(private commentService: CommentService) {}
   ngOnInit(): void {
-    this.getComments(this.postId)
+    this.getComments(this.postId);
   }
 
   getComments(postId: number | null) {
@@ -33,9 +32,13 @@ export class CommentComponent implements OnInit {
       if (this.comments.length === 0 && postId) {
         this.commentService.getEveryPostComments(postId).subscribe(
           (comments: any[]) => {
-            this.comments = comments.filter((comment) => comment.post_id === postId);
-
-
+            this.comments = comments.filter(
+              (comment) => comment.post_id === postId
+            );
+            // this.comments.forEach((comment) => {
+            //   const commentId = comment.id;
+            //   console.log(commentId);
+            // });
           },
           (error: any) => {
             console.error(error);
@@ -47,11 +50,10 @@ export class CommentComponent implements OnInit {
 
   toggleComments() {
     this.commentShown = !this.commentShown;
-    this.newCommentShow=!this.newCommentShow
-
+    this.newCommentShow = !this.newCommentShow;
   }
 
-  newComment(){
-    this.newCommentShow=!this.newCommentShow
+  newComment() {
+    this.newCommentShow = !this.newCommentShow;
   }
 }

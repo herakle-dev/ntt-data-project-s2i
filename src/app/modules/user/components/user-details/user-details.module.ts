@@ -4,10 +4,10 @@ import { CommonModule } from '@angular/common';
 import { UserDetailsRoutingModule } from './user-details-routing.module';
 import { UserDetailsComponent } from './user-details.component';
 
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+
 import { UikitModule } from 'src/app/shared/uikit/uikit.module';
 import { CommentModule } from "../../../comment/comment.module";
+import { PostFormModule } from 'src/app/modules/post/components/post-form/post-form.module';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { CommentModule } from "../../../comment/comment.module";
         CommonModule,
         UserDetailsRoutingModule,
         UikitModule,
-        CommentModule
+        CommentModule,
+        PostFormModule
     ]
 })
 export class UserDetailsModule { }

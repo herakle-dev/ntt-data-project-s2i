@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 
 import { GetAllService } from 'src/app/shared/services/get-all.service';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
+import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
 
 @Component({
   selector: 'app-user',
@@ -23,17 +24,20 @@ export class UserComponent implements OnInit, OnDestroy {
   searchValue: string = '';
   isVisible = true;
   private unsubscribe$ = new Subject<void>();
-
+  sharedUsers!:any[]
   constructor(
     private userService: UserService,
+    private dataSharingService: DataSharingService,
     public recursiveGetService: GetAllService,
-    private paginationService: PaginatorService
+    private paginationService: PaginatorService,
+
   ) {}
 
   ngOnInit() {
     this.sliderValue = 10;
     this.onSliderChange()
-
+    this.users = this.dataSharingService.getOriginalUsers();
+console.log(this.sharedUsers)
   }
 
   ngOnDestroy() {
@@ -49,10 +53,10 @@ export class UserComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         (pages: any[][]) => {
-          this.originalUsers =
-            this.recursiveGetService.flattenResponseInPages(pages);
+          this.originalUsers = this.recursiveGetService.flattenResponseInPages(pages);
+            this.dataSharingService.setOriginalUsers(this.originalUsers);
           this.searchUsers();
-          this.updateUsersToDisplay(); // Aggiorna gli utenti da visualizzare
+          this.updateUsersToDisplay();
         },
         (error: any) => {
           console.error(error);

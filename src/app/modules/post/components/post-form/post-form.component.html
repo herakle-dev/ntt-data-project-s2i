@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="centered-button">
+    <button (click)="toggleSidebarForm()" class="btn btn-pagination">Crea un nuovo Post</button>
+  </div>
+  <div class="sidebar right-sidebar" [class.active]="showSidebarForm">
+    <div class="sidebar-content">
+     <div class="header"><h3>Nuovo post</h3>
+      <button class="btn btn-danger" (click)="toggleSidebarForm()">X</button>
+    </div>
+      <form  (ngSubmit)="submitForm(postForm)" #postForm="ngForm">
+        <div class="form-group">
+          <label for="userId">Utente</label>
+          <input type="text" [value]="userId" readonly *ngIf="userId">
+          <select class="form-control" id="userId" [(ngModel)]="selectedUserId" name="userId" required *ngIf="!userId">
+            <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
+          </select>
+
+          <div *ngIf="postForm.controls['userId']?.invalid && (postForm.controls['userId']?.dirty || postForm.controls['userId']?.touched)" class="alert alert-danger">
+            Il campo Utente è obbligatorio.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Titolo</label>
+          <input type="text" class="form-control" id="title" [(ngModel)]="formData.title" name="title" required>
+          <div *ngIf="postForm.controls['title']?.invalid && (postForm.controls['title']?.dirty || postForm.controls['title']?.touched)" class="alert alert-danger">
+            Il campo Titolo è obbligatorio.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Body</label>
+          <input type="text" class="form-control" id="body" [(ngModel)]="formData.body" name="body" required>
+          <div *ngIf="postForm.controls['body']?.invalid && (postForm.controls['body']?.dirty || postForm.controls['body']?.touched)" class="alert alert-danger">
+            Il campo Body è obbligatorio.
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="postForm.invalid">Invia</button>
+      </form>
+    </div>
+  </div>
+</div>

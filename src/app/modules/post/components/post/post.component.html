@@ -16,13 +16,18 @@
   (pageChange)="goToPage($event)"
 
 ></app-paginator>
+<app-post-form></app-post-form>
+<div class="div" *ngIf="searchValue">
+  <p style="text-align:center" *ngIf="posts.length != 0">La ricerca ha prodotto {{posts.length}} risultati</p>
+  <p  style="text-align:center" *ngIf="posts.length === 0">La ricerca non ha prodotto risultati</p>
 
-<div class="container"  *ngIf="posts.length>0 && allPostsfull.length">
+</div>
+<div class="container"  *ngIf="posts.length>0 && allPostsFull.length">
   <div class="row">
     <h2 *ngIf="recursiveGetService.getRequestsComplete">
-      Totale post: {{ allPostsfull.length }}
+      Totale post: {{ allPostsFull.length }}
     </h2>
-    <h5 style="text-align:center"> {{ posts.length }} post presenti in questa pagina.</h5>
+    <h5 style="text-align:center" *ngIf="!searchValue" > {{ posts.length }} post presenti in questa pagina.</h5>
     <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of posts">
       <div class="post-card">
         <div class="post-header">
@@ -43,11 +48,7 @@
     </div>
   </div>
 </div>
-<div class="div" *ngIf="searchValue">
-  <p *ngIf="posts.length != 0">La ricerca ha prodotto {{posts.length}} risultati</p>
-  <p *ngIf="posts.length === 0">La ricerca non ha prodotto risultati</p>
 
-</div>
 
 <app-paginator
   [currentPage]="currentPage"
