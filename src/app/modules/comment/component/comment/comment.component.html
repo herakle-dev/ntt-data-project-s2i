@@ -11,10 +11,8 @@
   </div>
 
 
-</div>  <span class="new-comment" *ngIf="newCommentShow">
-    <textarea class="comment-textarea" placeholder="Aggiungi un commento..."></textarea>
-    <button class="comment-button btn btn-pagination">Invia</button>
-  </span>
+</div>
+<app-comment-form [newCommentShow]="newCommentShow" [postId]="postId"> </app-comment-form>
 <button class="btn btn-pagination" *ngIf="comments.length " (click)="toggleComments()">
   {{commentShown?'Mostra ' +   comments.length  +' commenti':'Nascondi commenti'}}</button>
 <button class="btn btn-pagination" *ngIf="!comments.length" (click)="newComment()">

@@ -32,19 +32,14 @@ export class PostFormComponent {
     body: '',
   };
   ngOnInit() {
-
     this.users = this.dataSharingService.getOriginalUsers();
-    console.log('cia>0')
-
-    if(this.users.length===0){
+    if(this.users.length===0 && location.pathname=='/post'){
 this.getAllService.getAllInApi(100,this.userService.allUsersUrl)
 .subscribe(
   (pages: any[][]) => {
     this.users = this.getAllService.flattenResponseInPages(pages);
       this.dataSharingService.setOriginalUsers(this.users);
       this.users=this.users.filter((user)=> user.name )
-      console.log(this.users)
-console.log('cia <0')
   },
   (error: any) => {
     console.error(error);

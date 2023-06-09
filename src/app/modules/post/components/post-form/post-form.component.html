@@ -14,7 +14,6 @@
           <select class="form-control" id="userId" [(ngModel)]="selectedUserId" name="userId" required *ngIf="!userId">
             <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
           </select>
-
           <div *ngIf="postForm.controls['userId']?.invalid && (postForm.controls['userId']?.dirty || postForm.controls['userId']?.touched)" class="alert alert-danger">
             Il campo Utente è obbligatorio.
           </div>

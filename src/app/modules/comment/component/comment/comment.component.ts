@@ -9,8 +9,8 @@ import { CommentService } from '../../services/comment.service';
 })
 export class CommentComponent implements OnInit {
   commentShown = false;
-  newCommentShow = false;
-  selectedPostId: number | null = null;
+ @Input() newCommentShow = false;
+ @Input() selectedPostId: number | null = null;
   @Input() post: any;
   @Input() currentPage: number = 1;
 
@@ -21,6 +21,7 @@ export class CommentComponent implements OnInit {
   constructor(private commentService: CommentService) {}
   ngOnInit(): void {
     this.getComments(this.postId);
+
   }
 
   getComments(postId: number | null) {
