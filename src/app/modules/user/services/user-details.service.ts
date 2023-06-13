@@ -1,7 +1,7 @@
   import { Injectable } from '@angular/core';
   import { UserService } from './user.service';
   import { Location, LocationStrategy } from '@angular/common';
-  import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+  import { HttpClient } from '@angular/common/http';
   import { Observable, map } from 'rxjs';
   import { GetAllService } from 'src/app/shared/services/get-all.service';
 

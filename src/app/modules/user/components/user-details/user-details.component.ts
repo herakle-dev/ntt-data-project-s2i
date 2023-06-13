@@ -31,7 +31,8 @@ export class UserDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userDetailsService.getUserDetail().subscribe(
+    this.userDetailsService.getUserDetail()
+    .subscribe(
       (user: any) => {
         this.user = user;
         this.userId = this.user.id;

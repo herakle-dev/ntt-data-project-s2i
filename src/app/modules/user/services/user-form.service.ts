@@ -7,7 +7,7 @@ import { GetAllService } from 'src/app/shared/services/get-all.service';
   providedIn: 'root'
 })
 export class UserFormService {
-private newUserUrl='https://gorest.co.in/public/v2/users'
+public newUserUrl='https://gorest.co.in/public/v2/users'
 
 
 

@@ -1,7 +1,6 @@
-import { AfterContentInit, AfterViewChecked, Component, DoCheck, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import {Component,  ElementRef,  OnInit, ViewChild } from '@angular/core';
 import { TokenAuthServiceService } from 'src/app/core/shared/token-auth-service.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',

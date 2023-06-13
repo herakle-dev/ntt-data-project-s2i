@@ -18,13 +18,13 @@
 ></app-paginator>
 <app-post-form></app-post-form>
 <div class="div" *ngIf="searchValue">
-  <p style="text-align:center" *ngIf="posts.length != 0">La ricerca ha prodotto {{posts.length}} risultati</p>
+  <p style="text-align:center" *ngIf="posts.length !== 0">La ricerca ha prodotto {{posts.length}} risultati</p>
   <p  style="text-align:center" *ngIf="posts.length === 0">La ricerca non ha prodotto risultati</p>
 
 </div>
 <div class="container"  *ngIf="posts.length>0 && allPostsFull.length">
   <div class="row">
-    <h2 *ngIf="recursiveGetService.getRequestsComplete">
+    <h2 *ngIf="!recursiveGetService.getRequestsComplete">
       Totale post: {{ allPostsFull.length }}
     </h2>
     <h5 style="text-align:center" *ngIf="!searchValue" > {{ posts.length }} post presenti in questa pagina.</h5>

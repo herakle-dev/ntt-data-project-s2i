@@ -13,10 +13,6 @@ export class CommentFormComponent {
   @Input() newCommentShow = false;
   @Input() postId!: number | null ;
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-  }
   formData: any = {
     name: '',
     email: '',

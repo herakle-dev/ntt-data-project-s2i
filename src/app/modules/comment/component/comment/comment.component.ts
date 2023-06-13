@@ -1,5 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommentService } from '../../services/comment.service';
 
 @Component({
@@ -11,12 +10,11 @@ export class CommentComponent implements OnInit {
   commentShown = false;
  @Input() newCommentShow = false;
  @Input() selectedPostId: number | null = null;
-  @Input() post: any;
-  @Input() currentPage: number = 1;
+  @Input() currentPage = 1;
 
   @Input() comments: any[] = [];
   @Input() postId!: number | null;
-  commentsCount: number = 0;
+  commentsCount = 0;
 
   constructor(private commentService: CommentService) {}
   ngOnInit(): void {
@@ -30,7 +28,8 @@ export class CommentComponent implements OnInit {
     } else {
       this.selectedPostId = postId;
       this.commentShown = true;
-      if (this.comments.length === 0 && postId) {
+      if (postId) {
+        console.log()
         this.commentService.getEveryPostComments(postId).subscribe(
           (comments: any[]) => {
             this.comments = comments.filter(

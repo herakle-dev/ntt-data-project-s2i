@@ -23,12 +23,5 @@ export class PostService {
   }
 
 
-//   this.postService.getEveryPostComments(postId)
-// .subscribe((allComments:any[])=>{
-//   allComments= allComments.filter(
-//     (comment)=>comment.post_id ===postId
-//   )
-//   this.everyCommentArray=allComments
-//   post.commentsCount=this.everyCommentArray.length
-// })
+
 }

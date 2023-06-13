@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { PostFormService } from '../../services/post-form.service';
 import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
@@ -10,7 +10,7 @@ import { UserService } from 'src/app/modules/user/services/user.service';
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.css'],
 })
-export class PostFormComponent {
+export class PostFormComponent  {
   constructor(
     private postFormService: PostFormService,
     private dataSharingService: DataSharingService,
@@ -31,11 +31,8 @@ export class PostFormComponent {
     title: '',
     body: '',
   };
-  ngOnInit() {
-    console.log(this.userId)
-    if (this.userId) {
-      this.formData.userId = this.userId;
-    }
+
+  getUsersForPost(){
     this.users = this.dataSharingService.getOriginalUsers();
     if(this.users.length===0 && location.pathname=='/post'){
 this.getAllService.getAllInApi(100,this.userService.allUsersUrl)
@@ -50,6 +47,7 @@ this.getAllService.getAllInApi(100,this.userService.allUsersUrl)
   }
 );
     }
+
   }
   submitForm(form: NgForm) {
     if (form.invalid) {

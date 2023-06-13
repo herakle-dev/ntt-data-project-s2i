@@ -4,8 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class PaginatorService {
-  perPage!: number;
-  constructor() {}
+  perPage: number;
 
   getNextPage(currentPage: number, totalPages: number): number {
     return Math.min(currentPage + 1, totalPages);

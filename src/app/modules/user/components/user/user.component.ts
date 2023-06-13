@@ -21,9 +21,9 @@ export class UserComponent implements OnInit, OnDestroy {
   currentPage = 1;
   totalPages = 1;
 
-  searchValue: string = '';
+  searchValue = '';
   isVisible = true;
-  private unsubscribe$ = new Subject<void>();
+  public unsubscribe$ = new Subject<void>();
   sharedUsers!:any[]
   constructor(
     private userService: UserService,
@@ -36,8 +36,8 @@ export class UserComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sliderValue = 10;
     this.onSliderChange()
-    this.users = this.dataSharingService.getOriginalUsers();
-console.log(this.sharedUsers)
+    this.originalUsers = this.dataSharingService.getOriginalUsers();
+console.log(this)
   }
 
   ngOnDestroy() {
@@ -45,6 +45,7 @@ console.log(this.sharedUsers)
     this.unsubscribe$.complete();
     this.recursiveGetService.cancelRequests();
     this.recursiveGetService.resetCache();
+    console.log(this)
 
   }
    fullUsers(perPage: number) {
@@ -66,6 +67,7 @@ console.log(this.sharedUsers)
   onSliderChange(): void {
     this.recursiveGetService.cancelRequests();
     this.recursiveGetService.resetCache();
+    this.originalUsers=[]
     this.fullUsers(this.sliderValue);
   }
   searchUsers(): void {
@@ -76,7 +78,6 @@ console.log(this.sharedUsers)
         user.name.toLowerCase().includes(this.searchValue.toLowerCase())
       );
     }
-    // Reimposta la pagina corrente a 1 dopo la ricerca
     this.updateUsersToDisplay();
   }
   updateUsersToDisplay(): void {
@@ -128,7 +129,7 @@ console.log(this.sharedUsers)
   }
 
   askForConsent(userId: number) {
-    let question = confirm('Vuoi davvero eliminare questo utente?');
+    const question = confirm('Vuoi davvero eliminare questo utente?');
     if (question) {
       this.userService.deleteThisUser(userId).subscribe(
         (response) => {

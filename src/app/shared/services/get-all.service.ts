@@ -75,12 +75,12 @@
     }
 
      splitArrayIntoPages(array: any[], perPage?: number): any[][] {
-      const totalPages = Math.ceil(array.length / perPage!);
+      const totalPages = Math.ceil(array.length / perPage);
       const pages: any[][] = [];
 
       for (let i = 0; i < totalPages; i++) {
-        const startIndex = i * perPage!;
-        const endIndex = startIndex + perPage!;
+        const startIndex = i * perPage;
+        const endIndex = startIndex + perPage;
         const page = array.slice(startIndex, endIndex);
         pages.push(page);
       }

@@ -1,29 +1,29 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ElementRef } from '@angular/core';
-import { TokenAuthServiceService } from 'src/app/core/shared/token-auth-service.service';
 import { LoginComponent } from './login.component';
+import { TokenAuthServiceService } from 'src/app/core/shared/token-auth-service.service';
+import { FormBuilder,  ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { UikitModule } from '../uikit/uikit.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-  let verifyTokenService: TokenAuthServiceService;
+  let tokenAuthService: TokenAuthServiceService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LoginComponent],
       providers: [TokenAuthServiceService, FormBuilder],
+      imports: [ReactiveFormsModule, HttpClientTestingModule,UikitModule,BrowserAnimationsModule  ],
     }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
-    verifyTokenService = TestBed.inject(TokenAuthServiceService);
-
-    // Stubbing ViewChild
-    component.tokenInput = { nativeElement: {} } as ElementRef<any>;
-
+    tokenAuthService = TestBed.inject(TokenAuthServiceService);
     fixture.detectChanges();
   });
 
@@ -31,17 +31,26 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initialize the form', () => {
-    expect(component.myForm).toBeInstanceOf(FormGroup);
-    expect(component.myForm.get('theTokenInput')).toBeTruthy();
+  it('should initialize myForm correctly', () => {
+    expect(component.myForm).toBeDefined();
+    expect(component.myForm.get('theTokenInput')).toBeDefined();
+    expect(component.myForm.valid).toBeFalse();
   });
 
-  it('should call verifyBearerToken method on token submission', () => {
+  it('should call verifyTokenService when onTokenSubmit is called', () => {
+    spyOn(tokenAuthService, 'verifyBearerToken');
     const token = 'testToken';
-    spyOn(verifyTokenService, 'verifyBearerToken');
-
     component.onTokenSubmit(token);
-
-    expect(verifyTokenService.verifyBearerToken).toHaveBeenCalledWith(token);
+    expect(tokenAuthService.verifyBearerToken).toHaveBeenCalledWith(token);
   });
+
+  it('should set theTokenInput value when token is entered', () => {
+    const token = 'testToken';
+    const tokenInput = fixture.debugElement.query(By.css('#tokenInput')).nativeElement;
+    tokenInput.value = token;
+    tokenInput.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    expect(component.myForm.get('theTokenInput')?.value).toBe(token);
+  });
+
 });

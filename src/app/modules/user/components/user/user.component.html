@@ -40,10 +40,10 @@
     <div class="container">
       <div class="row" *ngIf="searchValue">
         <div class="message">
-          <p *ngIf="originalUsers.length == 0">
+          <p *ngIf="originalUsers.length === 0">
             La ricerca non ha prodotto risultati
           </p>
-          <p *ngIf="users.length != 0">
+          <p *ngIf="users.length !== 0">
             La ricerca ha prodotto {{ users.length }} risultati
           </p>
         </div>

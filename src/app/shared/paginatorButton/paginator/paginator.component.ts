@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
 
 @Component({
@@ -6,9 +6,9 @@ import { PaginatorService } from 'src/app/shared/services/paginator.service';
   templateUrl: './paginator.component.html',
   styleUrls: ['./paginator.component.css'],
 })
-export class PaginatorComponent {
-  @Input() currentPage: number = 1;
-  @Input() totalPages: number = 1;
+export class PaginatorComponent implements OnChanges {
+  @Input() currentPage = 1;
+  @Input() totalPages = 1;
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
 
   visiblePages: number[] = [];

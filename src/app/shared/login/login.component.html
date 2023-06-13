@@ -12,14 +12,14 @@
         matInput
         #tokenInput
         name="tokenInput"
+        id="tokenInput"
         formControlName="theTokenInput"
         placeholder="your bearer token"
         minlength="64"
         required
       />
-      <mat-hint align="start"><strong></strong></mat-hint>
+      <mat-hint align="start" ></mat-hint>
     </mat-form-field>
-
 
     <a href="https://gorest.co.in/consumer/login" target="_blank"
     ><button class="btn btn-light"><mat-icon>exit_to_app</mat-icon>
@@ -27,7 +27,7 @@
     tuo token per accedere alla piattaforma</button></a>
     <div class="btn-container">
 
-      <button class="btn btn-primary" [disabled]="myForm.invalid">Login</button>
+      <button class="btn btn-primary" id="submitButton" [disabled]="myForm.invalid">Login</button>
 
 
     </div>

@@ -13,12 +13,11 @@ import { DataSharingService } from 'src/app/shared/services/data-sharing.service
 export class PostComponent implements OnInit, OnDestroy {
   allPostsFull!: any[];
   posts: any[] = [];
-  originalUsers: any[] = [];
   sliderValue = 100;
   currentPage = 1;
   totalPages = 1;
   visiblePages: number[] = [];
-  searchValue: string = '';
+  searchValue = '';
   private unsubscribe$ = new Subject<void>();
 
 
@@ -34,7 +33,7 @@ export class PostComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.retriveAllPosts();
     this.sharedPosts = this.dataSharingService.getAllPostsFull(); // Ottieni i dati dei post condivisi dal servizio
-
+console.log(this.sharedPosts)
   }
 
   ngOnDestroy() {
@@ -51,13 +50,12 @@ export class PostComponent implements OnInit, OnDestroy {
       .subscribe(
         (pages: any[][]) => {
           this.allPostsFull = this.recursiveGetService.flattenResponseInPages(pages);
-
             this.dataSharingService.setAllPostsFull(this.allPostsFull); // Condividi i dati con il servizio
 
-          this.posts.forEach((post) => {
-            const postId = post.id;
-            //console.log(postId);
-            });
+          // this.posts.forEach((post) => {
+          // //  const postId = post.id;
+          //   //console.log(postId);
+          //   });
           this.searchPosts();
           this.updatePostsToDisplay();
         },

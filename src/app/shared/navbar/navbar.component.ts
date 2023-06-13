@@ -10,5 +10,6 @@ export class NavbarComponent {
 constructor(public tokenAuthService:TokenAuthServiceService){}
 userLogout(){
 this.tokenAuthService.deleteToken()
+location.reload()
 }
 }
