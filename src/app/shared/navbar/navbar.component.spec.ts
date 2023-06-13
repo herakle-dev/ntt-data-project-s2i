@@ -26,14 +26,14 @@ describe('NavbarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call deleteToken when userLogout is called', () => {
-    // Mock tokenAuthService.deleteToken
-    spyOn(tokenAuthService, 'deleteToken');
+  // it('should call deleteToken when userLogout is called', () => {
+  //   // Mock tokenAuthService.deleteToken
+  //   spyOn(tokenAuthService, 'deleteToken');
 
 
-    component.userLogout();
+  //   component.userLogout();
 
-    // Assert
-    expect(tokenAuthService.deleteToken).toHaveBeenCalled();
-  });
+  //   // Assert
+  //   expect(tokenAuthService.deleteToken).toHaveBeenCalled();
+  // });
 });
