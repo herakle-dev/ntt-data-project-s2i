@@ -10,7 +10,7 @@
       <form  (ngSubmit)="submitForm(postForm)" #postForm="ngForm">
         <div class="form-group">
           <label for="userId">
-          <button class="btn btn-pagination" (click)="getUsersForPost()">Ottieni utenti</button>
+          <button class="btn btn-pagination" (click)="getUsersForPost()" [disabled]="clicked" *ngIf="currentUrl === '/post'">Ottieni utenti</button>
         </label>
           <input type="text" [value]="userId" readonly *ngIf="userId">
           <select class="form-control" id="userId" [(ngModel)]="selectedUserId" name="userId" required *ngIf="!userId">

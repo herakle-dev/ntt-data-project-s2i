@@ -46,12 +46,10 @@ describe('PostComponent', () => {
       { id: 2, title: 'Post 2', body: 'This is post 2' },
       { id: 3, title: 'Post 3', body: 'This is post 3' },
     ];
-    const getAllPostsFullSpy = spyOn(dataSharingService, 'getAllPostsFull').and.returnValue(allPosts);
     const getAllPostsSpy = spyOn(postService, 'getAllPosts').and.returnValue(of([allPosts]));
 
     component.ngOnInit();
 
-    expect(getAllPostsFullSpy).toHaveBeenCalled();
     expect(getAllPostsSpy).toHaveBeenCalled();
     expect(component.allPostsFull).toEqual(allPosts);
   });
@@ -93,6 +91,6 @@ describe('PostComponent', () => {
     component.changePostsToDisplay(perPage);
 
     expect(updatePostsToDisplaySpy).toHaveBeenCalled();
-    expect(component.sliderValue).toEqual(perPage);
+    expect(component.postPerPage).toEqual(perPage);
   });
 });

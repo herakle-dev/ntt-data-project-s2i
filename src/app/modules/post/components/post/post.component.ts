@@ -1,7 +1,7 @@
 import { Component,  OnDestroy, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, share, takeUntil } from 'rxjs';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
 import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
 
@@ -11,29 +11,30 @@ import { DataSharingService } from 'src/app/shared/services/data-sharing.service
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit, OnDestroy {
-  allPostsFull!: any[];
+  //new array for that contain all posts in the api
+  allPostsFull: any[];
+  //then we split the allPostFull array in posts array that is an array with postPerPage items for each page
   posts: any[] = [];
-  sliderValue = 100;
+  postPerPage = 100;
+  //starting at page 1
   currentPage = 1;
   totalPages = 1;
+  //array numbers that show how many pages we have to show
   visiblePages: number[] = [];
   searchValue = '';
   private unsubscribe$ = new Subject<void>();
 
-
   selectedPostId: number | null = null;
-  sharedPosts!: any[];
 
   constructor(
     private postService: PostService,
-    private dataSharingService: DataSharingService,
     public recursiveGetService: GetAllService,
     private paginationService: PaginatorService
   ) {}
   ngOnInit(): void {
+    //oninit we retrive all posts
     this.retriveAllPosts();
-    this.sharedPosts = this.dataSharingService.getAllPostsFull(); // Ottieni i dati dei post condivisi dal servizio
-console.log(this.sharedPosts)
+    //assign shard post to datasharingservice
   }
 
   ngOnDestroy() {
@@ -50,7 +51,6 @@ console.log(this.sharedPosts)
       .subscribe(
         (pages: any[][]) => {
           this.allPostsFull = this.recursiveGetService.flattenResponseInPages(pages);
-            this.dataSharingService.setAllPostsFull(this.allPostsFull); // Condividi i dati con il servizio
 
           // this.posts.forEach((post) => {
           // //  const postId = post.id;
@@ -90,9 +90,9 @@ console.log(this.sharedPosts)
     this.posts = this.paginationService.updateItemsToDisplay(
       allPostsToDisplay,
       this.currentPage,
-      this.sliderValue
+      this.postPerPage
     );
-    this.totalPages = Math.ceil(allPostsToDisplay.length / this.sliderValue);
+    this.totalPages = Math.ceil(allPostsToDisplay.length / this.postPerPage);
     this.updateVisiblePages();
   }
 
@@ -121,7 +121,7 @@ console.log(this.sharedPosts)
   }
 
   changePostsToDisplay(perPage: number): void {
-    this.sliderValue = perPage;
+    this.postPerPage = perPage;
     this.updatePostsToDisplay();
   }
 

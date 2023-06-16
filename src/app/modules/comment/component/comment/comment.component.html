@@ -1,5 +1,5 @@
 
-<div class="div" *ngIf="!commentShown && selectedPostId">
+<div class="div" *ngIf="!commentShown">
   <div *ngFor="let comment of comments" class="comment">
     <div class="comment-header">
       <i class="bi bi-person-fill"></i>
@@ -13,8 +13,10 @@
 
 </div>
 <app-comment-form [newCommentShow]="newCommentShow" [postId]="postId"> </app-comment-form>
+<div class="center">
 <button class="btn btn-pagination" *ngIf="comments.length " (click)="toggleComments()">
   {{commentShown?'Mostra ' +   comments.length  +' commenti':'Nascondi commenti'}}</button>
 <button class="btn btn-pagination" *ngIf="!comments.length" (click)="newComment()">
   Non ci sono commenti in questo post, creane uno tu!
 </button>
+</div>

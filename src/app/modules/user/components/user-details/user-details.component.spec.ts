@@ -34,9 +34,6 @@ describe('UserDetailsComponent', () => {
     expect(component.userPosts).toEqual([]);
   });
 
-  it(`userComments has default value`, () => {
-    expect(component.userComments).toEqual([]);
-  });
 
   it(`posts has default value`, () => {
     expect(component.posts).toEqual([]);

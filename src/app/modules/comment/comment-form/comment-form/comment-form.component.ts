@@ -10,7 +10,9 @@ import { CommentService } from '../../services/comment.service';
 export class CommentFormComponent {
 
   constructor(private commentService:CommentService){}
+  //boolen var used to show or hide the new comment section
   @Input() newCommentShow = false;
+  //postid used to make the new comment request(post)
   @Input() postId!: number | null ;
 
   formData: any = {
@@ -23,7 +25,7 @@ export class CommentFormComponent {
     if (form.invalid) {
       return;
     }
-
+//comment param neeeded
     const comment = {
       name: this.formData.name,
       email: this.formData.email,

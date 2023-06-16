@@ -9,32 +9,30 @@ import { CommentService } from 'src/app/modules/comment/services/comment.service
   styleUrls: ['./user-details.component.css'],
 })
 export class UserDetailsComponent implements OnInit {
+
   user: any;
   userPosts: any[] = [];
-  userComments: any[] = [];
   posts: any[] = [];
-
   userId!: number;
   postId!: number;
   userName: any;
   postShown = false;
-  commentShown = false;
-  noPosts!: boolean;
-  selectedPostId: number | null = null;
-
   commentsCount: { [postId: number]: number } = {};
-
+commentShown:boolean
 
   constructor(
     private userDetailsService: UserDetailsService,
     private commentService: CommentService
   ) {}
 
+  //when the component is oninit we get all information that we  need to make all calls
   ngOnInit(): void {
     this.userDetailsService.getUserDetail()
     .subscribe(
       (user: any) => {
+        //user object with all property
         this.user = user;
+        //the user id used to retrive all posts/comments and create the url
         this.userId = this.user.id;
       },
       (error) => {
@@ -42,7 +40,7 @@ export class UserDetailsComponent implements OnInit {
       }
     );
   }
-
+//simply function used for a button click event that retrive all posts  and comments for this user
   showPosts() {
     if (!this.postShown) {
       this.userDetailsService.getAllUserPost(this.userId)

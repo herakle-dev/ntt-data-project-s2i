@@ -3,19 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { BigModuleRouting } from './bigmodule-routing.module';
 import { AuthGuard } from '../core/auth/guard.guard';
-import { HomeComponent } from '../shared/home/home/home.component';
+import { NotFoundComponent } from '../shared/not-found/not-found.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [NotFoundComponent],
   imports: [
     CommonModule,
     BigModuleRouting,
 
   ],
   exports:[
-    HomeComponent
+NotFoundComponent
   ],
   providers:[AuthGuard,  ]
 })

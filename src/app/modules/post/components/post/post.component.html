@@ -1,6 +1,6 @@
 
-<div class="div" style="display: flex; justify-content:center; margin-top: 15px;">
-  <label for="search">Cerca un utente in archivio</label>
+<div class="container-search" >
+  <label for="search">Cerca un post in archivio</label>
   <input
     type="text"
     name="search"
@@ -24,19 +24,15 @@
 </div>
 <div class="container"  *ngIf="posts.length>0 && allPostsFull.length">
   <div class="row">
-    <h2 *ngIf="!recursiveGetService.getRequestsComplete">
-      Totale post: {{ allPostsFull.length }}
-    </h2>
-    <h5 style="text-align:center" *ngIf="!searchValue" > {{ posts.length }} post presenti in questa pagina.</h5>
     <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of posts">
       <div class="post-card">
         <div class="post-header">
           <p class="post-id">Id post: {{ post.id }}</p>
           <h4 class="post-creator">
-                 Premi
-            <a routerLink="../user/{{ post.user_id }}" class="user-link">
-              <strong class="user-name">qui</strong>
-            </a>   per visitare il profilo dell'autore del post
+
+            <a routerLink="../user/{{ post.user_id }}" class="user-link" target="_blank">
+              <strong class="user-name"> Premi qui per visitare il profilo dell'autore del post</strong>
+            </a>
           </h4>
         </div>
         <h2 class="post-title">{{ post.title }}</h2>
@@ -48,7 +44,6 @@
     </div>
   </div>
 </div>
-
 
 <app-paginator
   [currentPage]="currentPage"

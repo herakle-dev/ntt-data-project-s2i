@@ -37,7 +37,6 @@ export class UserComponent implements OnInit, OnDestroy {
     this.sliderValue = 10;
     this.onSliderChange()
     this.originalUsers = this.dataSharingService.getOriginalUsers();
-console.log(this)
   }
 
   ngOnDestroy() {
@@ -45,10 +44,8 @@ console.log(this)
     this.unsubscribe$.complete();
     this.recursiveGetService.cancelRequests();
     this.recursiveGetService.resetCache();
-    console.log(this)
-
   }
-   fullUsers(perPage: number) {
+   getUsers(perPage: number) {
     this.recursiveGetService
       .getAllInApi(perPage, this.userService.allUsersUrl)
       .pipe(takeUntil(this.unsubscribe$))
@@ -68,7 +65,7 @@ console.log(this)
     this.recursiveGetService.cancelRequests();
     this.recursiveGetService.resetCache();
     this.originalUsers=[]
-    this.fullUsers(this.sliderValue);
+    this.getUsers(this.sliderValue);
   }
   searchUsers(): void {
     if (this.searchValue.trim() === '') {

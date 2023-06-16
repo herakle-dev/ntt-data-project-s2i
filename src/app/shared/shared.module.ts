@@ -5,7 +5,9 @@ import { FooterModule } from './footer/footer.module';
 import { PaginatorModule } from './paginatorButton/paginator/paginator.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+
+  ],
   imports: [CommonModule, NavbarModule, FooterModule, PaginatorModule],
   exports: [NavbarModule, FooterModule, PaginatorModule],
 })

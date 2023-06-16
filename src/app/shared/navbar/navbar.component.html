@@ -1,14 +1,22 @@
-<mat-toolbar  class="bg nav">
+<mat-toolbar class="bg nav">
   <mat-toolbar-row>
     <span class="example-spacer"></span>
-    <a routerLink="home"  ><h1>Home</h1></a>
+
+    <a routerLink="/user" *ngIf="this.tokenAuthService.isUserLogged"
+      ><h1>Utenti Globali</h1></a
+    >
     <span class="example-spacer"></span>
-    <a routerLink="/user" *ngIf="this.tokenAuthService.isUserLogged"><h1>Utenti Globali</h1></a>
+    <span class="example-spacer"></span>
+    <a routerLink="/post" *ngIf="this.tokenAuthService.isUserLogged"
+      ><h1>Post Globali</h1></a
+    >
 
     <span class="example-spacer"></span>
-    <a routerLink="/post" *ngIf="this.tokenAuthService.isUserLogged"><h1>Post Globali</h1></a>
-
-    <span class="example-spacer"></span>
-  <span class="login" (click)="userLogout()" *ngIf="this.tokenAuthService.isUserLogged"><a routerLink="login"  ><h3>Logout</h3></a></span>
+    <span
+      class="btn btn-pagination"
+      (click)="userLogout()"
+      *ngIf="this.tokenAuthService.isUserLogged"
+      ><a routerLink="login"><h3>Logout</h3></a></span
+    >
   </mat-toolbar-row>
 </mat-toolbar>

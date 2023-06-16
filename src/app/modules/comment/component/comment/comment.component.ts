@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input,  OnInit } from '@angular/core';
 import { CommentService } from '../../services/comment.service';
 
 @Component({
@@ -8,43 +8,42 @@ import { CommentService } from '../../services/comment.service';
 })
 export class CommentComponent implements OnInit {
   commentShown = false;
- @Input() newCommentShow = false;
- @Input() selectedPostId: number | null = null;
-  @Input() currentPage = 1;
+  @Input() newCommentShow = false;
+selectedPostId: number | null = null;
 
-  @Input() comments: any[] = [];
+  comments: any[] = [];
   @Input() postId!: number | null;
-  commentsCount = 0;
 
-  constructor(private commentService: CommentService) {}
+  constructor(
+    private commentService: CommentService,
+  ) {}
+
   ngOnInit(): void {
-    this.getComments(this.postId);
-
+this.getComments(this.postId)
   }
 
   getComments(postId: number | null) {
     if (this.selectedPostId === postId && this.commentShown) {
       this.commentShown = false;
-    } else {
-      this.selectedPostId = postId;
-      this.commentShown = true;
-      if (postId) {
-        console.log()
-        this.commentService.getEveryPostComments(postId).subscribe(
-          (comments: any[]) => {
-            this.comments = comments.filter(
-              (comment) => comment.post_id === postId
-            );
-            // this.comments.forEach((comment) => {
-            //   const commentId = comment.id;
-            //   console.log(commentId);
-            // });
-          },
-          (error: any) => {
-            console.error(error);
-          }
-        );
-      }
+    }
+    this.selectedPostId = postId;
+    this.commentShown = true;
+    if (postId) {
+      this.commentService.getEveryPostComments(postId).subscribe(
+        (comments: any[]) => {
+
+          this.comments = comments
+          .filter((comment) => comment.post_id === postId)
+          .filter((comment, index, self) => {
+            return (
+              index ===
+              self.findIndex((c) => c.id === comment.id && c.name === comment.name)
+            ); })
+       },
+        (error: any) => {
+          console.error(error);
+        }
+      );
     }
   }
 

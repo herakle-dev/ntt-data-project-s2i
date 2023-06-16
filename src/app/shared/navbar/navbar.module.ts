@@ -8,7 +8,7 @@ import { UikitModule } from '../uikit/uikit.module';
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     CommonModule,

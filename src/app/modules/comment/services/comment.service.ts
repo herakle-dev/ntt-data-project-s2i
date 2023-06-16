@@ -13,16 +13,16 @@ export class CommentService {
     private recursiveGetService: GetAllService,
     private http: HttpClient
   ) {}
-  getEveryPostComments(postId: number | null): Observable<any[]> {
+
+   allComments =[];
+   getEveryPostComments(postId: number | null): Observable<any[]> {
     if (postId) {
       const commentsUrl = `https://gorest.co.in/public/v2/posts/${postId}/comments`;
-      return this.recursiveGetService.getAllInApi(100, commentsUrl).pipe(
-        map((pages: any[][]) => {
-          const allComments = pages.reduce(
-            (accumulator, page) => accumulator.concat(page),
-            []
-          );
-          return allComments;
+      return this.http.get(commentsUrl, { headers: this.recursiveGetService.headers }).pipe(
+        // eslint-disable-next-line @typescript-eslint/ban-types
+        map((pages: Object) => {
+          this.allComments = Object.values(pages).reduce((accumulator, page) => accumulator.concat(page), []);
+          return this.allComments;
         })
       );
     } else {
@@ -32,6 +32,9 @@ export class CommentService {
       });
     }
   }
+
+
+
 
   sendCommentAtPost(postId: number| null, comment:any): Observable<any> {
     const commentsUrl = `https://gorest.co.in/public/v2/posts/${postId}/comments`;
