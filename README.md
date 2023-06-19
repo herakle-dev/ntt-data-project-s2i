@@ -231,34 +231,34 @@ screenshot/login.png
 - Pagina utenti
 
 ![User page](
-    https://raw.githubusercontent.com/herakle-dev/ntt-data-project-s2i/main/NTT%20DATA%20SCREENSHOT/globaluser.png?token=GHSAT0AAAAAAB6Y6ZZ3XXXAU43VVHTBIQT4ZEQNZAA
+screenshot/globalUser.png
 )
 - Creazione nuovo utente 
 ![New user](
-    https://raw.githubusercontent.com/herakle-dev/ntt-data-project-s2i/main/NTT%20DATA%20SCREENSHOT/newuser.png?token=GHSAT0AAAAAAB6Y6ZZ33WHNND5BBUNAIFPSZEQN4OQ
+screenshot/newUser.png
 )
 - Pagina dettaglio utente 
 ![User details](
-    https://raw.githubusercontent.com/herakle-dev/ntt-data-project-s2i/main/NTT%20DATA%20SCREENSHOT/userdetails.png?token=GHSAT0AAAAAAB6Y6ZZ2WQ6RLX2BHLGKFFAOZEQN2AA
+screenshot/userDetails.png
 )
 
 - Nuovo post utente 
 ![User details Form](
-    https://raw.githubusercontent.com/herakle-dev/ntt-data-project-s2i/main/NTT%20DATA%20SCREENSHOT/usernewpost.png?token=GHSAT0AAAAAAB6Y6ZZ2SIT7JWQ7HN77NPPCZEQN3CA
+screenshot/usernewpost.png
 )
 - Commenti ai post dell'utente
 ![UserComment](
-    https://raw.githubusercontent.com/herakle-dev/ntt-data-project-s2i/main/NTT%20DATA%20SCREENSHOT/userdetails%20comment.png?token=GHSAT0AAAAAAB6Y6ZZ2534ALK4X7ZPRZCV2ZEQN32A
+screenshot/userComment.png
 )
 - Sezione Post globali
 ![Global Post](
-    https://raw.githubusercontent.com/herakle-dev/ntt-data-project-s2i/main/NTT%20DATA%20SCREENSHOT/globalpost.png?token=GHSAT0AAAAAAB6Y6ZZ23GEJBN7DBLBQA4HMZEQN5FQ
+screenshot/globalPost.png
 )
 - Commenti ai singoli post nella sezione post
 ![Post comments](
-    https://raw.githubusercontent.com/herakle-dev/ntt-data-project-s2i/main/NTT%20DATA%20SCREENSHOT/globalpost%20comment.png?token=GHSAT0AAAAAAB6Y6ZZ3FTAZ7YTN2LZNEIMIZEQN5PA
+   screenshot/globalPost Comment.png
 )
 - Creazione nuovo post 
 ![New post](
-    https://raw.githubusercontent.com/herakle-dev/ntt-data-project-s2i/main/NTT%20DATA%20SCREENSHOT/new%20post%20form.png?token=GHSAT0AAAAAAB6Y6ZZ3MKMO3JDBTZBUDOUMZEQN64A
+screenshot/newPostForm.png
 )
