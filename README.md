@@ -256,7 +256,7 @@ screenshot/globalPost.png
 )
 - Commenti ai singoli post nella sezione post
 ![Post comments](
-   screenshot/globalPost Comment.png
+   screenshot/globalPostComment.png
 )
 - Creazione nuovo post 
 ![New post](
