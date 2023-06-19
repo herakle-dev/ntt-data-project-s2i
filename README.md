@@ -224,7 +224,9 @@ typescript è il linguaggio di programmazione principale utilizzato in Angular. 
 ## Screenshots
 - Pagina di login
 
-![Login page](https://raw.githubusercontent.com/herakle-dev/ntt-data-project-s2i/main/NTT%20DATA%20SCREENSHOT/Login.png?token=GHSAT0AAAAAAB6Y6ZZ2HMQ2CUQAEQX2CVXUZEQNW3Q)
+![Login page](
+../screenshot/login.png
+)
 
 - Pagina utenti
 
