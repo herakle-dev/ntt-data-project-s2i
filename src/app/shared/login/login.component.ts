@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
     this.verifyTokenService.verifyBearerToken(token)
     setTimeout(() => {
       this.errorCode=  this.verifyTokenService.errorCode
-      console.log(this.errorCode,'code')
     }, 1000);
 
 

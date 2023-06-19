@@ -38,7 +38,6 @@ export class PostFormComponent implements OnInit {
   };
 
   ngOnInit(): void {
-console.log(this.userName)
     this.currentUrl = this.router.url;
   }
 

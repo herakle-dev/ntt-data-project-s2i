@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'user/:id', loadChildren: () => import('../modules/user/components/user-details/user-details.module').then(m => m.UserDetailsModule) },
   { path: 'user', loadChildren: () => import('../modules/user/user.module').then(m => m.UserModule), canActivate: [AuthGuard] },
   { path: 'post', loadChildren: () => import('../modules/post/post.module').then(m => m.PostModule), canActivate: [AuthGuard] },
-  { path: '**',pathMatch:'full', component: NotFoundComponent}
+  { path: '**', component: NotFoundComponent}
 
 ];
 

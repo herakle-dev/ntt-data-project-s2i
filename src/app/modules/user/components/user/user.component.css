@@ -23,7 +23,9 @@
 }
 
 
-
+.container-search{
+  display: flex;
+}
 
 
 .card-header {

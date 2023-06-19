@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -16,7 +16,7 @@ export class UserComponent implements OnInit, OnDestroy {
   users: any[] = [];
   originalUsers: any[] = [];
   visiblePages: number[] = [];
-
+@Input() userId:number
   sliderValue!: number;
   currentPage = 1;
   totalPages = 1;
