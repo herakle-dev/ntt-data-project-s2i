@@ -225,7 +225,7 @@ typescript è il linguaggio di programmazione principale utilizzato in Angular. 
 - Pagina di login
 
 ![Login page](
-../screenshot/login.png
+screenshot/login.png
 )
 
 - Pagina utenti
