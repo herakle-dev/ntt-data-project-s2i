@@ -1,7 +1,7 @@
 
-  <app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>
 
-<div class="example-container login" *ngIf="!errorCode">
+
+<div class="example-container login" >
 
   <h2>Login</h2>
   <form
@@ -38,3 +38,4 @@
   </form>
 
 </div>
+<app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>

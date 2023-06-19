@@ -1,4 +1,4 @@
-import {Component,  ElementRef,  OnInit, ViewChild } from '@angular/core';
+import {Component,  ElementRef,  OnChanges,  OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { TokenAuthServiceService } from 'src/app/core/shared/token-auth-service.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
@@ -22,11 +22,27 @@ export class LoginComponent implements OnInit {
 
 
   onTokenSubmit(token: string) {
+
+
     this.verifyTokenService.verifyBearerToken(token)
+    setTimeout(() => {
+      this.errorCode=  this.verifyTokenService.errorCode
+      console.log(this.errorCode,'code')
+    }, 1000);
+
+
+
+
+
   }
+
+
+
+
   ngOnInit(): void {
 const title = 'Login Fakebook'
 this.title.setTitle(title)
+
 this.myForm=this.formBuilder.group({
   theTokenInput:['', Validators.required]
 })

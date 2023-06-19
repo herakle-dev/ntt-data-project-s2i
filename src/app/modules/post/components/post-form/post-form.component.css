@@ -19,7 +19,7 @@
   padding: 20px;
   position: absolute;
   top: 0;
-  left: -350px;
+  left: -500px;
   transition: left 0.3s ease-in-out;
   z-index: 1;
 }

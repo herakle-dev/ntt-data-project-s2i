@@ -32,7 +32,6 @@ export class TokenAuthServiceService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
-
     this.http
       .get<boolean>(this.url, { headers, observe: 'response' })
       .subscribe(
@@ -49,6 +48,7 @@ export class TokenAuthServiceService {
         (error: HttpErrorResponse) => {
           this.handleAuthenticationError(error.status);
           this.errorCode = error.status;
+          console.log(this.errorCode)
         }
       );
 

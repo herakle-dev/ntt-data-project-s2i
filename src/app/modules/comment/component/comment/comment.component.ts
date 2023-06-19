@@ -1,4 +1,4 @@
-import { Component, Input,  OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommentService } from '../../services/comment.service';
 
 @Component({
@@ -9,23 +9,17 @@ import { CommentService } from '../../services/comment.service';
 export class CommentComponent implements OnInit {
   commentShown = false;
   @Input() newCommentShow = false;
-selectedPostId: number | null = null;
+  selectedPostId: number | null = null;
   comments: any[] = [];
-  @Input() postId!: number | null;
+  @Input() postId: number | null;
 
   errorCode: number | null = null;
 
-  constructor(
-    private commentService: CommentService,
-  ) {}
+  constructor(private commentService: CommentService) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.getComments(this.postId);
-    }, 5000);
-
-
-   }
+    this.getComments(this.postId);
+  }
 
   getComments(postId: number | null) {
     if (this.selectedPostId === postId && this.commentShown) {
@@ -37,16 +31,18 @@ selectedPostId: number | null = null;
       this.commentService.getEveryPostComments(postId).subscribe(
         (comments: any[]) => {
           this.comments = comments
-          .filter((comment) => comment.post_id === postId)
-          .filter((comment, index, self) => {
-            return (
-              index ===
-              self.findIndex((c) => c.id === comment.id && c.name === comment.name)
-            ); })
-       },
+            .filter((comment) => comment.post_id === postId)
+            .filter((comment, index, self) => {
+              return (
+                index ===
+                self.findIndex(
+                  (c) => c.id === comment.id && c.name === comment.name
+                )
+              );
+            });
+        },
         (error: any) => {
           this.errorCode = error.status;
-
         }
       );
     }
