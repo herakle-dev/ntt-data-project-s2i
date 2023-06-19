@@ -1,6 +1,7 @@
 
+<app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>
 
-  <div class="container" *ngIf="newCommentShow">
+  <div class="container" *ngIf="newCommentShow && !errorCode">
     <div class="sidebar right-sidebar">
       <div class="sidebar-content">
         <form (ngSubmit)="submitForm(commentForm)" #commentForm="ngForm">

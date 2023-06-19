@@ -17,12 +17,14 @@
 
 ></app-paginator>
 <app-post-form></app-post-form>
+<app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>
+
 <div class="div" *ngIf="searchValue">
   <p style="text-align:center" *ngIf="posts.length !== 0">La ricerca ha prodotto {{posts.length}} risultati</p>
   <p  style="text-align:center" *ngIf="posts.length === 0">La ricerca non ha prodotto risultati</p>
 
 </div>
-<div class="container"  *ngIf="posts.length>0 && allPostsFull.length">
+<div class="container"  *ngIf="posts.length>0 && allPostsFull.length && !errorCode">
   <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of posts">
       <div class="post-card">
@@ -50,7 +52,7 @@
   [totalPages]="totalPages"
   (pageChange)="goToPage($event)"
 ></app-paginator>
-<div class="row loading" *ngIf="posts.length === 0 && !searchValue">
+<div class="row loading" *ngIf="posts.length === 0 && !searchValue && !errorCode">
   <h1 class="animate__animated animate__pulse animate__infinite">
     Attendere prego...
   </h1>

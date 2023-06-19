@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 
 import { GetAllService } from 'src/app/shared/services/get-all.service';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
-import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-user',
@@ -25,18 +25,22 @@ export class UserComponent implements OnInit, OnDestroy {
   isVisible = true;
   public unsubscribe$ = new Subject<void>();
   sharedUsers!:any[]
+  errorCode: number | null = null;
+
   constructor(
     private userService: UserService,
-    private dataSharingService: DataSharingService,
     public recursiveGetService: GetAllService,
     private paginationService: PaginatorService,
+    private title:Title
+
 
   ) {}
 
   ngOnInit() {
+    const title= `Pagina utenti`
+    this.title.setTitle(title)
     this.sliderValue = 10;
     this.onSliderChange()
-    this.originalUsers = this.dataSharingService.getOriginalUsers();
   }
 
   ngOnDestroy() {
@@ -52,12 +56,11 @@ export class UserComponent implements OnInit, OnDestroy {
       .subscribe(
         (pages: any[][]) => {
           this.originalUsers = this.recursiveGetService.flattenResponseInPages(pages);
-            this.dataSharingService.setOriginalUsers(this.originalUsers);
           this.searchUsers();
           this.updateUsersToDisplay();
         },
         (error: any) => {
-          console.error(error);
+          this.errorCode = error.status;
         }
       );
   }
@@ -129,8 +132,7 @@ export class UserComponent implements OnInit, OnDestroy {
     const question = confirm('Vuoi davvero eliminare questo utente?');
     if (question) {
       this.userService.deleteThisUser(userId).subscribe(
-        (response) => {
-          console.log(response);
+        () => {
           this.users.forEach((user) => {
             if (user.id === userId) {
               user.hide = true;
@@ -138,10 +140,8 @@ export class UserComponent implements OnInit, OnDestroy {
           });
         },
         (error) => {
-          alert(
-            `Errore : ${error.status}, utente non trovato. Ricarica la pagina.`
-          );
-          console.log(error);
+          this.errorCode = error.status;
+
         }
       );
     }

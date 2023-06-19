@@ -12,6 +12,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [],
@@ -30,6 +32,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatCardModule,
     MatSidenavModule,
     MatSlideToggleModule,
+    MatSnackBarModule
 
 
   ],
@@ -46,7 +49,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatToolbarModule,
     MatSidenavModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
   ],
 })
 export class UikitModule {}

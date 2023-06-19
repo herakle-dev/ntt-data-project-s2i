@@ -1,5 +1,8 @@
+
 <div class="row center">
-  <mat-card class="example-card col-lg-12" *ngIf="user">
+  <app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>
+
+  <mat-card class="example-card col-lg-12" *ngIf="user && !errorCode">
     <mat-card-header>
       <mat-card-subtitle></mat-card-subtitle>
       <mat-card-title>Utente : {{ user?.name }}</mat-card-title>
@@ -17,7 +20,7 @@
       </p>
     </mat-card-content>
 
-    <mat-card-title><app-post-form  [userId]="user.id"></app-post-form></mat-card-title>
+    <mat-card-title><app-post-form  [userId]="user.id"  [userName]="user.name"></app-post-form></mat-card-title>
     <mat-card-actions>
       <button
         class="btn btn-pagination"
@@ -35,7 +38,7 @@
 
 <div class="content container">
   <div class="row col-lg-12">
-    <div class="post-container" *ngIf="postShown">
+    <div class="post-container" *ngIf="postShown && !errorCode">
       <ng-container *ngFor="let post of userPosts">
         <mat-card class="example-card styling">
           <mat-card-header>
@@ -54,12 +57,12 @@
             <div
               class="comment-section center"
             >
-              <app-comment [postId]="post.id"></app-comment>
+              <app-comment [postId]="post.id" ></app-comment>
 
             </div>
         </mat-card>
       </ng-container>
-      <ng-container *ngIf="postShown && userPosts.length === 0">
+      <ng-container *ngIf="postShown && userPosts.length === 0 && !errorCode">
         <p class="text-center">Nessun post di {{ user?.name }}</p>
       </ng-container>
     </div>

@@ -10,17 +10,22 @@ export class CommentComponent implements OnInit {
   commentShown = false;
   @Input() newCommentShow = false;
 selectedPostId: number | null = null;
-
   comments: any[] = [];
   @Input() postId!: number | null;
+
+  errorCode: number | null = null;
 
   constructor(
     private commentService: CommentService,
   ) {}
 
   ngOnInit(): void {
-this.getComments(this.postId)
-  }
+    setTimeout(() => {
+      this.getComments(this.postId);
+    }, 5000);
+
+
+   }
 
   getComments(postId: number | null) {
     if (this.selectedPostId === postId && this.commentShown) {
@@ -31,7 +36,6 @@ this.getComments(this.postId)
     if (postId) {
       this.commentService.getEveryPostComments(postId).subscribe(
         (comments: any[]) => {
-
           this.comments = comments
           .filter((comment) => comment.post_id === postId)
           .filter((comment, index, self) => {
@@ -41,7 +45,8 @@ this.getComments(this.postId)
             ); })
        },
         (error: any) => {
-          console.error(error);
+          this.errorCode = error.status;
+
         }
       );
     }

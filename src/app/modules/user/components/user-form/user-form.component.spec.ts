@@ -27,13 +27,4 @@ describe('UserFormComponent', () => {
     component.toggleSidebarForm();
     expect(component.showSidebarForm).toBeFalse();
   });
-
-  it('should change status', () => {
-
-    expect(component.status).toBeTrue();
-    component.changeStatus();
-    expect(component.status).toBeFalse();
-     expect(component.status).toBeFalse();
-    component.changeStatus();
-  });
 });

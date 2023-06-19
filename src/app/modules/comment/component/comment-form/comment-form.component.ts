@@ -14,7 +14,7 @@ export class CommentFormComponent {
   @Input() newCommentShow = false;
   //postid used to make the new comment request(post)
   @Input() postId!: number | null ;
-
+  errorCode: number | null = null;
   formData: any = {
     name: '',
     email: '',
@@ -33,12 +33,12 @@ export class CommentFormComponent {
 
     };
     this.commentService.sendCommentAtPost(this.postId,comment).subscribe(
-      (response) => {
-        console.log(response, 'commento creato con successo!');
+      () => {
+        alert('Commento creato con successo!');
         location.reload()
       },
       (error) => {
-        console.log('errore', error);
+        this.errorCode = error.status;
       }
     );
   }

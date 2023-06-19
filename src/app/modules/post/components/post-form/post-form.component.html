@@ -5,6 +5,8 @@
   <div class="sidebar right-sidebar" [class.active]="showSidebarForm">
     <div class="sidebar-content">
      <div class="header"><h3>Nuovo post</h3>
+      <app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>
+
       <button class="btn btn-danger" (click)="toggleSidebarForm()">X</button>
     </div>
       <form  (ngSubmit)="submitForm(postForm)" #postForm="ngForm">
@@ -12,7 +14,8 @@
           <label for="userId">
           <button class="btn btn-pagination" (click)="getUsersForPost()" [disabled]="clicked" *ngIf="currentUrl === '/post'">Ottieni utenti</button>
         </label>
-          <input type="text" [value]="userId" readonly *ngIf="userId">
+          <input type="text" [value]="userId"  *ngIf="userId" hidden>
+         <h4 style="text-align: left;"> {{userName}}</h4>
           <select class="form-control" id="userId" [(ngModel)]="selectedUserId" name="userId" required *ngIf="!userId">
             <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
           </select>

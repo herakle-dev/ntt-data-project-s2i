@@ -16,6 +16,7 @@ export class UserFormComponent {
   };
 
   constructor(private userFormService: UserFormService) { }
+  errorCode: number | null = null;
 
   showSidebarForm = false;
   status = false;
@@ -28,12 +29,13 @@ export class UserFormComponent {
     this.formData.status = this.status ? 'active' : 'inactive';
     this.userFormService.createUser(this.formData)
       .subscribe(
-        response => {
-          console.log('Dati inviati con successo!', response);
+        () => {
+          alert(`Utente creato con successo!`);
           location.reload()
+
         },
         error => {
-          console.error('Errore durante l\'invio dei dati:', error);
+          this.errorCode = error.status;
         }
       );
   }

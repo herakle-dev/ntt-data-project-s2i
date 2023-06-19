@@ -11,8 +11,10 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class TokenAuthServiceService {
+
   public isUserLogged = false; // Indicates whether the user is logged in or not
   public url = 'https://gorest.co.in/public/v2/users'; // Base URL to check bearer token
+  errorCode: number | null = null;
 
   constructor(private http: HttpClient, private route: Router) {
     const token = this.getTokenFromLocalStorage();
@@ -46,6 +48,7 @@ export class TokenAuthServiceService {
         },
         (error: HttpErrorResponse) => {
           this.handleAuthenticationError(error.status);
+          this.errorCode = error.status;
         }
       );
 
@@ -60,7 +63,8 @@ export class TokenAuthServiceService {
     this.deleteToken();
     this.route.navigate(['/login']);
     this.isUserLogged = false;
-    console.log('Authentication error. Code:', statusCode);
+    this.errorCode = statusCode;
+
   }
 
   /**
@@ -73,6 +77,8 @@ export class TokenAuthServiceService {
       localStorage.setItem('access_token', token);
     } else {
       console.error('Error while saving the token:', statusCode);
+      this.errorCode = statusCode;
+
     }
   }
 

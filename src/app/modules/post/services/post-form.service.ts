@@ -8,7 +8,7 @@ import { GetAllService } from 'src/app/shared/services/get-all.service';
 })
 export class PostFormService {
   header=this.getAllService.headers
-  newPostUrl = ``;
+  newPostUrl = ``;z
 
   constructor(private http: HttpClient, private getAllService: GetAllService) {}
   createPost(post: any): Observable<any> {

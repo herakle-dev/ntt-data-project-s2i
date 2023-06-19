@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { PostFormService } from '../../services/post-form.service';
-import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { Router } from '@angular/router';
@@ -11,17 +10,17 @@ import { Router } from '@angular/router';
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.css'],
 })
-export class PostFormComponent {
+export class PostFormComponent implements OnInit {
   constructor(
     private postFormService: PostFormService,
-    private dataSharingService: DataSharingService,
-    private getAllService: GetAllService,
-    private userService: UserService,
+    public getAllService: GetAllService,
+    public userService: UserService,
     private router: Router
   ) {}
 
   selectedUserId!: number;
   showSidebarForm = false;
+  errorCode: number | null = null;
 
   clicked = false;
   currentUrl: string;
@@ -30,7 +29,7 @@ export class PostFormComponent {
   users: any[] = [];
 
   @Input() userId?: number;
-  @Input() userName?: string;
+  @Input() userName: string;
 
   formData: any = {
     userId: this.userId,
@@ -39,23 +38,22 @@ export class PostFormComponent {
   };
 
   ngOnInit(): void {
+console.log(this.userName)
     this.currentUrl = this.router.url;
   }
 
   getUsersForPost() {
     this.clicked = true;
-    this.users = this.dataSharingService.getOriginalUsers();
     if (this.users.length === 0 && location.pathname == '/post') {
       this.getAllService
         .getAllInApi(100, this.userService.allUsersUrl)
         .subscribe(
           (pages: any[][]) => {
             this.users = this.getAllService.flattenResponseInPages(pages);
-            this.dataSharingService.setOriginalUsers(this.users);
             this.users = this.users.filter((user) => user.name);
           },
           (error: any) => {
-            console.error(error);
+            this.errorCode = error.status;
           }
         );
     }
@@ -74,13 +72,13 @@ export class PostFormComponent {
     }
     this.postFormService.newPostUrl = `https://gorest.co.in/public/v2/users/${this.selectedUserId}/posts`;
     this.postFormService.createPost(post).subscribe(
-      (response) => {
-        console.log(response, 'post creato con successo!');
+      () => {
+        alert(`Post creato con successo !`);
         location.reload();
       },
       (error) => {
         // Handle error response
-        console.log('errore', error);
+        this.errorCode = error.status;
       }
     );
   }

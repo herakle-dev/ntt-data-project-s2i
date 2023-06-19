@@ -1,46 +1,52 @@
-import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { FormsModule, NgForm } from '@angular/forms';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PostFormComponent } from './post-form.component';
-import { PostFormService } from '../../services/post-form.service';
-import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
+import { RouterTestingModule } from '@angular/router/testing';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
-import { of } from 'rxjs/internal/observable/of';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { UikitModule } from 'src/app/shared/uikit/uikit.module';
 
 describe('PostFormComponent', () => {
   let component: PostFormComponent;
   let fixture: ComponentFixture<PostFormComponent>;
-  let postFormService: PostFormService;
-  let dataSharingService: DataSharingService;
-  let getAllService: GetAllService;
-  let userService: UserService;
+  let getAllService: jasmine.SpyObj<GetAllService>;
+  let userService: jasmine.SpyObj<UserService>;
 
   beforeEach(async () => {
+    const getAllServiceSpy = jasmine.createSpyObj('GetAllService', ['getAllInApi', 'flattenResponseInPages']);
+    const userServiceSpy = jasmine.createSpyObj('UserService', ['allUsersUrl']);
+
     await TestBed.configureTestingModule({
-      imports: [FormsModule, HttpClientTestingModule],
       declarations: [PostFormComponent],
+      imports: [RouterTestingModule, HttpClientTestingModule,UikitModule  ],
       providers: [
-        PostFormService,
-        DataSharingService,
-        GetAllService,
-        UserService,
-      ],
+        { provide: GetAllService, useValue: getAllServiceSpy },
+        { provide: UserService, useValue: userServiceSpy }
+      ]
     }).compileComponents();
+
+    getAllService = TestBed.inject(GetAllService) as jasmine.SpyObj<GetAllService>;
+    userService = TestBed.inject(UserService) as jasmine.SpyObj<UserService>;
 
     fixture = TestBed.createComponent(PostFormComponent);
     component = fixture.componentInstance;
-    postFormService = TestBed.inject(PostFormService);
-    dataSharingService = TestBed.inject(DataSharingService);
-    getAllService = TestBed.inject(GetAllService);
-    userService = TestBed.inject(UserService);
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should get users for a new post', () => {
+    component.users = []; // Simulate empty users array
+    userService.allUsersUrl = 'mock/allUsersUrl';
+    getAllService.flattenResponseInPages.and.returnValue(['user1', 'user2']); // Mock flattened user array
+
+    component.getUsersForPost();
+
+    expect(component.clicked).toBeTrue();
+    expect(getAllService.getAllInApi).toHaveBeenCalledWith(100, 'mock/allUsersUrl');
+    expect(component.users).toEqual(['user1', 'user2']);
+  });
 
   it('should toggle sidebar form when calling toggleSidebarForm', () => {
     // Initial value of showSidebarForm
@@ -58,4 +64,6 @@ describe('PostFormComponent', () => {
     // Assert
     expect(component.showSidebarForm).toBeFalse();
   });
+
 });
+

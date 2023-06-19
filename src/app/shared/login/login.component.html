@@ -1,4 +1,8 @@
-<div class="example-container login">
+
+  <app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>
+
+<div class="example-container login" *ngIf="!errorCode">
+
   <h2>Login</h2>
   <form
     class="example-form"

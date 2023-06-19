@@ -1,5 +1,6 @@
+<app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>
 
-<div class="div" *ngIf="!commentShown">
+<div class="div" *ngIf="!commentShown && !errorCode">
   <div *ngFor="let comment of comments" class="comment">
     <div class="comment-header">
       <i class="bi bi-person-fill"></i>

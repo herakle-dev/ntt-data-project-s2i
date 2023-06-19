@@ -8,6 +8,7 @@ import { UserDetailsComponent } from './user-details.component';
 import { UikitModule } from 'src/app/shared/uikit/uikit.module';
 import { CommentModule } from "../../../comment/comment.module";
 import { PostFormModule } from 'src/app/modules/post/components/post-form/post-form.module';
+import { BigmoduleModule } from "../../../bigmodule.module";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PostFormModule } from 'src/app/modules/post/components/post-form/post-f
         UserDetailsRoutingModule,
         UikitModule,
         CommentModule,
-        PostFormModule
+        PostFormModule,
+        BigmoduleModule
     ]
 })
 export class UserDetailsModule { }

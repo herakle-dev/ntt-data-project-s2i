@@ -1,22 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserComponent } from './user.component';
 import { UserService } from '../../services/user.service';
-import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
-import { takeUntil } from 'rxjs/operators';
-import { Subject, of } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { UikitModule } from 'src/app/shared/uikit/uikit.module';
-import { BigmoduleModule } from 'src/app/modules/bigmodule.module';
 import { PaginatorModule } from 'src/app/shared/paginatorButton/paginator/paginator.module';
 import { UserFormModule } from '../user-form/user-form.module';
+import { of } from 'rxjs';
 
 describe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
   let userService: UserService;
-  let dataSharingService: DataSharingService;
   let recursiveGetService: GetAllService;
   let paginationService: PaginatorService;
 
@@ -26,7 +22,6 @@ describe('UserComponent', () => {
       imports:[HttpClientTestingModule,UikitModule,PaginatorModule,UserFormModule],
       providers: [
         UserService,
-        DataSharingService,
         GetAllService,
         PaginatorService,
       ],
@@ -37,7 +32,6 @@ describe('UserComponent', () => {
     fixture = TestBed.createComponent(UserComponent);
     component = fixture.componentInstance;
     userService = TestBed.inject(UserService);
-    dataSharingService = TestBed.inject(DataSharingService);
     recursiveGetService = TestBed.inject(GetAllService);
     paginationService = TestBed.inject(PaginatorService);
     fixture.detectChanges();

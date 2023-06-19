@@ -2,9 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PostComponent } from './post.component';
 import { PostService } from '../../services/post.service';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
-import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
-import { Subject, of } from 'rxjs';
+import {  of } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';
 import { PaginatorModule } from 'src/app/shared/paginatorButton/paginator/paginator.module';
@@ -14,15 +13,14 @@ describe('PostComponent', () => {
   let component: PostComponent;
   let fixture: ComponentFixture<PostComponent>;
   let postService: PostService;
-  let dataSharingService: DataSharingService;
   let getAllService: GetAllService;
   let paginatorService: PaginatorService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PostComponent],
-      imports:[HttpClientTestingModule, FormsModule,PaginatorModule,PostModule],
-      providers: [PostService, DataSharingService, GetAllService, PaginatorService],
+      imports: [HttpClientTestingModule, FormsModule, PaginatorModule, PostModule],
+      providers: [PostService,  GetAllService, PaginatorService],
     }).compileComponents();
   });
 
@@ -30,7 +28,6 @@ describe('PostComponent', () => {
     fixture = TestBed.createComponent(PostComponent);
     component = fixture.componentInstance;
     postService = TestBed.inject(PostService);
-    dataSharingService = TestBed.inject(DataSharingService);
     getAllService = TestBed.inject(GetAllService);
     paginatorService = TestBed.inject(PaginatorService);
     fixture.detectChanges();
@@ -60,37 +57,37 @@ describe('PostComponent', () => {
       { id: 2, title: 'Post 2', body: 'This is post 2' },
       { id: 3, title: 'Post 3', body: 'This is post 3' },
     ];
-    const updateItemsToDisplaySpy = spyOn(paginatorService, 'updateItemsToDisplay');
+    spyOn(paginatorService, 'updateItemsToDisplay');
     component.allPostsFull = allPosts;
 
     component.searchValue = 'post';
     component.searchPosts();
 
-    expect(updateItemsToDisplaySpy).toHaveBeenCalled();
+    expect(paginatorService.updateItemsToDisplay).toHaveBeenCalled();
   });
 
   it('should go to next page', () => {
-    const getNextPageSpy = spyOn(paginatorService, 'getNextPage');
+    spyOn(paginatorService, 'getNextPage');
     component.goToNextPage();
 
-    expect(getNextPageSpy).toHaveBeenCalled();
+    expect(paginatorService.getNextPage).toHaveBeenCalled();
   });
 
   it('should go to previous page', () => {
-    const getPreviousPageSpy = spyOn(paginatorService, 'getPreviousPage');
+    spyOn(paginatorService, 'getPreviousPage');
 
     component.goToPreviousPage();
 
-    expect(getPreviousPageSpy).toHaveBeenCalled();
+    expect(paginatorService.getPreviousPage).toHaveBeenCalled();
   });
 
   it('should change the number of posts to display per page', () => {
-    const updatePostsToDisplaySpy = spyOn(component, 'updatePostsToDisplay');
+    spyOn(component, 'updatePostsToDisplay');
     const perPage = 20;
 
     component.changePostsToDisplay(perPage);
 
-    expect(updatePostsToDisplaySpy).toHaveBeenCalled();
+    expect(component.updatePostsToDisplay).toHaveBeenCalled();
     expect(component.postPerPage).toEqual(perPage);
   });
 });

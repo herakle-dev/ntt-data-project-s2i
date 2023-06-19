@@ -6,15 +6,17 @@ import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
 
 import { UikitModule } from '../uikit/uikit.module';
+import { BigmoduleModule } from "../../modules/bigmodule.module";
 
 @NgModule({
-  declarations: [LoginComponent],
-  imports: [
-    CommonModule,
- UikitModule,
- LoginRoutingModule,
-  ],
-  exports: [LoginComponent],
-  providers: [],
+    declarations: [LoginComponent],
+    exports: [LoginComponent],
+    providers: [],
+    imports: [
+        CommonModule,
+        UikitModule,
+        LoginRoutingModule,
+        BigmoduleModule
+    ]
 })
 export class LoginModule {}

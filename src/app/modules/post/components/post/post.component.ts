@@ -1,9 +1,9 @@
 import { Component,  OnDestroy, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
-import { Subject, share, takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
-import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post',
@@ -25,16 +25,19 @@ export class PostComponent implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
 
   selectedPostId: number | null = null;
+  errorCode: number | null = null;
 
   constructor(
     private postService: PostService,
     public recursiveGetService: GetAllService,
-    private paginationService: PaginatorService
+    private paginationService: PaginatorService,
+    private title:Title
   ) {}
   ngOnInit(): void {
+    const title= `Pagina post`
+    this.title.setTitle(title)
     //oninit we retrive all posts
     this.retriveAllPosts();
-    //assign shard post to datasharingservice
   }
 
   ngOnDestroy() {
@@ -51,16 +54,11 @@ export class PostComponent implements OnInit, OnDestroy {
       .subscribe(
         (pages: any[][]) => {
           this.allPostsFull = this.recursiveGetService.flattenResponseInPages(pages);
-
-          // this.posts.forEach((post) => {
-          // //  const postId = post.id;
-          //   //console.log(postId);
-          //   });
           this.searchPosts();
           this.updatePostsToDisplay();
         },
         (error: any) => {
-          console.error(error);
+          this.errorCode = error.status;
         }
       );
   }

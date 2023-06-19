@@ -1,3 +1,6 @@
+<app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>
+
+<div *ngIf="!errorCode">
 <div class="container">
   <label for="sliderInput">Scegli quanti risultati vuoi vedere!</label>
   <span>{{ sliderValue }}</span>
@@ -18,8 +21,8 @@
     (keyup)="searchUsers()"
     placeholder="Cerca per nome o e-mail"
   />
-</div>
 
+</div>
 <app-paginator
   [currentPage]="currentPage"
   [totalPages]="totalPages"
@@ -28,15 +31,9 @@
 
 <app-user-form></app-user-form>
 
-<div class="container" *ngIf="users.length > 0">
+<div class="container" *ngIf="users.length > 0 ">
   <div class="row">
-    <div class="message" *ngIf="search.pristine || !searchValue">
-      <p>A pagina {{ currentPage }} ci sono: {{ users.length }} utenti</p>
 
-      <p *ngIf="this.recursiveGetService.getRequestsComplete">
-        In archivio ci sono: {{ originalUsers.length }} utenti
-      </p>
-    </div>
     <div class="container">
       <div class="row" *ngIf="searchValue">
         <div class="message">
@@ -85,7 +82,7 @@
     </div>
   </div>
 </div>
-<div class="row" *ngIf="originalUsers.length === 0">
+<div class="row" *ngIf="originalUsers.length === 0 ">
   <h1 class="animate__animated animate__pulse animate__infinite">
     Attendere prego...
   </h1>
@@ -102,3 +99,4 @@
   [totalPages]="totalPages"
   (pageChange)="goToPage($event)"
 ></app-paginator>
+</div>

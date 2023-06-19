@@ -4,6 +4,8 @@
   </div>
   <div class="sidebar right-sidebar" [class.active]="showSidebarForm">
     <div class="sidebar-content">
+      <app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>
+
      <div class="header"><h3>Registra un nuovo utente!</h3>
       <button class="btn btn-danger" (click)="toggleSidebarForm()">X</button>
     </div>

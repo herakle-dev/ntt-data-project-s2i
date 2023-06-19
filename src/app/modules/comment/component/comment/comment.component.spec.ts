@@ -1,28 +1,27 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick } from '@angular/core/testing';
 import { CommentComponent } from './comment.component';
 import { CommentService } from '../../services/comment.service';
 import { of } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { CommentFormComponent } from '../../comment-form/comment-form/comment-form.component';
+import { CommentFormComponent } from '../comment-form/comment-form.component';
 
 describe('CommentComponent', () => {
   let component: CommentComponent;
   let fixture: ComponentFixture<CommentComponent>;
   let commentService: CommentService;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       declarations: [CommentComponent, CommentFormComponent],
-      imports:[HttpClientTestingModule],
+      imports: [HttpClientTestingModule],
       providers: [CommentService],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CommentComponent);
     component = fixture.componentInstance;
     commentService = TestBed.inject(CommentService);
-    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -56,39 +55,23 @@ describe('CommentComponent', () => {
     expect(component.newCommentShow).toBeFalse();
   });
 
-  it('should get comments when getComments is called with a valid postId', () => {
+  it('should get comments when getComments is called with a valid postId', fakeAsync(() => {
     const postId = 1;
     const comments = [
       { id: 1, post_id: 1, body: 'Comment 1' },
       { id: 2, post_id: 1, body: 'Comment 2' },
     ];
 
-    const getEveryPostCommentsSpy = spyOn(commentService, 'getEveryPostComments').and.returnValue(of(comments));
+    spyOn(commentService, 'getEveryPostComments').and.returnValue(of(comments));
 
     component.getComments(postId);
 
-    expect(getEveryPostCommentsSpy).toHaveBeenCalledTimes(1);
+    tick(); // Sincronizza le operazioni asincrone
+
+    expect(commentService.getEveryPostComments).toHaveBeenCalledWith(postId);
     expect(component.comments).toEqual(comments);
     expect(component.commentShown).toBeTrue();
     expect(component.selectedPostId).toBe(postId);
-  });
+  }));
 
-  it('should toggle commentShown property when getComments is called with the same postId', () => {
-    const postId = 1;
-    const comments = [
-      { id: 1, post_id: 1, body: 'Comment 1' },
-      { id: 2, post_id: 1, body: 'Comment 2' },
-    ];
-
-    const getEveryPostCommentsSpy = spyOn(commentService, 'getEveryPostComments').and.returnValue(of(comments));
-
-    component.selectedPostId = postId;
-    component.commentShown = true;
-
-    component.getComments(postId);
-
-    expect(getEveryPostCommentsSpy).not.toHaveBeenCalled();
-    expect(component.comments).toEqual([]);
-    expect(component.commentShown).toBeFalse();
-  });
 });

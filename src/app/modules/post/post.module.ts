@@ -7,21 +7,21 @@ import { PaginatorModule } from "../../shared/paginatorButton/paginator/paginato
 import { UikitModule } from 'src/app/shared/uikit/uikit.module';
 import { CommentModule } from "../comment/comment.module";
 import { PostFormModule } from './components/post-form/post-form.module';
+import { BigmoduleModule } from "../bigmodule.module";
 
 @NgModule({
     declarations: [
         PostComponent,
-
     ],
     exports: [PostComponent, PostRoutingModule],
     imports: [
         CommonModule,
         PostRoutingModule,
         PaginatorModule,
-
         UikitModule,
         CommentModule,
-        PostFormModule
+        PostFormModule,
+        BigmoduleModule
     ]
 })
 export class PostModule { }

@@ -1,0 +1,47 @@
+<div class="error-container">
+  <div [ngClass]="{'hide': hideError}">
+  <div class="error-message" *ngIf="errorCode === 200">
+    <span class="error-code">{{errorCode}}</span> OK. Tutto ha funzionato come previsto.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 201">
+    <span class="error-code">{{errorCode}}</span> Risorsa creata con successo.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 204">
+    <span class="error-code">{{errorCode}}</span> La richiesta è stata gestita con successo e la risposta non contiene contenuto (come una richiesta DELETE).
+  </div>
+  <div class="error-message" *ngIf="errorCode === 304">
+    <span class="error-code">{{errorCode}}</span> La risorsa non è stata modificata. Puoi utilizzare la versione in cache.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 400">
+    <span class="error-code">{{errorCode}}</span> Richiesta non valida. Questo potrebbe essere causato da varie azioni dell'utente, come fornire dati JSON non validi nel corpo della richiesta, ecc.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 401">
+    <span class="error-code">{{errorCode}}</span> Autenticazione fallita.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 403">
+    <span class="error-code">{{errorCode}}</span> Accesso negato. L'utente autenticato non è autorizzato ad accedere all'endpoint API specificato.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 404">
+    <span class="error-code">{{errorCode}}</span> La risorsa richiesta non esiste.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 405">
+    <span class="error-code">{{errorCode}}</span> Metodo non consentito. Verifica l'intestazione Allow per i metodi HTTP consentiti.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 415">
+    <span class="error-code">{{errorCode}}</span> Tipo di media non supportato. Il tipo di contenuto o il numero di versione richiesto non è valido.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 422">
+    <span class="error-code">{{errorCode}}</span> Convalida dati non riuscita. Verifica il corpo della risposta per i messaggi di errore dettagliati.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 429">
+    <span class="error-code">{{errorCode}}</span> Troppe richieste. La richiesta è stata rifiutata a causa del limite di velocità.
+  </div>
+  <div class="error-message" *ngIf="errorCode === 500">
+    <span class="error-code">{{errorCode}}</span> Errore interno del server. Questo potrebbe essere causato da errori interni del programma.
+  </div>
+</div>
+  <button class="dismiss-button" (click)="dismissError()">
+  {{ hideError ? 'Mostra' : 'Chiudi' }} errore
+</button>
+</div>
+
