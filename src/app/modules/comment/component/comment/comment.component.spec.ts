@@ -66,7 +66,7 @@ describe('CommentComponent', () => {
 
     component.getComments(postId);
 
-    tick(); // Sincronizza le operazioni asincrone
+    tick();
 
     expect(commentService.getEveryPostComments).toHaveBeenCalledWith(postId);
     expect(component.comments).toEqual(comments);

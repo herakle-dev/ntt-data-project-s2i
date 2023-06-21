@@ -34,7 +34,6 @@ export class CommentFormComponent {
     };
     this.commentService.sendCommentAtPost(this.postId,comment).subscribe(
       () => {
-        alert('Commento creato con successo!');
         location.reload()
       },
       (error) => {

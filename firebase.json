@@ -1,6 +1,12 @@
 {
   "hosting": {
     "public": "dist/ntt-data",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
