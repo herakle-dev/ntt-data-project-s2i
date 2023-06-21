@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.45% </span>
+                <span class="strong">86.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/22</span>
+                <span class='fraction'>19/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>8/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.45% </span>
+                <span class="strong">86.36% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/22</span>
+                <span class='fraction'>19/22</span>
             </div>
         
             
@@ -131,42 +131,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,43 +191,43 @@ import { CommentService } from '../../services/comment.service';
 })
 export class CommentComponent implements OnInit {
   commentShown = false;
- @Input() newCommentShow = false;
- @Input() selectedPostId: number | null = null;
-  @Input() currentPage = 1;
+  @Input() newCommentShow = false;
+  selectedPostId: number | null = null;
+  comments: any[] = [];
+  @Input() postId: number | null;
 &nbsp;
-  @Input() comments: any[] = [];
-  @Input() postId!: number | null;
-  commentsCount = 0;
+  errorCode: number | null = null;
 &nbsp;
   constructor(private commentService: CommentService) {}
-  ngOnInit(): void {
-    this.getComments(this.postId);
 &nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnInit(</span>): void {
+<span class="cstat-no" title="statement not covered" >    this.getComments(this.postId);</span>
   }
 &nbsp;
   getComments(postId: number | null) {
-    if (this.selectedPostId === postId &amp;&amp; this.commentShown) {
-      this.commentShown = false;
-    } else {
-      this.selectedPostId = postId;
-      this.commentShown = true;
-      if (postId) {
-        console.log()
-        this.commentService.getEveryPostComments(postId).subscribe(
-          (comments: any[]) =&gt; {
-            this.comments = comments.filter(
-              (comment) =&gt; comment.post_id === postId
-            );
-            // this.comments.forEach((comment) =&gt; {
-            //   const commentId = comment.id;
-            //   console.log(commentId);
-            // });
-          },
-<span class="fstat-no" title="function not covered" >          (e</span>rror: any) =&gt; {
-<span class="cstat-no" title="statement not covered" >            console.error(error);</span>
-          }
-        );
-      }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.selectedPostId === postId &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.commentShown)</span> {
+<span class="cstat-no" title="statement not covered" >      this.commentShown = false;</span>
+    }
+    this.selectedPostId = postId;
+    this.commentShown = true;
+    if (postId) {
+      this.commentService.getEveryPostComments(postId).subscribe(
+        (comments: any[]) =&gt; {
+          this.comments = comments
+            .filter((comment) =&gt; comment.post_id === postId)
+            .filter((comment, index, self) =&gt; {
+              return (
+                index ===
+                self.findIndex(
+                  (c) =&gt; c.id === comment.id &amp;&amp; c.name === comment.name
+                )
+              );
+            });
+        },
+<span class="fstat-no" title="function not covered" >        (e</span>rror: any) =&gt; {
+<span class="cstat-no" title="statement not covered" >          this.errorCode = error.status;</span>
+        }
+      );
     }
   }
 &nbsp;
@@ -247,7 +247,7 @@ export class CommentComponent implements OnInit {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T13:18:11.647Z
+                at 2023-06-21T13:20:40.347Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

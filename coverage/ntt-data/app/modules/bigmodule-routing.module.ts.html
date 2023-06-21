@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.07% </span>
+                <span class="strong">27.27% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/13</span>
+                <span class='fraction'>3/11</span>
             </div>
         
             
@@ -39,7 +39,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -84,7 +84,11 @@
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -93,6 +97,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -108,12 +114,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../core/auth/guard.guard';
+import { NotFoundComponent } from '../shared/not-found/not-found.component';
 &nbsp;
-const routes: Routes = [{path:'login',loadChildren:<span class="fstat-no" title="function not covered" >()=</span>&gt;<span class="cstat-no" title="statement not covered" >import('../shared/login/login.module').then(<span class="fstat-no" title="function not covered" >m=</span>&gt;<span class="cstat-no" title="statement not covered" >m.LoginModule)</span> </span> },
-{ path: 'user', loadChildren: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >import('../modules/user/user.module').then(<span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >m.UserModule)</span>,</span> canActivate:[AuthGuard] },
-{path:'user/:id',  loadChildren: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >import('../modules/user/components/user-details/user-details.module').then(<span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >m.UserDetailsModule)</span>}</span>,
-{ path: 'comment', loadChildren: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >import('../modules/comment/comment.module').then(<span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >m.CommentModule)</span>,</span> canActivate:[AuthGuard] },
-{ path: 'post', loadChildren: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >import('../modules/post/post.module').then(<span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >m.PostModule)</span>,</span> canActivate:[AuthGuard] }
+const routes: Routes = [
+  { path: 'login', loadChildren: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >import('../shared/login/login.module').then(<span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >m.LoginModule)</span> </span>},
+  { path: 'user/:id', loadChildren: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >import('../modules/user/components/user-details/user-details.module').then(<span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >m.UserDetailsModule)</span> </span>},
+  { path: 'user', loadChildren: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >import('../modules/user/user.module').then(<span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >m.UserModule)</span>,</span> canActivate: [AuthGuard] },
+  { path: 'post', loadChildren: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >import('../modules/post/post.module').then(<span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >m.PostModule)</span>,</span> canActivate: [AuthGuard] },
+  { path: '**', component: NotFoundComponent}
+&nbsp;
 ];
 &nbsp;
 @NgModule({
@@ -133,7 +142,7 @@ export class BigModuleRouting { }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T13:18:11.647Z
+                at 2023-06-21T13:20:40.347Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.88% </span>
+                <span class="strong">89.65% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>53/61</span>
+                <span class='fraction'>52/58</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.88% </span>
+                <span class="strong">89.65% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>53/61</span>
+                <span class='fraction'>52/58</span>
             </div>
         
             
@@ -212,10 +212,7 @@
 <a name='L147'></a><a href='#L147'>147</a>
 <a name='L148'></a><a href='#L148'>148</a>
 <a name='L149'></a><a href='#L149'>149</a>
-<a name='L150'></a><a href='#L150'>150</a>
-<a name='L151'></a><a href='#L151'>151</a>
-<a name='L152'></a><a href='#L152'>152</a>
-<a name='L153'></a><a href='#L153'>153</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L150'></a><a href='#L150'>150</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -242,11 +239,14 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -262,8 +262,6 @@
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
@@ -271,7 +269,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -351,7 +348,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -361,20 +357,18 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, OnDestroy } from '@angular/core';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 &nbsp;
 import { GetAllService } from 'src/app/shared/services/get-all.service';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
-import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
+import { Title } from '@angular/platform-browser';
 &nbsp;
 @Component({
   selector: 'app-user',
@@ -385,7 +379,7 @@ export class UserComponent implements OnInit, OnDestroy {
   users: any[] = [];
   originalUsers: any[] = [];
   visiblePages: number[] = [];
-&nbsp;
+@Input() userId:number
   sliderValue!: number;
   currentPage = 1;
   totalPages = 1;
@@ -394,19 +388,22 @@ export class UserComponent implements OnInit, OnDestroy {
   isVisible = true;
   public unsubscribe$ = new Subject&lt;void&gt;();
   sharedUsers!:any[]
+  errorCode: number | null = null;
+&nbsp;
   constructor(
     private userService: UserService,
-    private dataSharingService: DataSharingService,
     public recursiveGetService: GetAllService,
     private paginationService: PaginatorService,
+    private title:Title
+&nbsp;
 &nbsp;
   ) {}
 &nbsp;
   ngOnInit() {
+    const title= `Pagina utenti`
+    this.title.setTitle(title)
     this.sliderValue = 10;
     this.onSliderChange()
-    this.originalUsers = this.dataSharingService.getOriginalUsers();
-console.log(this)
   }
 &nbsp;
   ngOnDestroy() {
@@ -414,22 +411,19 @@ console.log(this)
     this.unsubscribe$.complete();
     this.recursiveGetService.cancelRequests();
     this.recursiveGetService.resetCache();
-    console.log(this)
-&nbsp;
   }
-   fullUsers(perPage: number) {
+   getUsers(perPage: number) {
     this.recursiveGetService
       .getAllInApi(perPage, this.userService.allUsersUrl)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
 <span class="fstat-no" title="function not covered" >        (p</span>ages: any[][]) =&gt; {
 <span class="cstat-no" title="statement not covered" >          this.originalUsers = this.recursiveGetService.flattenResponseInPages(pages);</span>
-<span class="cstat-no" title="statement not covered" >            this.dataSharingService.setOriginalUsers(this.originalUsers);</span>
 <span class="cstat-no" title="statement not covered" >          this.searchUsers();</span>
 <span class="cstat-no" title="statement not covered" >          this.updateUsersToDisplay();</span>
         },
 <span class="fstat-no" title="function not covered" >        (e</span>rror: any) =&gt; {
-<span class="cstat-no" title="statement not covered" >          console.error(error);</span>
+<span class="cstat-no" title="statement not covered" >          this.errorCode = error.status;</span>
         }
       );
   }
@@ -437,7 +431,7 @@ console.log(this)
     this.recursiveGetService.cancelRequests();
     this.recursiveGetService.resetCache();
     this.originalUsers=[]
-    this.fullUsers(this.sliderValue);
+    this.getUsers(this.sliderValue);
   }
   searchUsers(): void {
     if (this.searchValue.trim() === '') {
@@ -501,8 +495,7 @@ console.log(this)
     const question = confirm('Vuoi davvero eliminare questo utente?');
     if (question) {
       this.userService.deleteThisUser(userId).subscribe(
-        (response) =&gt; {
-          console.log(response);
+        () =&gt; {
           this.users.forEach((user) =&gt; {
             if (user.id === userId) {
               user.hide = true;
@@ -510,10 +503,8 @@ console.log(this)
           });
         },
 <span class="fstat-no" title="function not covered" >        (e</span>rror) =&gt; {
-<span class="cstat-no" title="statement not covered" >          alert(</span>
-            `Errore : ${error.status}, utente non trovato. Ricarica la pagina.`
-          );
-<span class="cstat-no" title="statement not covered" >          console.log(error);</span>
+<span class="cstat-no" title="statement not covered" >          this.errorCode = error.status;</span>
+&nbsp;
         }
       );
     }
@@ -526,7 +517,7 @@ console.log(this)
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T13:18:11.647Z
+                at 2023-06-21T13:20:40.347Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

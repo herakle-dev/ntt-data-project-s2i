@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.33% </span>
+                <span class="strong">61.53% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/12</span>
+                <span class='fraction'>8/13</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.33% </span>
+                <span class="strong">61.53% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/12</span>
+                <span class='fraction'>8/13</span>
             </div>
         
             
@@ -119,62 +119,67 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component } from '@angular/core';
 import { UserFormService } from '../../services/user-form.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 &nbsp;
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.css']
+  styleUrls: ['./user-form.component.css'],
 })
 export class UserFormComponent {
   formData: any = {
     name: '',
     email: '',
     gender: '',
-    status: ''
+    status: '',
   };
 &nbsp;
-  constructor(private userFormService: UserFormService) { }
+  constructor(
+    private userFormService: UserFormService,
+    private router: Router
+  ) {}
+  errorCode: number | null = null;
 &nbsp;
   showSidebarForm = false;
   status = false;
@@ -185,23 +190,18 @@ export class UserFormComponent {
 &nbsp;
 <span class="fstat-no" title="function not covered" >  submitForm(</span>form: NgForm) {
 <span class="cstat-no" title="statement not covered" >    this.formData.status = this.status ? 'active' : 'inactive';</span>
-<span class="cstat-no" title="statement not covered" >    this.userFormService.createUser(this.formData)</span>
-      .subscribe(
-<span class="fstat-no" title="function not covered" >        response </span>=&gt; {
-<span class="cstat-no" title="statement not covered" >          console.log('Dati inviati con successo!', response);</span>
-<span class="cstat-no" title="statement not covered" >          location.reload()</span>
-        },
-<span class="fstat-no" title="function not covered" >        error </span>=&gt; {
-<span class="cstat-no" title="statement not covered" >          console.error('Errore durante l\'invio dei dati:', error);</span>
-        }
-      );
+<span class="cstat-no" title="statement not covered" >    this.userFormService.createUser(this.formData).subscribe(</span>
+<span class="fstat-no" title="function not covered" >      () =</span>&gt; {
+<span class="cstat-no" title="statement not covered" >        location.reload();</span>
+      },
+<span class="fstat-no" title="function not covered" >      (e</span>rror) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.errorCode = error.status;</span>
+      }
+    );
   }
 &nbsp;
-&nbsp;
-&nbsp;
-  changeStatus() {
-this.status
-&nbsp;
+<span class="fstat-no" title="function not covered" >  changeStatus(</span>) {
+<span class="cstat-no" title="statement not covered" >    this.status;</span>
   }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -211,7 +211,7 @@ this.status
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T13:18:11.647Z
+                at 2023-06-21T13:20:40.347Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

@@ -197,9 +197,7 @@
 <a name='L132'></a><a href='#L132'>132</a>
 <a name='L133'></a><a href='#L133'>133</a>
 <a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a>
-<a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -213,17 +211,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
@@ -234,6 +235,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -251,12 +253,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -340,7 +336,7 @@ import { PostService } from '../../services/post.service';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
 import { Subject, takeUntil } from 'rxjs';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
-import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
+import { Title } from '@angular/platform-browser';
 &nbsp;
 @Component({
   selector: 'app-post',
@@ -348,29 +344,33 @@ import { DataSharingService } from 'src/app/shared/services/data-sharing.service
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit, OnDestroy {
-  allPostsFull!: any[];
+  //new array for that contain all posts in the api
+  allPostsFull: any[];
+  //then we split the allPostFull array in posts array that is an array with postPerPage items for each page
   posts: any[] = [];
-  sliderValue = 100;
+  postPerPage = 100;
+  //starting at page 1
   currentPage = 1;
   totalPages = 1;
+  //array numbers that show how many pages we have to show
   visiblePages: number[] = [];
   searchValue = '';
   private unsubscribe$ = new Subject&lt;void&gt;();
 &nbsp;
-&nbsp;
   selectedPostId: number | null = null;
-  sharedPosts!: any[];
+  errorCode: number | null = null;
 &nbsp;
   constructor(
     private postService: PostService,
-    private dataSharingService: DataSharingService,
     public recursiveGetService: GetAllService,
-    private paginationService: PaginatorService
+    private paginationService: PaginatorService,
+    private title:Title
   ) {}
   ngOnInit(): void {
+    const title= `Pagina post`
+    this.title.setTitle(title)
+    //oninit we retrive all posts
     this.retriveAllPosts();
-    this.sharedPosts = this.dataSharingService.getAllPostsFull(); // Ottieni i dati dei post condivisi dal servizio
-console.log(this.sharedPosts)
   }
 &nbsp;
   ngOnDestroy() {
@@ -387,17 +387,11 @@ console.log(this.sharedPosts)
       .subscribe(
         (pages: any[][]) =&gt; {
           this.allPostsFull = this.recursiveGetService.flattenResponseInPages(pages);
-            this.dataSharingService.setAllPostsFull(this.allPostsFull); // Condividi i dati con il servizio
-&nbsp;
-          // this.posts.forEach((post) =&gt; {
-          // //  const postId = post.id;
-          //   //console.log(postId);
-          //   });
           this.searchPosts();
           this.updatePostsToDisplay();
         },
 <span class="fstat-no" title="function not covered" >        (e</span>rror: any) =&gt; {
-<span class="cstat-no" title="statement not covered" >          console.error(error);</span>
+<span class="cstat-no" title="statement not covered" >          this.errorCode = error.status;</span>
         }
       );
   }
@@ -427,9 +421,9 @@ console.log(this.sharedPosts)
     this.posts = this.paginationService.updateItemsToDisplay(
       allPostsToDisplay,
       this.currentPage,
-      this.sliderValue
+      this.postPerPage
     );
-    this.totalPages = Math.ceil(allPostsToDisplay.length / this.sliderValue);
+    this.totalPages = Math.ceil(allPostsToDisplay.length / this.postPerPage);
     this.updateVisiblePages();
   }
 &nbsp;
@@ -458,7 +452,7 @@ console.log(this.sharedPosts)
   }
 &nbsp;
   changePostsToDisplay(perPage: number): void {
-    this.sliderValue = perPage;
+    this.postPerPage = perPage;
     this.updatePostsToDisplay();
   }
 &nbsp;
@@ -478,7 +472,7 @@ console.log(this.sharedPosts)
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T13:18:11.647Z
+                at 2023-06-21T13:20:40.347Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

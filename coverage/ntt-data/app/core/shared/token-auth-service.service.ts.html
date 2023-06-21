@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.31% </span>
+                <span class="strong">75.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/29</span>
+                <span class='fraction'>25/33</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.57% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/28</span>
+                <span class='fraction'>24/32</span>
             </div>
         
             
@@ -165,7 +165,13 @@
 <a name='L100'></a><a href='#L100'>100</a>
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -178,13 +184,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">59x</span>
-<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">59x</span>
-<span class="cline-any cline-yes">59x</span>
-<span class="cline-any cline-yes">59x</span>
-<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -195,7 +203,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -213,6 +220,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,6 +237,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -240,6 +250,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -264,7 +276,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-yes">108x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
@@ -280,8 +292,10 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class TokenAuthServiceService {
+&nbsp;
   public isUserLogged = false; // Indicates whether the user is logged in or not
   public url = 'https://gorest.co.in/public/v2/users'; // Base URL to check bearer token
+  errorCode: number | null = null;
 &nbsp;
   constructor(private http: HttpClient, private route: Router) {
     const token = this.getTokenFromLocalStorage();
@@ -299,7 +313,6 @@ export class TokenAuthServiceService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
-&nbsp;
     this.http
       .get&lt;boolean&gt;(this.url, { headers, observe: 'response' })
       .subscribe(
@@ -315,6 +328,8 @@ export class TokenAuthServiceService {
         },
 <span class="fstat-no" title="function not covered" >        (e</span>rror: HttpErrorResponse) =&gt; {
 <span class="cstat-no" title="statement not covered" >          this.handleAuthenticationError(error.status);</span>
+<span class="cstat-no" title="statement not covered" >          this.errorCode = error.status;</span>
+<span class="cstat-no" title="statement not covered" >          console.log(this.errorCode)</span>
         }
       );
 &nbsp;
@@ -329,7 +344,8 @@ export class TokenAuthServiceService {
 <span class="cstat-no" title="statement not covered" >    this.deleteToken();</span>
 <span class="cstat-no" title="statement not covered" >    this.route.navigate(['/login']);</span>
 <span class="cstat-no" title="statement not covered" >    this.isUserLogged = false;</span>
-<span class="cstat-no" title="statement not covered" >    console.log('Authentication error. Code:', statusCode);</span>
+<span class="cstat-no" title="statement not covered" >    this.errorCode = statusCode;</span>
+&nbsp;
   }
 &nbsp;
   /**
@@ -342,6 +358,8 @@ export class TokenAuthServiceService {
       localStorage.setItem('access_token', token);
     } else {
       console.error('Error while saving the token:', statusCode);
+      this.errorCode = statusCode;
+&nbsp;
     }
   }
 &nbsp;
@@ -376,7 +394,7 @@ export class TokenAuthServiceService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T13:18:11.647Z
+                at 2023-06-21T13:20:40.347Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

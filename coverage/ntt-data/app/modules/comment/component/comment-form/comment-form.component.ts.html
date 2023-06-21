@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for app/modules/comment/comment-form/comment-form/comment-form.component.ts</title>
+    <title>Code coverage report for app/modules/comment/component/comment-form/comment-form.component.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">app/modules/comment/comment-form/comment-form</a> comment-form.component.ts</h1>
+        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">app/modules/comment/component/comment-form</a> comment-form.component.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.54% </span>
+                <span class="strong">63.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/11</span>
+                <span class='fraction'>7/11</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.54% </span>
+                <span class="strong">63.63% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/11</span>
+                <span class='fraction'>7/11</span>
             </div>
         
             
@@ -108,7 +108,8 @@
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -119,11 +120,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,7 +145,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,9 +167,11 @@ import { CommentService } from '../../services/comment.service';
 export class CommentFormComponent {
 &nbsp;
   constructor(private commentService:CommentService){}
+  //boolen var used to show or hide the new comment section
   @Input() newCommentShow = false;
+  //postid used to make the new comment request(post)
   @Input() postId!: number | null ;
-&nbsp;
+  errorCode: number | null = null;
   formData: any = {
     name: '',
     email: '',
@@ -178,7 +182,7 @@ export class CommentFormComponent {
     if (form.invalid) {
       return;
     }
-&nbsp;
+//comment param neeeded
     const comment = <span class="cstat-no" title="statement not covered" >{</span>
       name: this.formData.name,
       email: this.formData.email,
@@ -186,12 +190,11 @@ export class CommentFormComponent {
 &nbsp;
     };
 <span class="cstat-no" title="statement not covered" >    this.commentService.sendCommentAtPost(this.postId,comment).subscribe(</span>
-<span class="fstat-no" title="function not covered" >      (r</span>esponse) =&gt; {
-<span class="cstat-no" title="statement not covered" >        console.log(response, 'commento creato con successo!');</span>
+<span class="fstat-no" title="function not covered" >      () =</span>&gt; {
 <span class="cstat-no" title="statement not covered" >        location.reload()</span>
       },
 <span class="fstat-no" title="function not covered" >      (e</span>rror) =&gt; {
-<span class="cstat-no" title="statement not covered" >        console.log('errore', error);</span>
+<span class="cstat-no" title="statement not covered" >        this.errorCode = error.status;</span>
       }
     );
   }
@@ -205,7 +208,7 @@ export class CommentFormComponent {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T13:18:11.647Z
+                at 2023-06-21T13:20:40.347Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
