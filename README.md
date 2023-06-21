@@ -263,10 +263,13 @@ screenshot/userComment.png
 screenshot/globalPost.png
 )
 - Commenti ai singoli post nella sezione post
+  
 ![Post comments](
    screenshot/globalPostComment.png
 )
-- Creazione nuovo post 
+- Creazione nuovo post
+
+
 ![New post](
 screenshot/newPostForm.png
 )
