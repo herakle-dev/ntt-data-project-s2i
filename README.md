@@ -223,7 +223,11 @@ typescript è il linguaggio di programmazione principale utilizzato in Angular. 
  - Pagina dettagli utente singolo, clickando su qualsiasi utente si viene indirizzati al profilo dell'utente dove si possono trovare tutti i suoi post, commenti ai post e si possono creare nuovi commenti ai post esistenti.
  - Pagina elenco post dove è possibile trovare tutti i post presenti a sistema, i suoi relativi commenti per ogni post, si ha la possibilità di creare nuovi post in questa pagina.
  - Test coverage almeno del 60%
- (Ottenuta : 78.92% Statements 352/44670.21% Branches 33/4770.27% Functions 104/14879.71% Lines 330/414 )
+ ## Coverage Ottenuta :
+- 81.35% Statements 371/456
+-  70.83% Branches 34/48
+-   72.84% Functions 110/151
+-   82.35% Lines 350/425)
 
 ## Screenshots
 - Pagina di login
