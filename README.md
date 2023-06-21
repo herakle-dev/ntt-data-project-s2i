@@ -8,9 +8,9 @@ L'applicazione è stata sviluppata tenendo conto delle best practice in tema di 
 Per la prova in locale è necessario : 
 - **Nodejs**
 - Editor di codice (**Visual studio code**)
-- **Clonare** questa repository tramite cli con il comando
+- **Clonare** questa repository dalla console del tuo code editor con il comando
 ```bash
-  git clone <https://github.com/herakle-dev/ntt-data-project-s2i>
+  git clone https://github.com/herakle-dev/ntt-data-project-s2i
 ```
 - Installare le dipendenze con il comando 
 ```bash
