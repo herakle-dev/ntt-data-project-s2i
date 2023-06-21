@@ -6,7 +6,7 @@ L'applicazione è stata sviluppata tenendo conto delle best practice in tema di 
 ## Provare l'app online 
 ### Link deploy  
 - [Firebase link 1](https://socialmock-project.firebaseapp.com)
--   [Firebase link 2](socialmock-project.web.app)
+-   [Firebase link 2](https://socialmock-project.web.app)
 
 ## Installazione
 Per la prova in locale è necessario : 
