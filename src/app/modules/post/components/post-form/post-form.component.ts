@@ -84,7 +84,6 @@ export class PostFormComponent implements OnInit {
     this.postFormService.newPostUrl = `https://gorest.co.in/public/v2/users/${this.selectedUserId}/posts`;
     this.postFormService.createPost(post).subscribe(
       () => {
-        alert(`Post creato con successo !`);
         location.reload();
       },
       (error) => {

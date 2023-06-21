@@ -33,8 +33,7 @@ export class UserFormComponent {
     this.formData.status = this.status ? 'active' : 'inactive';
     this.userFormService.createUser(this.formData).subscribe(
       () => {
-        alert(`Utente creato con successo!`);
-        location.href='user'
+        location.reload();
       },
       (error) => {
         this.errorCode = error.status;

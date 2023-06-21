@@ -12,13 +12,18 @@
       <form  (ngSubmit)="submitForm(postForm)" #postForm="ngForm">
         <div class="form-group">
           <label for="userId" >
-            <span *ngIf="clicked">Scegli un utente da questa lista</span>
-          <button class="btn btn-pagination" (click)="getUsersForPost()" [disabled]="clicked" *ngIf="currentUrl === '/post'" [hidden]="usersFetched ">Ottieni utenti</button>
+            <span *ngIf="clicked">
+              Scegli un utente da questa lista
+
+            </span>
+          <button class="btn btn-pagination" (click)="getUsersForPost()" [disabled]="clicked" *ngIf="currentUrl === '/post'" [hidden]="usersFetched ">
+            Ottieni utenti
+          </button>
         </label>
           <input type="text" [value]="userId"  *ngIf="userId" hidden>
          {{userName}}
-         <mat-select class="form-control" id="userId" [(ngModel)]="selectedUserId" name="userId" [hidden]="!usersFetched " required
-  #userSelectMat >
+         <mat-select *ngIf="usersFetched" class="form-control" id="userId" [(ngModel)]="selectedUserId" name="userId" [hidden]="!usersFetched " required
+           #userSelectMat >
   <mat-option *ngFor="let user of users" [value]="user.id">{{ user.name }}</mat-option>
 </mat-select>
           <div *ngIf="postForm.controls['userId']?.invalid && (postForm.controls['userId']?.dirty )" class="alert alert-danger">
