@@ -73,7 +73,7 @@ describe('UserDetailsComponent', () => {
 
       component.showPosts();
 
-      expect(getAllUserPostSpy).toHaveBeenCalledWith(component.userId);
+      expect(getAllUserPostSpy).toHaveBeenCalledWith();
       expect(getEveryPostCommentsSpy).toHaveBeenCalledTimes(allPosts.length);
       expect(component.userPosts).toEqual(allPosts);
       expect(component.postShown).toBe(true);

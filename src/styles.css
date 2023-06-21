@@ -44,3 +44,7 @@ label{
   justify-content: center;
   align-items: center;
 }
+.centered{
+  display: flex;
+  justify-content: center;
+}

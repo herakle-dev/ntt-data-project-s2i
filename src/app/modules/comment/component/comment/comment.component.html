@@ -18,6 +18,6 @@
 <button class="btn btn-pagination" *ngIf="comments.length " (click)="toggleComments()">
   {{commentShown?'Mostra ' +   comments.length  +' commenti':'Nascondi commenti'}}</button>
 <button class="btn btn-pagination" *ngIf="!comments.length" (click)="newComment()">
-  Non ci sono commenti in questo post, creane uno tu!
+  {{!this.newCommentShow? '' +   comments.length  +' commenti aggiungine uno tu!':'Nascondi commenti'}}
 </button>
 </div>

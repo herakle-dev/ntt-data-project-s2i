@@ -26,16 +26,18 @@
         </div>
         <div class="form-group">
           <label for="gender">Sesso</label>
-          <select class="form-control" id="gender" [(ngModel)]="formData.gender" name="gender" required>
-            <option value="male">Maschio</option>
-            <option value="female">Femmina</option>
-          </select>
+          <mat-select class="form-control" id="gender" [(ngModel)]="formData.gender" name="gender" required>
+            <mat-option value="male">Maschio</mat-option>
+            <mat-option value="female">Femmina</mat-option>
+          </mat-select>
         </div>
         <div class="form-group">
           <label>Stato</label>
           <mat-slide-toggle (change)="changeStatus()" name="status" [(ngModel)]="status">{{ status ? 'Online' : 'Offline' }} </mat-slide-toggle>
         </div>
+        <div class="centered">
         <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">Invia</button>
+        </div>
       </form>
     </div>
   </div>

@@ -19,15 +19,13 @@ describe('UserDetailsService', () => {
   });
 
   it('should retrieve user details', () => {
-    const userId = 1; // ID utente di prova
     service.getUserDetail().subscribe((response) => {
       expect(response).toBeDefined();
     });
   });
 
   it('should retrieve all user posts', () => {
-    const userId = 1;
-    service.getAllUserPost(userId).subscribe((posts) => {
+    service.getAllUserPost().subscribe((posts) => {
       expect(posts).toBeDefined();
       expect(posts.length).toBeGreaterThan(0);
     });

@@ -21,3 +21,7 @@ margin:10px;
 .btn{
   margin:10px
 }
+a{display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;}
