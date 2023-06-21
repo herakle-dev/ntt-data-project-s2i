@@ -4,7 +4,10 @@
 Questo progetto Angular è stato sviluppato da Ivan Ferrigno come oggetto di esame per Start2Impact, il progetto prevede la creazione di un mock social network utilizzando le Api di https://gorest.co.in/ , che possono essere fruite sia pubblicamente, ma sopratutto una delle richieste di progetto è utilizzare un token fornito dalla piattaforma GoRest per l'autenticazione dell'utente finale in modo da poter gestire le proprie Api.
 L'applicazione è stata sviluppata tenendo conto delle best practice in tema di suddivisione delle cartelle in moduli, componenti, servizi, guardie. Per rendere l'applicazione più performante è stato utilizzato il lazyloading, inoltre tutte le route sono protette da autenticazione, semplicemente controlla se l'utente ha inserito il proprio token e che sia valido durante la fase di login, nonchè la prima pagina che viene presentata all'utente finale una volta inizializzata l'applicazione. 
 ## Provare l'app online 
-- Link deploy https://socialmock-project.web.app/ 
+### Link deploy  
+- [Firebase link 1](https://socialmock-project.firebaseapp.com)
+-   [Firebase link 2](https://socialmock-project.web.app)
+
 ## Installazione
 Per la prova in locale è necessario : 
 - **Nodejs**
