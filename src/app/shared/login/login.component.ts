@@ -1,4 +1,4 @@
-import {Component,  ElementRef,  OnChanges,  OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import {Component,  ElementRef,    OnInit,  ViewChild } from '@angular/core';
 import { TokenAuthServiceService } from 'src/app/core/shared/token-auth-service.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-import { Observable, of } from 'rxjs';
 import { PostService } from './post.service';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
+import { of } from 'rxjs';
 
 describe('PostService', () => {
   let service: PostService;
@@ -9,7 +9,7 @@ describe('PostService', () => {
 
   beforeEach(() => {
     getAllServiceMock = {
-      getAllInApi: (perPage: number, url: string) => {
+      getAllInApi: () => {
         // Simulate the response of getAllInApi method
         // Return a mock data for testing purposes
         const mockPages: any[][] = [[{ id: 1, title: 'Post 1' }], [{ id: 2, title: 'Post 2' }]];

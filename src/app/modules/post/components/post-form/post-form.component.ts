@@ -1,10 +1,9 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { PostFormService } from '../../services/post-form.service';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { Router } from '@angular/router';
-import { MatSelect } from '@angular/material/select';
 
 @Component({
   selector: 'app-post-form',

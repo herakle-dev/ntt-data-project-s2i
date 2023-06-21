@@ -13,7 +13,6 @@ describe('PostComponent', () => {
   let component: PostComponent;
   let fixture: ComponentFixture<PostComponent>;
   let postService: PostService;
-  let getAllService: GetAllService;
   let paginatorService: PaginatorService;
 
   beforeEach(async () => {
@@ -28,7 +27,6 @@ describe('PostComponent', () => {
     fixture = TestBed.createComponent(PostComponent);
     component = fixture.componentInstance;
     postService = TestBed.inject(PostService);
-    getAllService = TestBed.inject(GetAllService);
     paginatorService = TestBed.inject(PaginatorService);
     fixture.detectChanges();
   });
