@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   @ViewChild('tokenInput', { static: false })
   tokenInput!: ElementRef<any>;
-  myForm!: FormGroup;
+  loginForm!: FormGroup;
   errorCode: number | null = null;
 
 
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 const title = 'Login Fakebook'
 this.title.setTitle(title)
 
-this.myForm=this.formBuilder.group({
+this.loginForm=this.formBuilder.group({
   theTokenInput:['', Validators.required]
 })
 

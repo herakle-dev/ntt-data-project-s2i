@@ -31,10 +31,10 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initialize myForm correctly', () => {
-    expect(component.myForm).toBeDefined();
-    expect(component.myForm.get('theTokenInput')).toBeDefined();
-    expect(component.myForm.valid).toBeFalse();
+  it('should initialize loginForm correctly', () => {
+    expect(component.loginForm).toBeDefined();
+    expect(component.loginForm.get('theTokenInput')).toBeDefined();
+    expect(component.loginForm.valid).toBeFalse();
   });
 
   it('should call verifyTokenService when onTokenSubmit is called', () => {
@@ -50,7 +50,7 @@ describe('LoginComponent', () => {
     tokenInput.value = token;
     tokenInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
-    expect(component.myForm.get('theTokenInput')?.value).toBe(token);
+    expect(component.loginForm.get('theTokenInput')?.value).toBe(token);
   });
 
 });

@@ -6,7 +6,7 @@
   <h2>Login</h2>
   <form
     class="example-form"
-    [formGroup]="myForm"
+    [formGroup]="loginForm"
     action="ngForm"
     (ngSubmit)="onTokenSubmit(tokenInput.value)"
   >
@@ -31,7 +31,7 @@
     Clicca qui per ottenere il
     tuo token per accedere alla piattaforma</a>
     <div class="btn-container">
-      <button class="btn btn-primary" id="submitButton" [disabled]="myForm.invalid">Login</button>
+      <button class="btn btn-primary" id="submitButton" [disabled]="loginForm.invalid">Login</button>
 
 
     </div>
