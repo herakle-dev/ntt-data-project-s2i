@@ -2,7 +2,7 @@
   <div class="centered-button">
     <button (click)="toggleSidebarForm()" class="btn btn-pagination">Crea un nuovo Post</button>
   </div>
-  <div class="sidebar right-sidebar" [class.active]="showSidebarForm">
+  <div class="sidebar right-sidebar" [class.active]="showSidebarForm" [hidden]="!showSidebarForm">
     <div class="sidebar-content">
      <div class="header"><h3>Nuovo post</h3>
       <app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>

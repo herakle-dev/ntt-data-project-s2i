@@ -2,7 +2,7 @@
   <div class="centered-button">
     <button (click)="toggleSidebarForm()" class="btn btn-pagination">Crea un nuovo utente</button>
   </div>
-  <div class="sidebar right-sidebar" [class.active]="showSidebarForm">
+  <div class="sidebar right-sidebar" id="right-sidebar" [class.active]="showSidebarForm"[hidden]="!showSidebarForm">
     <div class="sidebar-content">
       <app-error-message *ngIf="errorCode" [errorCode]="errorCode"></app-error-message>
 

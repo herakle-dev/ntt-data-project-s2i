@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent {
+export class UserFormComponent  {
   formData: any = {
     name: '',
     email: '',
@@ -15,14 +15,20 @@ export class UserFormComponent {
     status: ''
   };
 
-  constructor(private userFormService: UserFormService) { }
+  constructor(private userFormService: UserFormService) {
+  }
   errorCode: number | null = null;
 
   showSidebarForm = false;
   status = false;
 
+
+
   toggleSidebarForm() {
+
+
     this.showSidebarForm = !this.showSidebarForm;
+
   }
 
   submitForm(form: NgForm) {
@@ -39,8 +45,6 @@ export class UserFormComponent {
         }
       );
   }
-
-
 
   changeStatus() {
 this.status
