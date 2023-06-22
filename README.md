@@ -273,3 +273,7 @@ screenshot/globalPost.png
 ![New post](
 screenshot/newPostForm.png
 )
+
+
+![Grafico dipendenze progetto](
+documentation/dependencies.svg)
