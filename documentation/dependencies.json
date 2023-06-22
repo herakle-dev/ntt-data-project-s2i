@@ -1,0 +1,4848 @@
+[
+  {
+    "name": "AppRoutingModule",
+    "file": "src/app/app-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forRoot(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 195,
+        "end": 237,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 195,
+          "end": 205,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 206,
+          "end": 237,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 208,
+              "end": 236,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 212,
+              "expression": {
+                "pos": 208,
+                "end": 228,
+                "flags": 0,
+                "modifierFlagsCache": 0,
+                "transformFlags": 0,
+                "kind": 210,
+                "expression": {
+                  "pos": 208,
+                  "end": 220,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 221,
+                  "end": 228,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "forRoot"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 229,
+                  "end": 235,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 238,
+        "end": 264,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 238,
+          "end": 248,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 249,
+          "end": 264,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 251,
+              "end": 263,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "RouterModule"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "AppModule",
+    "file": "src/app/app.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "AppComponent",
+        "file": "src/app/app.component.ts",
+        "selector": "app-root",
+        "providers": [],
+        "templateUrl": [
+          "app.component.html"
+        ],
+        "styleUrls": [
+          "app.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 56,
+            "end": 79,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 56,
+              "end": 67,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 68,
+              "end": 79,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "app-root",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 80,
+            "end": 118,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 80,
+              "end": 94,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 95,
+              "end": 118,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "./app.component.html",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 119,
+            "end": 156,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 119,
+              "end": 131,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 132,
+              "end": 156,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 208,
+              "elements": [
+                {
+                  "pos": 134,
+                  "end": 155,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 11,
+                  "text": "./app.component.css",
+                  "hasExtendedUnicodeEscape": false
+                }
+              ],
+              "multiLine": false
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "BrowserModule"
+      },
+      {
+        "name": "AppRoutingModule"
+      },
+      {
+        "name": "BrowserAnimationsModule"
+      },
+      {
+        "name": "BigmoduleModule"
+      },
+      {
+        "name": "SharedModule"
+      },
+      {
+        "name": "UikitModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "__raw": [
+      {
+        "pos": 477,
+        "end": 509,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 477,
+          "end": 492,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 493,
+          "end": 509,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 495,
+              "end": 507,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "AppComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 510,
+        "end": 665,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 510,
+          "end": 520,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 521,
+          "end": 665,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 523,
+              "end": 541,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BrowserModule"
+            },
+            {
+              "pos": 542,
+              "end": 563,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "AppRoutingModule"
+            },
+            {
+              "pos": 564,
+              "end": 592,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BrowserAnimationsModule"
+            },
+            {
+              "pos": 593,
+              "end": 625,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BigmoduleModule"
+            },
+            {
+              "pos": 626,
+              "end": 643,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "SharedModule"
+            },
+            {
+              "pos": 644,
+              "end": 660,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UikitModule"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 666,
+        "end": 682,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 666,
+          "end": 678,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 679,
+          "end": 682,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 683,
+        "end": 711,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 683,
+          "end": 695,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "bootstrap"
+        },
+        "initializer": {
+          "pos": 696,
+          "end": 711,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 698,
+              "end": 710,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "AppComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "BigModuleRouting",
+    "file": "app/modules/bigmodule-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 827,
+        "end": 870,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 827,
+          "end": 837,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 838,
+          "end": 870,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 840,
+              "end": 869,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 212,
+              "expression": {
+                "pos": 840,
+                "end": 861,
+                "flags": 0,
+                "modifierFlagsCache": 0,
+                "transformFlags": 0,
+                "kind": 210,
+                "expression": {
+                  "pos": 840,
+                  "end": 852,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 853,
+                  "end": 861,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 862,
+                  "end": 868,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 871,
+        "end": 897,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 871,
+          "end": 881,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 882,
+          "end": 897,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 884,
+              "end": 896,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "RouterModule"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "BigmoduleModule",
+    "file": "app/modules/bigmodule.module.ts",
+    "providers": [
+      {
+        "name": "AuthGuard"
+      }
+    ],
+    "declarations": [
+      {
+        "name": "NotFoundComponent"
+      },
+      {
+        "name": "ErrorMessageComponent"
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "BigModuleRouting"
+      }
+    ],
+    "exports": [
+      {
+        "name": "NotFoundComponent"
+      },
+      {
+        "name": "ErrorMessageComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 388,
+        "end": 446,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 388,
+          "end": 403,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 404,
+          "end": 446,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 406,
+              "end": 423,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "NotFoundComponent"
+            },
+            {
+              "pos": 424,
+              "end": 445,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "ErrorMessageComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 447,
+        "end": 505,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 447,
+          "end": 457,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 458,
+          "end": 505,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 460,
+              "end": 477,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 478,
+              "end": 499,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BigModuleRouting"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 506,
+        "end": 562,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 506,
+          "end": 516,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 517,
+          "end": 562,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 518,
+              "end": 536,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "NotFoundComponent"
+            },
+            {
+              "pos": 537,
+              "end": 558,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "ErrorMessageComponent"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 563,
+        "end": 590,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 563,
+          "end": 575,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 576,
+          "end": 590,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 577,
+              "end": 586,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "AuthGuard"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "CommentRoutingModule",
+    "file": "modules/comment/comment-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 249,
+        "end": 292,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 249,
+          "end": 259,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 260,
+          "end": 292,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 262,
+              "end": 291,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 212,
+              "expression": {
+                "pos": 262,
+                "end": 283,
+                "flags": 0,
+                "modifierFlagsCache": 0,
+                "transformFlags": 0,
+                "kind": 210,
+                "expression": {
+                  "pos": 262,
+                  "end": 274,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 275,
+                  "end": 283,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 284,
+                  "end": 290,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 293,
+        "end": 319,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 293,
+          "end": 303,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 304,
+          "end": 319,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 306,
+              "end": 318,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "RouterModule"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "CommentModule",
+    "file": "modules/comment/comment.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "CommentComponent"
+      },
+      {
+        "name": "CommentFormComponent"
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "CommentRoutingModule"
+      },
+      {
+        "name": "UikitModule"
+      },
+      {
+        "name": "BigmoduleModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "CommentComponent"
+      },
+      {
+        "name": "CommentFormComponent"
+      },
+      {
+        "name": "CommentRoutingModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 451,
+        "end": 532,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 451,
+          "end": 468,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 469,
+          "end": 532,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 471,
+              "end": 496,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommentComponent"
+            },
+            {
+              "pos": 497,
+              "end": 526,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommentFormComponent"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 533,
+        "end": 609,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 533,
+          "end": 545,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 546,
+          "end": 609,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 548,
+              "end": 564,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommentComponent"
+            },
+            {
+              "pos": 565,
+              "end": 586,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommentFormComponent"
+            },
+            {
+              "pos": 587,
+              "end": 608,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommentRoutingModule"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 610,
+        "end": 728,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 610,
+          "end": 622,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 623,
+          "end": 728,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 625,
+              "end": 646,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 647,
+              "end": 676,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommentRoutingModule"
+            },
+            {
+              "pos": 677,
+              "end": 697,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UikitModule"
+            },
+            {
+              "pos": 698,
+              "end": 722,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BigmoduleModule"
+            }
+          ],
+          "multiLine": true
+        }
+      }
+    ]
+  },
+  {
+    "name": "PostFormModule",
+    "file": "components/post-form/post-form.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "PostFormComponent",
+        "file": "components/post-form/post-form.component.ts",
+        "selector": "app-post-form",
+        "providers": [],
+        "templateUrl": [
+          "post-form.component.html"
+        ],
+        "styleUrls": [
+          "post-form.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 369,
+            "end": 397,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 369,
+              "end": 380,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 381,
+              "end": 397,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "app-post-form",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 398,
+            "end": 442,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 398,
+              "end": 412,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 413,
+              "end": 442,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "./post-form.component.html",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 443,
+            "end": 486,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 443,
+              "end": 455,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 456,
+              "end": 486,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 208,
+              "elements": [
+                {
+                  "pos": 458,
+                  "end": 485,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 11,
+                  "text": "./post-form.component.css",
+                  "hasExtendedUnicodeEscape": false
+                }
+              ],
+              "multiLine": false
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "UikitModule"
+      },
+      {
+        "name": "BigmoduleModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "PostFormComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 289,
+        "end": 327,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 289,
+          "end": 306,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 307,
+          "end": 327,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 309,
+              "end": 326,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PostFormComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 328,
+        "end": 361,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 328,
+          "end": 340,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 341,
+          "end": 361,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 343,
+              "end": 360,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PostFormComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 362,
+        "end": 450,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 362,
+          "end": 374,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 375,
+          "end": 450,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 377,
+              "end": 398,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 399,
+              "end": 419,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UikitModule"
+            },
+            {
+              "pos": 420,
+              "end": 444,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BigmoduleModule"
+            }
+          ],
+          "multiLine": true
+        }
+      }
+    ]
+  },
+  {
+    "name": "PostRoutingModule",
+    "file": "modules/post/post-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 238,
+        "end": 281,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 238,
+          "end": 248,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 249,
+          "end": 281,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 251,
+              "end": 280,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 212,
+              "expression": {
+                "pos": 251,
+                "end": 272,
+                "flags": 0,
+                "modifierFlagsCache": 0,
+                "transformFlags": 0,
+                "kind": 210,
+                "expression": {
+                  "pos": 251,
+                  "end": 263,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 264,
+                  "end": 272,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 273,
+                  "end": 279,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 282,
+        "end": 308,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 282,
+          "end": 292,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 293,
+          "end": 308,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 295,
+              "end": 307,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "RouterModule"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "PostModule",
+    "file": "modules/post/post.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "PostComponent",
+        "file": "components/post/post.component.ts",
+        "selector": "app-post",
+        "providers": [],
+        "templateUrl": [
+          "post.component.html"
+        ],
+        "styleUrls": [
+          "post.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 380,
+            "end": 403,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 380,
+              "end": 391,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 392,
+              "end": 403,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "app-post",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 404,
+            "end": 443,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 404,
+              "end": 418,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 419,
+              "end": 443,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "./post.component.html",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 444,
+            "end": 482,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 444,
+              "end": 456,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 457,
+              "end": 482,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 208,
+              "elements": [
+                {
+                  "pos": 459,
+                  "end": 481,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 11,
+                  "text": "./post.component.css",
+                  "hasExtendedUnicodeEscape": false
+                }
+              ],
+              "multiLine": false
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "PostRoutingModule"
+      },
+      {
+        "name": "PaginatorModule"
+      },
+      {
+        "name": "UikitModule"
+      },
+      {
+        "name": "CommentModule"
+      },
+      {
+        "name": "PostFormModule"
+      },
+      {
+        "name": "BigmoduleModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "PostComponent"
+      },
+      {
+        "name": "PostRoutingModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 572,
+        "end": 621,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 572,
+          "end": 589,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 590,
+          "end": 621,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 592,
+              "end": 614,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PostComponent"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 622,
+        "end": 670,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 622,
+          "end": 634,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 635,
+          "end": 670,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 637,
+              "end": 650,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PostComponent"
+            },
+            {
+              "pos": 651,
+              "end": 669,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PostRoutingModule"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 671,
+        "end": 858,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 671,
+          "end": 683,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 684,
+          "end": 858,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 686,
+              "end": 707,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 708,
+              "end": 734,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PostRoutingModule"
+            },
+            {
+              "pos": 735,
+              "end": 759,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PaginatorModule"
+            },
+            {
+              "pos": 760,
+              "end": 780,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UikitModule"
+            },
+            {
+              "pos": 781,
+              "end": 803,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommentModule"
+            },
+            {
+              "pos": 804,
+              "end": 827,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PostFormModule"
+            },
+            {
+              "pos": 828,
+              "end": 852,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BigmoduleModule"
+            }
+          ],
+          "multiLine": true
+        }
+      }
+    ]
+  },
+  {
+    "name": "UserDetailsRoutingModule",
+    "file": "components/user-details/user-details-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 246,
+        "end": 289,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 246,
+          "end": 256,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 257,
+          "end": 289,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 259,
+              "end": 288,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 212,
+              "expression": {
+                "pos": 259,
+                "end": 280,
+                "flags": 0,
+                "modifierFlagsCache": 0,
+                "transformFlags": 0,
+                "kind": 210,
+                "expression": {
+                  "pos": 259,
+                  "end": 271,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 272,
+                  "end": 280,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 281,
+                  "end": 287,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 290,
+        "end": 316,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 290,
+          "end": 300,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 301,
+          "end": 316,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 303,
+              "end": 315,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "RouterModule"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "UserDetailsModule",
+    "file": "components/user-details/user-details.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "UserDetailsComponent",
+        "file": "components/user-details/user-details.component.ts",
+        "selector": "app-user-details",
+        "providers": [],
+        "templateUrl": [
+          "user-details.component.html"
+        ],
+        "styleUrls": [
+          "user-details.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 347,
+            "end": 380,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 347,
+              "end": 360,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 361,
+              "end": 380,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "app-user-details",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 381,
+            "end": 430,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 381,
+              "end": 397,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 398,
+              "end": 430,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "./user-details.component.html",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 431,
+            "end": 479,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 431,
+              "end": 445,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 446,
+              "end": 479,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 208,
+              "elements": [
+                {
+                  "pos": 448,
+                  "end": 478,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 11,
+                  "text": "./user-details.component.css",
+                  "hasExtendedUnicodeEscape": false
+                }
+              ],
+              "multiLine": false
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "UserDetailsRoutingModule"
+      },
+      {
+        "name": "UikitModule"
+      },
+      {
+        "name": "CommentModule"
+      },
+      {
+        "name": "PostFormModule"
+      },
+      {
+        "name": "BigmoduleModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "UserDetailsComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 529,
+        "end": 570,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 529,
+          "end": 546,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 547,
+          "end": 570,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 549,
+              "end": 569,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserDetailsComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 571,
+        "end": 607,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 571,
+          "end": 583,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 584,
+          "end": 607,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 586,
+              "end": 606,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserDetailsComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 608,
+        "end": 777,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 608,
+          "end": 620,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 621,
+          "end": 777,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 623,
+              "end": 644,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 645,
+              "end": 678,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserDetailsRoutingModule"
+            },
+            {
+              "pos": 679,
+              "end": 699,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UikitModule"
+            },
+            {
+              "pos": 700,
+              "end": 722,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommentModule"
+            },
+            {
+              "pos": 723,
+              "end": 746,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PostFormModule"
+            },
+            {
+              "pos": 747,
+              "end": 771,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BigmoduleModule"
+            }
+          ],
+          "multiLine": true
+        }
+      }
+    ]
+  },
+  {
+    "name": "UserFormModule",
+    "file": "components/user-form/user-form.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "UserFormComponent",
+        "file": "components/user-form/user-form.component.ts",
+        "selector": "app-user-form",
+        "providers": [],
+        "templateUrl": [
+          "user-form.component.html"
+        ],
+        "styleUrls": [
+          "user-form.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 207,
+            "end": 235,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 207,
+              "end": 218,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 219,
+              "end": 235,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "app-user-form",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 236,
+            "end": 280,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 236,
+              "end": 250,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 251,
+              "end": 280,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "./user-form.component.html",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 281,
+            "end": 324,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 281,
+              "end": 293,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 294,
+              "end": 324,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 208,
+              "elements": [
+                {
+                  "pos": 296,
+                  "end": 323,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 11,
+                  "text": "./user-form.component.css",
+                  "hasExtendedUnicodeEscape": false
+                }
+              ],
+              "multiLine": false
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "UikitModule"
+      },
+      {
+        "name": "BigmoduleModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "UserFormComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 288,
+        "end": 326,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 288,
+          "end": 305,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 306,
+          "end": 326,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 308,
+              "end": 325,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserFormComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 327,
+        "end": 360,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 327,
+          "end": 339,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 340,
+          "end": 360,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 342,
+              "end": 359,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserFormComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 361,
+        "end": 449,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 361,
+          "end": 373,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 374,
+          "end": 449,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 376,
+              "end": 397,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 398,
+              "end": 418,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UikitModule"
+            },
+            {
+              "pos": 419,
+              "end": 443,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BigmoduleModule"
+            }
+          ],
+          "multiLine": true
+        }
+      }
+    ]
+  },
+  {
+    "name": "UserRoutingModule",
+    "file": "modules/user/user-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 241,
+        "end": 284,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 241,
+          "end": 251,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 252,
+          "end": 284,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 254,
+              "end": 283,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 212,
+              "expression": {
+                "pos": 254,
+                "end": 275,
+                "flags": 0,
+                "modifierFlagsCache": 0,
+                "transformFlags": 0,
+                "kind": 210,
+                "expression": {
+                  "pos": 254,
+                  "end": 266,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 267,
+                  "end": 275,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 276,
+                  "end": 282,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 285,
+        "end": 311,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 285,
+          "end": 295,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 296,
+          "end": 311,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 298,
+              "end": 310,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "RouterModule"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "UserModule",
+    "file": "modules/user/user.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "UserComponent",
+        "file": "components/user/user.component.ts",
+        "selector": "app-user",
+        "providers": [],
+        "templateUrl": [
+          "user.component.html"
+        ],
+        "styleUrls": [
+          "user.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 420,
+            "end": 443,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 420,
+              "end": 431,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 432,
+              "end": 443,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "app-user",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 444,
+            "end": 483,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 444,
+              "end": 458,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 459,
+              "end": 483,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "./user.component.html",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 484,
+            "end": 522,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 484,
+              "end": 496,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 497,
+              "end": 522,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 208,
+              "elements": [
+                {
+                  "pos": 499,
+                  "end": 521,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 11,
+                  "text": "./user.component.css",
+                  "hasExtendedUnicodeEscape": false
+                }
+              ],
+              "multiLine": false
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "UserRoutingModule"
+      },
+      {
+        "name": "UikitModule"
+      },
+      {
+        "name": "SharedModule"
+      },
+      {
+        "name": "UserFormModule"
+      },
+      {
+        "name": "UserDetailsModule"
+      },
+      {
+        "name": "PaginatorModule"
+      },
+      {
+        "name": "BigmoduleModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "UserComponent"
+      },
+      {
+        "name": "UserRoutingModule"
+      },
+      {
+        "name": "PaginatorModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 658,
+        "end": 692,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 658,
+          "end": 675,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 676,
+          "end": 692,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 678,
+              "end": 691,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 693,
+        "end": 758,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 693,
+          "end": 705,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 706,
+          "end": 758,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 708,
+              "end": 721,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserComponent"
+            },
+            {
+              "pos": 722,
+              "end": 740,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserRoutingModule"
+            },
+            {
+              "pos": 741,
+              "end": 757,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PaginatorModule"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 759,
+        "end": 777,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 759,
+          "end": 773,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 774,
+          "end": 777,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 778,
+        "end": 991,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 778,
+          "end": 790,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 791,
+          "end": 991,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 793,
+              "end": 814,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 815,
+              "end": 841,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserRoutingModule"
+            },
+            {
+              "pos": 842,
+              "end": 862,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UikitModule"
+            },
+            {
+              "pos": 863,
+              "end": 884,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "SharedModule"
+            },
+            {
+              "pos": 885,
+              "end": 908,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserFormModule"
+            },
+            {
+              "pos": 909,
+              "end": 935,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UserDetailsModule"
+            },
+            {
+              "pos": 936,
+              "end": 960,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PaginatorModule"
+            },
+            {
+              "pos": 961,
+              "end": 985,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BigmoduleModule"
+            }
+          ],
+          "multiLine": true
+        }
+      }
+    ]
+  },
+  {
+    "name": "FooterModule",
+    "file": "shared/footer/footer.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "FooterComponent",
+        "file": "shared/footer/footer.component.ts",
+        "selector": "app-footer",
+        "providers": [],
+        "templateUrl": [
+          "footer.component.html"
+        ],
+        "styleUrls": [
+          "footer.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 56,
+            "end": 81,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 56,
+              "end": 67,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 68,
+              "end": 81,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "app-footer",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 82,
+            "end": 123,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 82,
+              "end": 96,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 97,
+              "end": 123,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "./footer.component.html",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 124,
+            "end": 164,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 124,
+              "end": 136,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 137,
+              "end": 164,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 208,
+              "elements": [
+                {
+                  "pos": 139,
+                  "end": 163,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 11,
+                  "text": "./footer.component.css",
+                  "hasExtendedUnicodeEscape": false
+                }
+              ],
+              "multiLine": false
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "FooterComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 158,
+        "end": 200,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 158,
+          "end": 173,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 174,
+          "end": 200,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 176,
+              "end": 196,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "FooterComponent"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 201,
+        "end": 235,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 201,
+          "end": 211,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 212,
+          "end": 235,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 214,
+              "end": 231,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 236,
+        "end": 264,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 236,
+          "end": 246,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 247,
+          "end": 264,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 248,
+              "end": 263,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "FooterComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "LoginRoutingModule",
+    "file": "shared/login/login-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 225,
+        "end": 268,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 225,
+          "end": 235,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 236,
+          "end": 268,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 238,
+              "end": 267,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 212,
+              "expression": {
+                "pos": 238,
+                "end": 259,
+                "flags": 0,
+                "modifierFlagsCache": 0,
+                "transformFlags": 0,
+                "kind": 210,
+                "expression": {
+                  "pos": 238,
+                  "end": 250,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 251,
+                  "end": 259,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 260,
+                  "end": 266,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 80,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 269,
+        "end": 295,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 269,
+          "end": 279,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 280,
+          "end": 295,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 282,
+              "end": 294,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "RouterModule"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "LoginModule",
+    "file": "shared/login/login.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "LoginComponent",
+        "file": "shared/login/login.component.ts",
+        "selector": "app-login",
+        "providers": [],
+        "templateUrl": [
+          "login.component.html"
+        ],
+        "styleUrls": [
+          "login.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 301,
+            "end": 325,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 301,
+              "end": 312,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 313,
+              "end": 325,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "app-login",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 326,
+            "end": 366,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 326,
+              "end": 340,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 341,
+              "end": 366,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "./login.component.html",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 367,
+            "end": 406,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 367,
+              "end": 379,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 380,
+              "end": 406,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 208,
+              "elements": [
+                {
+                  "pos": 382,
+                  "end": 405,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 11,
+                  "text": "./login.component.css",
+                  "hasExtendedUnicodeEscape": false
+                }
+              ],
+              "multiLine": false
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "UikitModule"
+      },
+      {
+        "name": "LoginRoutingModule"
+      },
+      {
+        "name": "BigmoduleModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "LoginComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 337,
+        "end": 372,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 337,
+          "end": 354,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 355,
+          "end": 372,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 357,
+              "end": 371,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "LoginComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 373,
+        "end": 403,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 373,
+          "end": 385,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 386,
+          "end": 403,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 388,
+              "end": 402,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "LoginComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 404,
+        "end": 422,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 404,
+          "end": 418,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 419,
+          "end": 422,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 423,
+        "end": 539,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 423,
+          "end": 435,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 436,
+          "end": 539,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 438,
+              "end": 459,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 460,
+              "end": 480,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UikitModule"
+            },
+            {
+              "pos": 481,
+              "end": 508,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "LoginRoutingModule"
+            },
+            {
+              "pos": 509,
+              "end": 533,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BigmoduleModule"
+            }
+          ],
+          "multiLine": true
+        }
+      }
+    ]
+  },
+  {
+    "name": "NavbarModule",
+    "file": "shared/navbar/navbar.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "NavbarComponent",
+        "file": "shared/navbar/navbar.component.ts",
+        "selector": "app-navbar",
+        "providers": [],
+        "templateUrl": [
+          "navbar.component.html"
+        ],
+        "styleUrls": [
+          "navbar.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 188,
+            "end": 213,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 188,
+              "end": 199,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 200,
+              "end": 213,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "app-navbar",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 214,
+            "end": 255,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 214,
+              "end": 228,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 229,
+              "end": 255,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "./navbar.component.html",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 256,
+            "end": 296,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 256,
+              "end": 268,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 269,
+              "end": 296,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 208,
+              "elements": [
+                {
+                  "pos": 271,
+                  "end": 295,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 11,
+                  "text": "./navbar.component.css",
+                  "hasExtendedUnicodeEscape": false
+                }
+              ],
+              "multiLine": false
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "UikitModule"
+      },
+      {
+        "name": "BigModuleRouting"
+      }
+    ],
+    "exports": [
+      {
+        "name": "NavbarComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 288,
+        "end": 331,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 288,
+          "end": 303,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 304,
+          "end": 331,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 306,
+              "end": 326,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "NavbarComponent"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 332,
+        "end": 402,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 332,
+          "end": 342,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 343,
+          "end": 402,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 345,
+              "end": 362,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 363,
+              "end": 375,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "UikitModule"
+            },
+            {
+              "pos": 376,
+              "end": 397,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "BigModuleRouting"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 403,
+        "end": 431,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 403,
+          "end": 413,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 414,
+          "end": 431,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 415,
+              "end": 430,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "NavbarComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "PaginatorModule",
+    "file": "paginatorButton/paginator/paginator.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "PaginatorComponent",
+        "file": "paginatorButton/paginator/paginator.component.ts",
+        "selector": "app-paginator",
+        "providers": [],
+        "templateUrl": [
+          "paginator.component.html"
+        ],
+        "styleUrls": [
+          "paginator.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 174,
+            "end": 202,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 174,
+              "end": 185,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 186,
+              "end": 202,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "app-paginator",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 203,
+            "end": 247,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 203,
+              "end": 217,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 218,
+              "end": 247,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 11,
+              "text": "./paginator.component.html",
+              "hasExtendedUnicodeEscape": false
+            }
+          },
+          {
+            "pos": 248,
+            "end": 291,
+            "flags": 0,
+            "modifierFlagsCache": 0,
+            "transformFlags": 0,
+            "kind": 302,
+            "name": {
+              "pos": 248,
+              "end": 260,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 261,
+              "end": 291,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 208,
+              "elements": [
+                {
+                  "pos": 263,
+                  "end": 290,
+                  "flags": 0,
+                  "modifierFlagsCache": 0,
+                  "transformFlags": 0,
+                  "kind": 11,
+                  "text": "./paginator.component.css",
+                  "hasExtendedUnicodeEscape": false
+                }
+              ],
+              "multiLine": false
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "PaginatorComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 164,
+        "end": 201,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 164,
+          "end": 179,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 180,
+          "end": 201,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 182,
+              "end": 200,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PaginatorComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 202,
+        "end": 236,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 202,
+          "end": 212,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 213,
+          "end": 236,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 215,
+              "end": 232,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 237,
+        "end": 268,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 237,
+          "end": 247,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 248,
+          "end": 268,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 249,
+              "end": 267,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PaginatorComponent"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "SharedModule",
+    "file": "app/shared/shared.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "NavbarModule"
+      },
+      {
+        "name": "FooterModule"
+      },
+      {
+        "name": "PaginatorModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "NavbarModule"
+      },
+      {
+        "name": "FooterModule"
+      },
+      {
+        "name": "PaginatorModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 292,
+        "end": 314,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 292,
+          "end": 307,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 308,
+          "end": 314,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 315,
+        "end": 386,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 315,
+          "end": 325,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 326,
+          "end": 386,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 328,
+              "end": 340,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 341,
+              "end": 354,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "NavbarModule"
+            },
+            {
+              "pos": 355,
+              "end": 368,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "FooterModule"
+            },
+            {
+              "pos": 369,
+              "end": 385,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PaginatorModule"
+            }
+          ],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 387,
+        "end": 444,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 387,
+          "end": 397,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 398,
+          "end": 444,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 400,
+              "end": 412,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "NavbarModule"
+            },
+            {
+              "pos": 413,
+              "end": 426,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "FooterModule"
+            },
+            {
+              "pos": 427,
+              "end": 443,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "PaginatorModule"
+            }
+          ],
+          "multiLine": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "UikitModule",
+    "file": "shared/uikit/uikit.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "FormsModule"
+      },
+      {
+        "name": "MatSliderModule"
+      },
+      {
+        "name": "MatInputModule"
+      },
+      {
+        "name": "MatButtonModule"
+      },
+      {
+        "name": "ReactiveFormsModule"
+      },
+      {
+        "name": "MatProgressSpinnerModule"
+      },
+      {
+        "name": "MatIconModule"
+      },
+      {
+        "name": "MatFormFieldModule"
+      },
+      {
+        "name": "HttpClientModule"
+      },
+      {
+        "name": "MatToolbarModule"
+      },
+      {
+        "name": "MatCardModule"
+      },
+      {
+        "name": "MatSidenavModule"
+      },
+      {
+        "name": "MatSlideToggleModule"
+      },
+      {
+        "name": "MatSnackBarModule"
+      },
+      {
+        "name": "MatSelectModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "FormsModule"
+      },
+      {
+        "name": "MatSliderModule"
+      },
+      {
+        "name": "MatInputModule"
+      },
+      {
+        "name": "MatButtonModule"
+      },
+      {
+        "name": "ReactiveFormsModule"
+      },
+      {
+        "name": "MatProgressSpinnerModule"
+      },
+      {
+        "name": "MatIconModule"
+      },
+      {
+        "name": "MatFormFieldModule"
+      },
+      {
+        "name": "HttpClientModule"
+      },
+      {
+        "name": "MatToolbarModule"
+      },
+      {
+        "name": "MatSidenavModule"
+      },
+      {
+        "name": "MatSlideToggleModule"
+      },
+      {
+        "name": "MatCardModule"
+      },
+      {
+        "name": "MatSnackBarModule"
+      },
+      {
+        "name": "MatSelectModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 975,
+        "end": 994,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 975,
+          "end": 990,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 991,
+          "end": 994,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [],
+          "multiLine": false
+        }
+      },
+      {
+        "pos": 995,
+        "end": 1363,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 995,
+          "end": 1005,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 1006,
+          "end": 1363,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 1008,
+              "end": 1025,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 1026,
+              "end": 1042,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "FormsModule"
+            },
+            {
+              "pos": 1043,
+              "end": 1063,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatSliderModule"
+            },
+            {
+              "pos": 1064,
+              "end": 1083,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatInputModule"
+            },
+            {
+              "pos": 1084,
+              "end": 1104,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatButtonModule"
+            },
+            {
+              "pos": 1105,
+              "end": 1129,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "ReactiveFormsModule"
+            },
+            {
+              "pos": 1130,
+              "end": 1159,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatProgressSpinnerModule"
+            },
+            {
+              "pos": 1160,
+              "end": 1178,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatIconModule"
+            },
+            {
+              "pos": 1179,
+              "end": 1202,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatFormFieldModule"
+            },
+            {
+              "pos": 1203,
+              "end": 1224,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "HttpClientModule"
+            },
+            {
+              "pos": 1225,
+              "end": 1246,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatToolbarModule"
+            },
+            {
+              "pos": 1247,
+              "end": 1265,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatCardModule"
+            },
+            {
+              "pos": 1266,
+              "end": 1287,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatSidenavModule"
+            },
+            {
+              "pos": 1288,
+              "end": 1313,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatSlideToggleModule"
+            },
+            {
+              "pos": 1314,
+              "end": 1336,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatSnackBarModule"
+            },
+            {
+              "pos": 1337,
+              "end": 1357,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatSelectModule"
+            }
+          ],
+          "multiLine": true
+        }
+      },
+      {
+        "pos": 1364,
+        "end": 1712,
+        "flags": 0,
+        "modifierFlagsCache": 0,
+        "transformFlags": 0,
+        "kind": 302,
+        "name": {
+          "pos": 1364,
+          "end": 1374,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 80,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 1375,
+          "end": 1712,
+          "flags": 0,
+          "modifierFlagsCache": 0,
+          "transformFlags": 0,
+          "kind": 208,
+          "elements": [
+            {
+              "pos": 1377,
+              "end": 1393,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "FormsModule"
+            },
+            {
+              "pos": 1394,
+              "end": 1414,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatSliderModule"
+            },
+            {
+              "pos": 1415,
+              "end": 1434,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatInputModule"
+            },
+            {
+              "pos": 1435,
+              "end": 1455,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatButtonModule"
+            },
+            {
+              "pos": 1456,
+              "end": 1480,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "ReactiveFormsModule"
+            },
+            {
+              "pos": 1481,
+              "end": 1510,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatProgressSpinnerModule"
+            },
+            {
+              "pos": 1511,
+              "end": 1529,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatIconModule"
+            },
+            {
+              "pos": 1530,
+              "end": 1553,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatFormFieldModule"
+            },
+            {
+              "pos": 1554,
+              "end": 1575,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "HttpClientModule"
+            },
+            {
+              "pos": 1576,
+              "end": 1597,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatToolbarModule"
+            },
+            {
+              "pos": 1598,
+              "end": 1619,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatSidenavModule"
+            },
+            {
+              "pos": 1620,
+              "end": 1645,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatSlideToggleModule"
+            },
+            {
+              "pos": 1646,
+              "end": 1664,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatCardModule"
+            },
+            {
+              "pos": 1665,
+              "end": 1687,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatSnackBarModule"
+            },
+            {
+              "pos": 1688,
+              "end": 1708,
+              "flags": 0,
+              "modifierFlagsCache": 0,
+              "transformFlags": 0,
+              "kind": 80,
+              "escapedText": "MatSelectModule"
+            }
+          ],
+          "multiLine": true
+        }
+      }
+    ]
+  }
+]

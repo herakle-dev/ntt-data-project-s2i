@@ -26,6 +26,7 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
+    "dependency-cruiser": "^13.0.4",
     "e": "^0.2.33",
     "ngx-bootstrap-icons": "^1.9.2",
     "rxjs": "~7.8.0",
