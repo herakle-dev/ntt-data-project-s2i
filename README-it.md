@@ -1,4 +1,3 @@
-
 # Angular Project for Start2Impact 
 
 Questo progetto Angular è stato sviluppato da Ivan Ferrigno come oggetto di esame per Start2Impact, il progetto prevede la creazione di un mock social network utilizzando le Api di https://gorest.co.in/ , che possono essere fruite sia pubblicamente, ma sopratutto una delle richieste di progetto è utilizzare un token fornito dalla piattaforma GoRest per l'autenticazione dell'utente finale in modo da poter gestire le proprie Api.
@@ -274,6 +273,7 @@ screenshot/globalPost.png
 screenshot/newPostForm.png
 )
 
+- Grafico dipendenze
 
 ![Grafico dipendenze progetto](
 documentation/dependencies.svg)
