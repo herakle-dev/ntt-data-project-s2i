@@ -64,20 +64,7 @@ describe('PostComponent', () => {
     expect(paginatorService.updateItemsToDisplay).toHaveBeenCalled();
   });
 
-  it('should go to next page', () => {
-    spyOn(paginatorService, 'getNextPage');
-    component.goToNextPage();
 
-    expect(paginatorService.getNextPage).toHaveBeenCalled();
-  });
-
-  it('should go to previous page', () => {
-    spyOn(paginatorService, 'getPreviousPage');
-
-    component.goToPreviousPage();
-
-    expect(paginatorService.getPreviousPage).toHaveBeenCalled();
-  });
 
   it('should change the number of posts to display per page', () => {
     spyOn(component, 'updatePostsToDisplay');

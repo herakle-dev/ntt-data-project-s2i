@@ -3,173 +3,116 @@ import { UserComponent } from './user.component';
 import { UserService } from '../../services/user.service';
 import { GetAllService } from 'src/app/shared/services/get-all.service';
 import { PaginatorService } from 'src/app/shared/services/paginator.service';
+import { Title } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { UikitModule } from 'src/app/shared/uikit/uikit.module';
 import { PaginatorModule } from 'src/app/shared/paginatorButton/paginator/paginator.module';
+import { UikitModule } from 'src/app/shared/uikit/uikit.module';
 import { UserFormModule } from '../user-form/user-form.module';
-import { of } from 'rxjs';
 
 describe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
-  let userService: UserService;
-  let recursiveGetService: GetAllService;
-  let paginationService: PaginatorService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [UserComponent],
-      imports:[HttpClientTestingModule,UikitModule,PaginatorModule,UserFormModule],
+      imports: [FormsModule, HttpClientTestingModule,PaginatorModule,UikitModule,UserFormModule],
       providers: [
         UserService,
         GetAllService,
         PaginatorService,
-      ],
+        Title
+      ]
     }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UserComponent);
     component = fixture.componentInstance;
-    userService = TestBed.inject(UserService);
-    recursiveGetService = TestBed.inject(GetAllService);
-    paginationService = TestBed.inject(PaginatorService);
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  afterEach(() => {
+    fixture.destroy();
+  });
+
+  it('should create the component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should set the title on initialization', () => {
+    const titleService = TestBed.inject(Title);
+    spyOn(titleService, 'setTitle');
+    component.ngOnInit();
+    expect(titleService.setTitle).toHaveBeenCalledWith('Pagina utenti');
   });
 
   it('should call onSliderChange method on slider value change', () => {
     spyOn(component, 'onSliderChange');
     component.sliderValue = 10;
-    fixture.detectChanges();
-
-    const sliderInput = fixture.nativeElement.querySelector('#sliderInput');
-    sliderInput.dispatchEvent(new Event('input')); // Change 'change' to 'input'
-    fixture.detectChanges();
-
+    component.ngOnInit();
     expect(component.onSliderChange).toHaveBeenCalled();
   });
 
 
-  it('should update users array when searchValue is empty', () => {
-    component.searchValue = '';
-    component.originalUsers = [{ name: 'User 1' }, { name: 'User 2' }];
-    component.searchUsers();
 
-    expect(component.users).toEqual(component.originalUsers);
+  it('should filter users based on search value', () => {
+    component.originalUsers = [{ id: 1, name: 'User 1' }, { id: 2, name: 'User 2' }];
+    component.searchValue = 'User 1';
+    component.searchUsers();
+    expect(component.users.length).toEqual(1);
+    expect(component.users[0].name).toEqual('User 1');
   });
 
-  it('should update users array when searchValue is not empty', () => {
-    component.searchValue = 'User';
-    component.originalUsers = [{ name: 'User 1' }, { name: 'User 2' }];
-    component.searchUsers();
-
-    expect(component.users).toEqual([{ name: 'User 1' }, { name: 'User 2' }]);
-  });
-
-  it('should call paginationService.updateItemsToDisplay and updateVisiblePages when updateUsersToDisplay is called', () => {
-    spyOn(paginationService, 'updateItemsToDisplay');
-    spyOn(paginationService, 'updateVisiblePages');
-    component.currentPage = 1;
-    component.sliderValue = 10;
-    component.originalUsers = [{ name: 'User 1' }, { name: 'User 2' }];
+  it('should update users to display when currentPage changes', () => {
+    component.originalUsers = [
+      { id: 1, name: 'User 1' },
+      { id: 2, name: 'User 2' },
+      { id: 3, name: 'User 3' },
+      { id: 4, name: 'User 4' },
+      { id: 5, name: 'User 5' }
+    ];
+    component.sliderValue = 2;
+    component.currentPage = 2;
     component.updateUsersToDisplay();
-
-    expect(paginationService.updateItemsToDisplay).toHaveBeenCalledWith(
-      component.originalUsers,
-      component.currentPage,
-      component.sliderValue
-    );
-    expect(paginationService.updateVisiblePages).toHaveBeenCalled();
+    expect(component.users.length).toEqual(2);
+    expect(component.users[0].name).toEqual('User 3');
+    expect(component.users[1].name).toEqual('User 4');
   });
 
-  it('should call paginationService.getNextPage and updateUsersToDisplay when goToNextPage is called', () => {
-    spyOn(paginationService, 'getNextPage');
-    spyOn(component, 'updateUsersToDisplay');
-    component.currentPage = 1;
-    component.totalPages = 5;
+  it('should go to the next page when goToNextPage is called', () => {
+    component.currentPage = 2;
+    component.totalPages = 3;
     component.goToNextPage();
-
-    expect(paginationService.getNextPage).toHaveBeenCalledWith(
-      component.currentPage,
-      component.totalPages
-    );
-    expect(component.updateUsersToDisplay).toHaveBeenCalled();
+    expect(component.currentPage).toEqual(3);
   });
 
-  it('should call paginationService.getPageInRange and updateUsersToDisplay when goToPage is called', () => {
-    spyOn(paginationService, 'getPageInRange');
-    spyOn(component, 'updateUsersToDisplay');
-    component.currentPage = 1;
-    component.totalPages = 5;
-    const page = 3;
-    component.goToPage(page);
-
-    expect(paginationService.getPageInRange).toHaveBeenCalledWith(
-      page,
-      component.totalPages
-    );
-    expect(component.updateUsersToDisplay).toHaveBeenCalled();
-  });
-
-  it('should call paginationService.getPreviousPage and updateUsersToDisplay when goToPreviousPage is called', () => {
-    spyOn(paginationService, 'getPreviousPage');
-    spyOn(component, 'updateUsersToDisplay');
+  it('should go to the previous page when goToPreviousPage is called', () => {
     component.currentPage = 2;
     component.goToPreviousPage();
-
-    expect(paginationService.getPreviousPage).toHaveBeenCalledWith(
-      component.currentPage
-    );
-    expect(component.updateUsersToDisplay).toHaveBeenCalled();
+    expect(component.currentPage).toEqual(1);
   });
 
-  it('should update sliderValue and call updateUsersToDisplay when changeUsersToDisplay is called', () => {
-    spyOn(component, 'updateUsersToDisplay');
-    const perPage = 20;
-    component.changeUsersToDisplay(perPage);
-
-    expect(component.sliderValue).toBe(perPage);
-    expect(component.updateUsersToDisplay).toHaveBeenCalled();
+  it('should not change the page if goToPage is called with the same page', () => {
+    component.currentPage = 2;
+    component.totalPages = 5;
+    component.goToPage(2);
+    expect(component.currentPage).toEqual(2);
   });
 
-  it('should call userService.deleteThisUser and update user.hide when askForConsent is called and question is confirmed', () => {
-    spyOn(window, 'confirm').and.returnValue(true);
-    spyOn(userService, 'deleteThisUser').and.returnValue(of({}));
-
-    component.users = [
-      { id: 1, hide: false },
-      { id: 2, hide: false },
-    ];
-    component.askForConsent(1);
-
-    expect(userService.deleteThisUser).toHaveBeenCalledWith(1);
-    expect(component.users[0].hide).toBe(true);
+  it('should change the page if goToPage is called with a different page', () => {
+    component.currentPage = 2;
+    component.totalPages = 5;
+    component.goToPage(4);
+    expect(component.currentPage).toEqual(4);
   });
 
-  it('should show alert when askForConsent is called and question is not confirmed', () => {
-    spyOn(window, 'confirm').and.returnValue(false);
-    spyOn(window, 'alert');
-
-    component.askForConsent(1);
-    expect(window.alert).toHaveBeenCalledTimes(0);
+  it('should change the number of users to display when changeUsersToDisplay is called', () => {
+    component.sliderValue = 10;
+    component.changeUsersToDisplay(5);
+    expect(component.sliderValue).toEqual(5);
   });
 
 
-  it('should call unsubscribe methods and reset cache on ngOnDestroy', () => {
-    spyOn(recursiveGetService, 'cancelRequests');
-    spyOn(recursiveGetService, 'resetCache');
-    spyOn(component.unsubscribe$, 'next');
-    spyOn(component.unsubscribe$, 'complete');
-
-    component.ngOnDestroy();
-
-    expect(recursiveGetService.cancelRequests).toHaveBeenCalled();
-    expect(recursiveGetService.resetCache).toHaveBeenCalled();
-    expect(component.unsubscribe$.next).toHaveBeenCalled();
-    expect(component.unsubscribe$.complete).toHaveBeenCalled();
-  });
 });

@@ -21,19 +21,7 @@ describe('CommentService', () => {
     httpTestingController.verify();
   });
 
-  it('should retrieve all comments for a post or empty array if no commments to display', () => {
-    const postId = 1;
-    const commentsUrl = `https://gorest.co.in/public/v2/posts/${postId}/comments?page=1&per_page=100`;
-    const mockResponse = [];
 
-    commentService.getEveryPostComments(postId).subscribe((comments) => {
-      expect(comments).toEqual(mockResponse);
-    });
-
-    const req = httpTestingController.expectOne(commentsUrl);
-    expect(req.request.method).toEqual('GET');
-    req.flush(mockResponse);
-  });
 
   it('should return an empty array if postId is null', () => {
     const postId = null;

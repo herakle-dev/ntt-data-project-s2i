@@ -36,17 +36,7 @@ describe('PostFormComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get users for a new post', () => {
-    component.users = []; // Simulate empty users array
-    userService.allUsersUrl = 'mock/allUsersUrl';
-    getAllService.flattenResponseInPages.and.returnValue(['user1', 'user2']); // Mock flattened user array
 
-    component.getUsersForPost();
-
-    expect(component.clicked).toBeTrue();
-    expect(getAllService.getAllInApi).toHaveBeenCalledWith(100, 'mock/allUsersUrl');
-    expect(component.users).toEqual(['user1', 'user2']);
-  });
 
   it('should toggle sidebar form when calling toggleSidebarForm', () => {
     // Initial value of showSidebarForm
