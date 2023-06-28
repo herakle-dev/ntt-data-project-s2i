@@ -1,279 +1,239 @@
+## Angular Project for Start2Impact
+This Angular project was developed by Ivan Ferrigno as an examination project for Start2Impact. The project involves creating a mock social network using the APIs from https://gorest.co.in/. These APIs can be accessed publicly, but one of the project requirements is to use a token provided by the GoRest platform for user authentication, allowing the management of their own APIs.
 
-# Angular Project for Start2Impact 
+The application was developed following best practices for folder organization into modules, components, services, and guards. To enhance performance, lazy loading was implemented, and all routes are protected by authentication. The application simply checks if the user has entered their token and if it is valid during the login phase. This authentication is also required for the initial page presented to the end user upon application initialization.
 
-Questo progetto Angular è stato sviluppato da Ivan Ferrigno come oggetto di esame per Start2Impact, il progetto prevede la creazione di un mock social network utilizzando le Api di https://gorest.co.in/ , che possono essere fruite sia pubblicamente, ma sopratutto una delle richieste di progetto è utilizzare un token fornito dalla piattaforma GoRest per l'autenticazione dell'utente finale in modo da poter gestire le proprie Api.
-L'applicazione è stata sviluppata tenendo conto delle best practice in tema di suddivisione delle cartelle in moduli, componenti, servizi, guardie. Per rendere l'applicazione più performante è stato utilizzato il lazyloading, inoltre tutte le route sono protette da autenticazione, semplicemente controlla se l'utente ha inserito il proprio token e che sia valido durante la fase di login, nonchè la prima pagina che viene presentata all'utente finale una volta inizializzata l'applicazione. 
-## Provare l'app online 
-### Link deploy  
+## Try the app online
+### Deployment Links
 - [Firebase link 1](https://socialmock-project.firebaseapp.com)
 -   [Firebase link 2](https://socialmock-project.web.app)
+  ## Installation
+To try this project locally, you will need:
 
-## Installazione
-Per la prova in locale è necessario : 
-- **Nodejs**
-- Editor di codice (**Visual studio code**)
-- **Clonare** questa repository dalla console del tuo code editor con il comando
+- Nodejs
+- Code editor (Visual Studio Code)
+- Clone this repository from your code editor's console using the command:
 ```bash
   git clone https://github.com/herakle-dev/ntt-data-project-s2i
-```
-- Installare le dipendenze con il comando 
+  ```
+- Install the dependencies using the command:
 ```bash
   npm install
-```
-- Dalla console utilizzare il comando
+  ```
+From the console, use the command:
 ```bash
   ng serve --open
-```
-## Dipendenze principali
+  ```
+## Main Dependencies
 - @angular/animations
-Versione: ^15.2.0
-
-La libreria @angular/animations fornisce il supporto per le animazioni all'interno dell'applicazione Angular. È possibile utilizzarla per aggiungere animazioni fluide e interattive agli elementi del tuo progetto.
+Version: ^15.2.0
+The @angular/animations library provides support for animations within your Angular application. You can use it to add smooth and interactive animations to elements in your project.
 
 - @angular/cdk
-Versione: ^15.2.9
-
-@angular/cdk è il Component Dev Kit (CDK) di Angular. Fornisce un set di strumenti e componenti essenziali che possono essere utilizzati per creare applicazioni Angular più complesse e interattive.
+Version: ^15.2.9
+@angular/cdk is Angular's Component Dev Kit (CDK). It provides a set of essential tools and components that can be used to create more complex and interactive Angular applications.
 
 - @angular/common
-Versione: ^15.2.0
-
-@angular/common è una libreria di base di Angular che contiene le funzionalità comuni utilizzate in tutto il framework.
+Version: ^15.2.0
+@angular/common is a core library of Angular that contains common functionality used throughout the framework.
 
 - @angular/compiler
-Versione: ^15.2.0
-
-La libreria @angular/compiler fornisce il compilatore just-in-time (JIT) di Angular, che analizza il codice TypeScript dell'applicazione e lo traduce in codice JavaScript eseguibile.
+Version: ^15.2.0
+The @angular/compiler library provides the Angular Just-in-Time (JIT) compiler, which analyzes the TypeScript code of your application and translates it into executable JavaScript code.
 
 - @angular/core
-Versione: ^15.2.0
-
-@angular/core è una delle librerie principali di Angular e contiene le funzionalità fondamentali del framework, come il sistema di moduli, il sistema di dependency injection e altre funzionalità di base.
+Version: ^15.2.0
+@angular/core is one of the core libraries of Angular and contains fundamental features of the framework, such as the module system, dependency injection system, and other basic functionalities.
 
 - @angular/forms
-Versione: ^15.2.0
-
-La libreria @angular/forms offre il supporto per la gestione dei form all'interno delle applicazioni Angular, inclusa la validazione dei dati inseriti dagli utenti.
+Version: ^15.2.0
+The @angular/forms library provides support for form handling within Angular applications, including validation of user-entered data.
 
 - @angular/material
-Versione: ^15.2.9
-
-@angular/material è una libreria che implementa il Material Design di Google per Angular. Fornisce una vasta gamma di componenti UI predefiniti, come bottoni, modali, tabelle e molto altro, che possono essere utilizzati per creare interfacce utente moderne e intuitive.
+Version: ^15.2.9
+@angular/material is a library that implements Google's Material Design for Angular. It provides a wide range of pre-built UI components such as buttons, modals, tables, and more, which can be used to create modern and intuitive user interfaces.
 
 - @angular/platform-browser
-Versione: ^15.2.0
-
-La libreria @angular/platform-browser contiene le implementazioni di Angular specifiche per i browser, come il rendering del DOM, la manipolazione degli eventi e altre funzionalità legate all'ambiente di esecuzione del browser.
+Version: ^15.2.0
+The @angular/platform-browser library contains Angular implementations specific to browsers, such as DOM rendering, event handling, and other browser runtime-related functionalities.
 
 - @angular/platform-browser-dynamic
-Versione: ^15.2.0
-
-@angular/platform-browser-dynamic fornisce il supporto per la compilazione e l'esecuzione dinamica degli script Angular all'interno del browser. Questa libreria è utilizzata per l'avvio dell'applicazione Angular nel browser.
+Version: ^15.2.0
+@angular/platform-browser-dynamic provides support for compiling and dynamically executing Angular scripts within the browser. This library is used to bootstrap the Angular application in the browser.
 
 - @angular/router
-Versione: ^15.2.0
-
-La libreria @angular/router offre un routing client-side per le applicazioni Angular. Consente di gestire la navigazione tra le diverse visualizzazioni dell'applicazione in modo efficace e gestibile.
+Version: ^15.2.0
+The @angular/router library offers client-side routing for Angular applications. It allows you to effectively and manageably handle navigation between different views of the application.
 
 - @fortawesome/fontawesome-svg-core
-Versione: ^6.4.0
-
-@fortawesome/fontawesome-svg-core è una libreria che fornisce icone vettoriali scalabili (SVG) di alta qualità provenienti dalla collezione Font Awesome. Puoi utilizzare questa libreria per aggiungere icone stilizzate al tuo progetto Angular.
+Version: ^6.4.0
+@fortawesome/fontawesome-svg-core is a library that provides high-quality scalable vector icons (SVG) from the Font Awesome collection. You can use this library to add stylish icons to your Angular project.
 
 - @fortawesome/free-solid-svg-icons
-Versione: ^6.4.0
-
-La libreria @fortawesome/free-solid-svg-icons contiene una vasta gamma di icone vettoriali solidi provenienti dalla collezione Font Awesome. Puoi utilizzare queste icone per arricchire l'aspetto delle tue interfacce utente.
+Version: ^6.4.0
+The @fortawesome/free-solid-svg-icons library contains a wide range of solid vector icons from the Font Awesome collection. You can use these icons to enhance the appearance of your user interfaces.
 
 - animate.css
-Versione: ^4.1.1
-
-animate.css è una libreria di animazioni CSS pronte all'uso. Fornisce una collezione di classi CSS che possono essere utilizzate per animare gli elementi dell'interfaccia utente in modo semplice e veloce.
+Version: ^4.1.1
+animate.css is a ready-to-use CSS animation library. It provides a collection of CSS classes that can be used to animate UI elements easily and quickly.
 
 - bootstrap
-Versione: ^5.2.3
-
-bootstrap è una popolare libreria CSS e JavaScript per la creazione di interfacce web responsive e di alta qualità. È ampiamente utilizzata per lo sviluppo di applicazioni web moderne.
+Version: ^5.2.3
+bootstrap is a popular CSS and JavaScript library for creating responsive and high-quality web interfaces. It is widely used for developing modern web applications.
 
 - bootstrap-icons
-Versione: ^1.10.5
-
-La libreria bootstrap-icons fornisce una vasta gamma di icone SVG di alta qualità che possono essere utilizzate all'interno del tuo progetto Angular. Le icone possono essere facilmente personalizzate e adattate alle tue esigenze.
+Version: ^1.10.5
+The bootstrap-icons library provides a wide range of high-quality SVG icons that can be used within your Angular project. The icons can be easily customized and adapted to your needs.
 
 - ngx-bootstrap-icons
-Versione: ^1.9.2
-
-ngx-bootstrap-icons è una libreria che semplifica l'utilizzo di icone Bootstrap all'interno delle applicazioni Angular. Fornisce componenti Angular che consentono di utilizzare facilmente le icone Bootstrap nei tuoi template.
+Version: ^1.9.2
+ngx-bootstrap-icons is a library that simplifies the usage of Bootstrap icons within Angular applications. It provides Angular components that allow you to easily use Bootstrap icons in your templates.
 
 - rxjs
-Versione: ~7.8.0
-
-La libreria rxjs è una libreria reattiva per JavaScript che fornisce supporto per la programmazione asincrona basata sugli observable. È ampiamente utilizzata in applicazioni Angular per gestire flussi di dati reattivi.
+Version: ~7.8.0
+The rxjs library is a reactive programming library for JavaScript that provides support for asynchronous programming based on observables. It is widely used in Angular applications to handle reactive data streams.
 
 - tslib
-Versione: ^2.5.3
-
-tslib è una libreria TypeScript che fornisce varie funzionalità utili, come supporto per le annotazioni dei tipi, funzioni di utilità e altro ancora. È spesso utilizzata come dipendenza per i progetti TypeScript.
+Version: ^2.5.3
+tslib is a TypeScript library that provides various useful features such as type annotations support, utility functions, and more. It is often used as a dependency for TypeScript projects.
 
 - zone.js
-Versione: ~0.12.0
+Version: ~0.12.0
+zone.js is a library that provides a zone system for JavaScript. It is internally used by Angular for managing asynchronous events and the application lifecycle.
 
-zone.js è una libreria che fornisce un sistema di zone per JavaScript. È utilizzata internamente da Angular per la gestione degli eventi asincroni e del ciclo di vita delle applicazioni.
+## Development Dependencies
 
-## Dipendenze di sviluppo
 - @angular-devkit/build-angular
-Versione: ^15.2.8
-
-La libreria @angular-devkit/build-angular fornisce gli strumenti necessari per compilare e distribuire un'applicazione Angular. Contiene anche una serie di plugin e configurazioni per facilitare il processo di build.
+Version: ^15.2.8
+The @angular-devkit/build-angular library provides the necessary tools to build and deploy an Angular application. It also includes a set of plugins and configurations to facilitate the build process.
 
 - @angular-eslint/builder
-Versione: 15.2.1
-
-@angular-eslint/builder è un builder specifico per Angular che consente di eseguire l'analisi statica del codice TypeScript utilizzando ESLint.
+Version: 15.2.1
+@angular-eslint/builder is an Angular-specific builder that enables static analysis of TypeScript code using ESLint.
 
 - @angular-eslint/eslint-plugin
-Versione: 15.2.1
-
-La libreria @angular-eslint/eslint-plugin è un plugin ESLint specifico per Angular che fornisce regole aggiuntive per l'analisi statica del codice TypeScript all'interno di progetti Angular.
+Version: 15.2.1
+The @angular-eslint/eslint-plugin library is an ESLint plugin specifically for Angular that provides additional rules for static analysis of TypeScript code within Angular projects.
 
 - @angular-eslint/eslint-plugin-template
-Versione: 15.2.1
-
-@angular-eslint/eslint-plugin-template è un plugin ESLint specifico per Angular che fornisce regole per l'analisi statica dei template HTML all'interno di progetti Angular.
+Version: 15.2.1
+@angular-eslint/eslint-plugin-template is an ESLint plugin specifically for Angular that provides rules for static analysis of HTML templates within Angular projects.
 
 - @angular-eslint/schematics
-Versione: 15.2.1
-
-La libreria @angular-eslint/schematics fornisce schemi e generatori di codice specifici per Angular che possono essere utilizzati con l'Angular CLI per automatizzare le attività di sviluppo, come la creazione di componenti, moduli e altro ancora.
+Version: 15.2.1
+The @angular-eslint/schematics library provides Angular-specific code schematics and generators that can be used with the Angular CLI to automate development tasks such as creating components, modules, and more.
 
 - @angular-eslint/template-parser
-Versione: 15.2.1
-
-@angular-eslint/template-parser è un parser per l'analisi statica dei template HTML all'interno di progetti Angular utilizzando ESLint.
+Version: 15.2.1
+@angular-eslint/template-parser is a parser for static analysis of HTML templates within Angular projects using ESLint.
 
 - @angular/cli
-Versione: ~15.2.6
-
-@angular/cli è l'Angular Command Line Interface (CLI) che fornisce uno strumento da riga di comando per la creazione, la gestione e il deployment di progetti Angular.
+Version: ~15.2.6
+@angular/cli is the Angular Command Line Interface (CLI) that provides a command-line tool for creating, managing, and deploying Angular projects.
 
 - @angular/compiler-cli
-Versione: ^15.2.0
-
-La libreria @angular/compiler-cli fornisce il compilatore ahead-of-time (AOT) di Angular, che consente di compilare l'applicazione Angular in JavaScript eseguibile in anticipo per una migliore prestazione.
+Version: ^15.2.0
+The @angular/compiler-cli library provides the ahead-of-time (AOT) compiler for Angular, which allows compiling the Angular application into pre-executable JavaScript for improved performance.
 
 - @types/jasmine
-Versione: ~4.3.0
-
-@types/jasmine è una libreria che fornisce le definizioni di tipo TypeScript per Jasmine, un popolare framework di testing per JavaScript.
+Version: ~4.3.0
+@types/jasmine is a library that provides TypeScript type definitions for Jasmine, a popular testing framework for JavaScript.
 
 - @typescript-eslint/eslint-plugin
-Versione: 5.48.2
-
-La libreria @typescript-eslint/eslint-plugin è un plugin ESLint specifico per TypeScript che fornisce regole aggiuntive per l'analisi statica del codice TypeScript.
+Version: 5.48.2
+The @typescript-eslint/eslint-plugin library is an ESLint plugin specifically for TypeScript that provides additional rules for static analysis of TypeScript code.
 
 - @typescript-eslint/parser
-Versione: 5.48.2
-
-@typescript-eslint/parser è un parser per l'analisi statica del codice TypeScript utilizzando ESLint. Converte il codice TypeScript in un'AST (Abstract Syntax Tree) che può essere analizzato da ESLint.
+Version: 5.48.2
+@typescript-eslint/parser is a parser for static analysis of TypeScript code using ESLint. It converts TypeScript code into an Abstract Syntax Tree (AST) that can be analyzed by ESLint.
 
 - eslint
-Versione: ^8.33.0
-
-eslint è uno strumento di analisi statica del codice che aiuta a identificare potenziali problemi o errori nel codice JavaScript o TypeScript.
+Version: ^8.33.0
+eslint is a code static analysis tool that helps identify potential issues or errors in JavaScript or TypeScript code.
 
 - jasmine-core
-Versione: ~4.5.0
-
-jasmine-core è la libreria principale di Jasmine, un framework di testing per JavaScript. Fornisce le funzionalità di base per l'esecuzione dei test.
+Version: ~4.5.0
+jasmine-core is the core library of Jasmine, a testing framework for JavaScript. It provides basic functionality for test execution.
 
 - karma
-Versione: ~6.4.0
-
-karma è un test runner per JavaScript che consente di eseguire i test in diversi browser o ambienti di esecuzione. È spesso utilizzato insieme a Jasmine per l'esecuzione dei test unitari.
+Version: ~6.4.0
+karma is a test runner for JavaScript that allows running tests in different browsers or execution environments. It is often used with Jasmine for unit testing.
 
 - karma-chrome-launcher
-Versione: ~3.1.0
-
-karma-chrome-launcher è un plugin Karma che consente di eseguire i test nei browser Google Chrome. È uno dei plugin più comuni utilizzati per l'esecuzione dei test Karma.
+Version: ~3.1.0
+karma-chrome-launcher is a Karma plugin that allows running tests in Google Chrome browsers. It is one of the most commonly used plugins for Karma test execution.
 
 - karma-coverage
-Versione: ~2.2.0
-
-karma-coverage è un plugin Karma che consente di generare report di copertura del codice durante l'esecuzione dei test. Fornisce informazioni sulle porzioni di codice testate e su quelle non coperte dai test.
+Version: ~2.2.0
+karma-coverage is a Karma plugin that enables generating code coverage reports during test execution. It provides information about the tested code portions and those not covered by tests.
 
 - karma-jasmine
-Versione: ~5.1.0
-
-karma-jasmine è un plugin Karma che consente di eseguire i test scritti utilizzando Jasmine come framework di testing.
+Version: ~5.1.0
+karma-jasmine is a Karma plugin that allows running tests written using Jasmine as the testing framework.
 
 - karma-jasmine-html-reporter
-Versione: ~2.0.0
-
-karma-jasmine-html-reporter è un plugin Karma che genera un report HTML dettagliato sull'esecuzione dei test Jasmine. Il report include informazioni sui test eseguiti, i successi e gli eventuali errori o fallimenti.
+Version: ~2.0.0
+karma-jasmine-html-reporter is a Karma plugin that generates a detailed HTML report on the execution of Jasmine tests. The report includes information about the executed tests, successes, and any errors or failures.
 
 - typescript
-Versione: ~4.9.4
+Version: ~4.9.4
+typescript is the primary programming language used in Angular. It is a superset of JavaScript that adds additional features such as static types and the latest ECMAScript features.
 
-typescript è il linguaggio di programmazione principale utilizzato in Angular. È un superset di JavaScript che aggiunge funzionalità aggiuntive come i tipi statici e le caratteristiche ECMAScript più recenti.
-
-## Requisiti app richiesti :
-
- - Pagina di login per autenticare l'utente e relativa funzionalità di logout.
- - Pagina principale che mostra tutti gli utenti a sistema, scegliendo quanti utenti visualizzare, inoltre è possibile effettuare ricerche, creare un nuovo utente, ed eliminare quelli esistenti 
- - Pagina dettagli utente singolo, clickando su qualsiasi utente si viene indirizzati al profilo dell'utente dove si possono trovare tutti i suoi post, commenti ai post e si possono creare nuovi commenti ai post esistenti.
- - Pagina elenco post dove è possibile trovare tutti i post presenti a sistema, i suoi relativi commenti per ogni post, si ha la possibilità di creare nuovi post in questa pagina.
- - Test coverage almeno del 60%
- ## Coverage Ottenuta :
+##  Required App Features:
+- Login page to authenticate the user and the corresponding logout functionality.
+- Main page that displays all system users, with the ability to choose the number of users to display. It also allows searching, creating new users, and deleting existing ones.
+- Single user details page, where clicking on any user redirects to their profile. The profile displays all their posts, comments on posts, and allows creating new comments on existing posts.
+- Post list page where all the system posts can be found, along with their respective comments. It provides the ability to create new posts on this page.
+- Test coverage of at least 60%.
+## Coverage Achieved:
 - 81.35% Statements 371/456
--  70.83% Branches 34/48
--   72.84% Functions 110/151
--   82.35% Lines 350/425)
-
-## Screenshots
-- Pagina di login
+- 70.83% Branches 34/48
+- 72.84% Functions 110/151
+- 82.35% Lines 350/425
+  ## Screenshots
+- Login page
 
 ![Login page](
 screenshot/login.png
 )
 
-- Pagina utenti
+- Users Page
 
 ![User page](
 screenshot/globalUser.png
 )
-- Creazione nuovo utente 
+- New user
 ![New user](
 screenshot/newUser.png
 )
-- Pagina dettaglio utente 
+- Single user profile 
 ![User details](
 screenshot/userDetails.png
 )
 
-- Nuovo post utente 
+- New user post
 ![User details Form](
 screenshot/usernewpost.png
 )
-- Commenti ai post dell'utente
+- New comment
 ![UserComment](
 screenshot/userComment.png
 )
-- Sezione Post globali
+- Posts
 ![Global Post](
 screenshot/globalPost.png
 )
-- Commenti ai singoli post nella sezione post
+- Global Post comments
   
 ![Post comments](
    screenshot/globalPostComment.png
 )
-- Creazione nuovo post
-
+- New post 
 
 ![New post](
 screenshot/newPostForm.png
 )
-
+- Dependencies graph
 
 ![Grafico dipendenze progetto](
 documentation/dependencies.svg)
