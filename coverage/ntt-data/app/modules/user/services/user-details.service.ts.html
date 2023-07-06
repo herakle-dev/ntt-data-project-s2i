@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76% </span>
+                <span class="strong">44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/25</span>
+                <span class='fraction'>11/25</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.55% </span>
+                <span class="strong">22.22% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/9</span>
+                <span class='fraction'>2/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.6% </span>
+                <span class="strong">47.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>19/23</span>
+                <span class='fraction'>11/23</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -131,35 +131,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -168,8 +168,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -199,10 +199,10 @@ export class UserDetailsService {
     private http: HttpClient
   ) {}
 &nbsp;
-  private getCurrentUserId(): string {
-    const currentUrl = this.locationStrategy.path();
-    const pathArray = currentUrl.split('/');
-    return pathArray[2];
+<span class="fstat-no" title="function not covered" >   getCurrentUserId(</span>): string {
+    const currentUrl = <span class="cstat-no" title="statement not covered" >this.locationStrategy.path();</span>
+    const pathArray = <span class="cstat-no" title="statement not covered" >currentUrl.split('/');</span>
+<span class="cstat-no" title="statement not covered" >    return pathArray[2];</span>
   }
 &nbsp;
   public postUrl: string;
@@ -213,10 +213,10 @@ export class UserDetailsService {
     return this.http.get(`${this.url}/${userId}`, { headers: this.headers });
   }
 &nbsp;
-  getAllUserPost(): Observable&lt;any[]&gt; {
-    const userId = this.getCurrentUserId();
-    const postUrl = `${this.url}/${userId}/posts`;
-    return this.recursiveGetService.getAllInApi(this.postPerPage, postUrl).pipe(
+<span class="fstat-no" title="function not covered" >  getAllUserPost(</span>): Observable&lt;any[]&gt; {
+    const userId = <span class="cstat-no" title="statement not covered" >this.getCurrentUserId();</span>
+    const postUrl = <span class="cstat-no" title="statement not covered" >`${this.url}/${userId}/posts`;</span>
+<span class="cstat-no" title="statement not covered" >    return this.recursiveGetService.getAllInApi(this.postPerPage, postUrl).pipe(</span>
       map(<span class="fstat-no" title="function not covered" >(p</span>ages: any[][]) =&gt; {
         const allPosts = <span class="cstat-no" title="statement not covered" >pages.reduce(<span class="fstat-no" title="function not covered" >(a</span>ccumulator, page) =&gt; <span class="cstat-no" title="statement not covered" >accumulator.concat(page),</span> []);</span>
 <span class="cstat-no" title="statement not covered" >        return allPosts;</span>
@@ -224,9 +224,9 @@ export class UserDetailsService {
     );
   }
 &nbsp;
-  getAllUserComments(postId: number): Observable&lt;any[]&gt; {
-    const commentsUrl = `https://gorest.co.in/public/v2/posts/${postId}/comments`;
-    return this.recursiveGetService.getAllInApi(this.postPerPage, commentsUrl).pipe(
+<span class="fstat-no" title="function not covered" >  getAllUserComments(</span>postId: number): Observable&lt;any[]&gt; {
+    const commentsUrl = <span class="cstat-no" title="statement not covered" >`https://gorest.co.in/public/v2/posts/${postId}/comments`;</span>
+<span class="cstat-no" title="statement not covered" >    return this.recursiveGetService.getAllInApi(this.postPerPage, commentsUrl).pipe(</span>
       map(<span class="fstat-no" title="function not covered" >(p</span>ages: any[][]) =&gt; {
         const allComments = <span class="cstat-no" title="statement not covered" >pages.reduce(<span class="fstat-no" title="function not covered" >(a</span>ccumulator, page) =&gt; <span class="cstat-no" title="statement not covered" >accumulator.concat(page),</span> []);</span>
 <span class="cstat-no" title="statement not covered" >        return allComments;</span>
@@ -241,7 +241,7 @@ export class UserDetailsService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-05T16:35:36.212Z
+                at 2023-07-06T08:14:01.159Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

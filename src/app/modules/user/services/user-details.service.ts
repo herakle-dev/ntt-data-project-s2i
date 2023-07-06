@@ -20,7 +20,7 @@ export class UserDetailsService {
     private http: HttpClient
   ) {}
 
-  private getCurrentUserId(): string {
+   getCurrentUserId(): string {
     const currentUrl = this.locationStrategy.path();
     const pathArray = currentUrl.split('/');
     return pathArray[2];
